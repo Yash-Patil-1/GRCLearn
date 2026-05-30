@@ -1,0 +1,649 @@
+{
+  "id": "soc2",
+  "name": "SOC 2",
+  "description": "Service Organization Control 2 \u2014 Trust Service Criteria",
+  "controls": [
+    {
+      "id": "soc2-cc1-1",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC1",
+      "control_id": "CC1.1",
+      "name": "COSO Principle 1: Demonstrates Commitment to Integrity and Ethical Values",
+      "description": "The entity demonstrates a commitment to integrity and ethical values.",
+      "implementation_guidance": [
+        "Establish code of conduct",
+        "Communicate ethical expectations",
+        "Enforce consequences for violations",
+        "Board oversight of ethics"
+      ],
+      "audit_evidence": [
+        "Code of conduct",
+        "Ethics training records",
+        "Violation reports",
+        "Board meeting minutes"
+      ],
+      "risk_addressed": [
+        "Ethical violations",
+        "Fraud",
+        "Reputational damage"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "PL-4"
+        ],
+        "iso_27001": [
+          "A.5.1"
+        ]
+      },
+      "related_controls": [
+        "CC1.2",
+        "CC1.3"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc1-4",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC1",
+      "control_id": "CC1.4",
+      "name": "COSO Principle 4: Demonstrates Commitment to Competence",
+      "description": "The entity demonstrates commitment to attract, develop, and retain competent individuals.",
+      "implementation_guidance": [
+        "Define competency requirements",
+        "Provide ongoing training",
+        "Conduct performance evaluations",
+        "Maintain succession plans"
+      ],
+      "audit_evidence": [
+        "Job descriptions",
+        "Training records",
+        "Performance reviews",
+        "Succession plans"
+      ],
+      "risk_addressed": [
+        "Skill gaps",
+        "Key person dependency",
+        "Inadequate security knowledge"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "nist_800_53": [
+          "AT-2",
+          "PS-2"
+        ],
+        "iso_27001": [
+          "A.6.3"
+        ]
+      },
+      "related_controls": [
+        "CC1.1",
+        "CC1.5"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc3-2",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC3",
+      "control_id": "CC3.2",
+      "name": "Risk Assessment: Identifies Risks",
+      "description": "The entity identifies risks to the achievement of its objectives.",
+      "implementation_guidance": [
+        "Conduct annual risk assessments",
+        "Identify internal and external threats",
+        "Assess likelihood and impact",
+        "Maintain risk register"
+      ],
+      "audit_evidence": [
+        "Risk assessment reports",
+        "Risk register",
+        "Threat analysis",
+        "Risk scoring methodology"
+      ],
+      "risk_addressed": [
+        "Unknown risks",
+        "Unmanaged threats",
+        "Inadequate controls"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "RA-3"
+        ],
+        "iso_27001": [
+          "A.5.7"
+        ]
+      },
+      "related_controls": [
+        "CC3.1",
+        "CC3.3",
+        "CC3.4"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc5-1",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC5",
+      "control_id": "CC5.1",
+      "name": "Control Activities: Selects and Develops Control Activities",
+      "description": "The entity selects and develops control activities that mitigate risks.",
+      "implementation_guidance": [
+        "Map controls to identified risks",
+        "Implement preventive and detective controls",
+        "Document control procedures",
+        "Test control effectiveness"
+      ],
+      "audit_evidence": [
+        "Control matrix",
+        "Procedure documentation",
+        "Test results",
+        "Gap analysis"
+      ],
+      "risk_addressed": [
+        "Unmitigated risks",
+        "Ineffective controls"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CA-2",
+          "PL-2"
+        ],
+        "iso_27001": [
+          "A.5.1"
+        ]
+      },
+      "related_controls": [
+        "CC5.2",
+        "CC5.3"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc6-1",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC6",
+      "control_id": "CC6.1",
+      "name": "Logical and Physical Access Controls",
+      "description": "The entity implements logical access security over protected information assets.",
+      "implementation_guidance": [
+        "Implement RBAC",
+        "Require MFA",
+        "Conduct access reviews",
+        "Manage privileged access"
+      ],
+      "audit_evidence": [
+        "RBAC configuration",
+        "MFA enrollment",
+        "Access review records",
+        "PAM logs"
+      ],
+      "risk_addressed": [
+        "Unauthorized access",
+        "Data breach",
+        "Privilege abuse"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-2",
+          "AC-3",
+          "IA-2"
+        ],
+        "iso_27001": [
+          "A.5.15",
+          "A.5.16"
+        ]
+      },
+      "related_controls": [
+        "CC6.2",
+        "CC6.3",
+        "CC6.6"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc6-2",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC6",
+      "control_id": "CC6.2",
+      "name": "Registration and Authorization",
+      "description": "Prior to issuing system credentials, the entity registers and authorizes new users.",
+      "implementation_guidance": [
+        "Formal access request process",
+        "Manager approval required",
+        "Verify identity before provisioning",
+        "Document all access grants"
+      ],
+      "audit_evidence": [
+        "Access request forms",
+        "Approval records",
+        "Identity verification",
+        "Provisioning logs"
+      ],
+      "risk_addressed": [
+        "Unauthorized account creation",
+        "Identity fraud"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-2",
+          "IA-4"
+        ],
+        "iso_27001": [
+          "A.5.16"
+        ]
+      },
+      "related_controls": [
+        "CC6.1",
+        "CC6.3"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc6-3",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC6",
+      "control_id": "CC6.3",
+      "name": "Role-Based Access and Least Privilege",
+      "description": "The entity authorizes, modifies, or removes access based on roles and least privilege.",
+      "implementation_guidance": [
+        "Implement role-based access",
+        "Review quarterly",
+        "Remove access on role change",
+        "Apply least privilege"
+      ],
+      "audit_evidence": [
+        "Role definitions",
+        "Quarterly review records",
+        "Access modification logs"
+      ],
+      "risk_addressed": [
+        "Privilege creep",
+        "Excessive access",
+        "Insider threat"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-6"
+        ],
+        "iso_27001": [
+          "A.5.15"
+        ]
+      },
+      "related_controls": [
+        "CC6.1",
+        "CC6.2"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc6-6",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC6",
+      "control_id": "CC6.6",
+      "name": "System Boundaries and Network Security",
+      "description": "The entity implements controls to prevent or detect unauthorized access at system boundaries.",
+      "implementation_guidance": [
+        "Deploy firewalls",
+        "Implement IDS/IPS",
+        "Segment networks",
+        "Monitor boundary traffic"
+      ],
+      "audit_evidence": [
+        "Firewall rules",
+        "IDS/IPS configuration",
+        "Network diagrams",
+        "Monitoring dashboards"
+      ],
+      "risk_addressed": [
+        "Network intrusion",
+        "Lateral movement",
+        "Data exfiltration"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SC-7"
+        ],
+        "iso_27001": [
+          "A.8.20"
+        ]
+      },
+      "related_controls": [
+        "CC6.1",
+        "CC7.2"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc7-1",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC7",
+      "control_id": "CC7.1",
+      "name": "Detection of Changes",
+      "description": "The entity uses detection and monitoring procedures to identify changes to configurations and vulnerabilities.",
+      "implementation_guidance": [
+        "Implement vulnerability scanning",
+        "Monitor configuration changes",
+        "Deploy file integrity monitoring",
+        "Alert on unauthorized changes"
+      ],
+      "audit_evidence": [
+        "Scan reports",
+        "FIM alerts",
+        "Change detection logs",
+        "Configuration baselines"
+      ],
+      "risk_addressed": [
+        "Undetected vulnerabilities",
+        "Unauthorized changes",
+        "Configuration drift"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SI-2",
+          "CM-3"
+        ],
+        "iso_27001": [
+          "A.8.8",
+          "A.8.9"
+        ]
+      },
+      "related_controls": [
+        "CC7.2",
+        "CC7.3"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc7-2",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC7",
+      "control_id": "CC7.2",
+      "name": "Monitoring System Components",
+      "description": "The entity monitors system components for anomalies indicative of malicious acts or natural disasters.",
+      "implementation_guidance": [
+        "Deploy SIEM",
+        "Implement anomaly detection",
+        "Monitor 24/7",
+        "Define alert thresholds"
+      ],
+      "audit_evidence": [
+        "SIEM configuration",
+        "Monitoring procedures",
+        "Alert records",
+        "Incident correlation"
+      ],
+      "risk_addressed": [
+        "Undetected attacks",
+        "Delayed response"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SI-4",
+          "AU-6"
+        ],
+        "iso_27001": [
+          "A.8.15",
+          "A.8.16"
+        ]
+      },
+      "related_controls": [
+        "CC7.1",
+        "CC7.3",
+        "CC7.4"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc7-3",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC7",
+      "control_id": "CC7.3",
+      "name": "Incident Response",
+      "description": "The entity evaluates events to determine whether they constitute security incidents.",
+      "implementation_guidance": [
+        "Define incident classification criteria",
+        "Implement triage procedures",
+        "Establish escalation paths",
+        "Document all decisions"
+      ],
+      "audit_evidence": [
+        "Classification criteria",
+        "Triage procedures",
+        "Escalation matrix",
+        "Incident tickets"
+      ],
+      "risk_addressed": [
+        "Missed incidents",
+        "Delayed escalation",
+        "Inconsistent handling"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IR-4",
+          "IR-5"
+        ],
+        "iso_27001": [
+          "A.5.25"
+        ]
+      },
+      "related_controls": [
+        "CC7.2",
+        "CC7.4",
+        "CC7.5"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc7-4",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC7",
+      "control_id": "CC7.4",
+      "name": "Incident Containment and Remediation",
+      "description": "The entity responds to identified security incidents by executing defined response procedures.",
+      "implementation_guidance": [
+        "Implement containment procedures",
+        "Eradicate threats",
+        "Recover affected systems",
+        "Conduct post-incident review"
+      ],
+      "audit_evidence": [
+        "IR procedures",
+        "Containment actions",
+        "Recovery records",
+        "Post-mortem reports"
+      ],
+      "risk_addressed": [
+        "Uncontained breaches",
+        "Repeated incidents",
+        "Extended impact"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IR-4",
+          "IR-6"
+        ],
+        "iso_27001": [
+          "A.5.26"
+        ]
+      },
+      "related_controls": [
+        "CC7.3",
+        "CC7.5"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc8-1",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC8",
+      "control_id": "CC8.1",
+      "name": "Change Management",
+      "description": "The entity authorizes, designs, develops, configures, documents, tests, approves, and implements changes.",
+      "implementation_guidance": [
+        "Implement formal change process",
+        "Require testing before production",
+        "Document all changes",
+        "Maintain rollback procedures"
+      ],
+      "audit_evidence": [
+        "Change requests",
+        "Test results",
+        "Approval records",
+        "Rollback plans"
+      ],
+      "risk_addressed": [
+        "Unauthorized changes",
+        "System instability",
+        "Security regression"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CM-3"
+        ],
+        "iso_27001": [
+          "A.8.32"
+        ]
+      },
+      "related_controls": [
+        "CC7.1",
+        "CC8.2"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-cc9-2",
+      "framework": "SOC 2",
+      "family": "Common Criteria",
+      "family_id": "CC9",
+      "control_id": "CC9.2",
+      "name": "Vendor and Business Partner Risk",
+      "description": "The entity assesses and manages risks associated with vendors and business partners.",
+      "implementation_guidance": [
+        "Conduct vendor assessments",
+        "Include security in contracts",
+        "Monitor vendor compliance",
+        "Define exit strategies"
+      ],
+      "audit_evidence": [
+        "Vendor assessments",
+        "Contract clauses",
+        "Monitoring reports",
+        "Exit plans"
+      ],
+      "risk_addressed": [
+        "Third-party breach",
+        "Supply chain risk",
+        "Data exposure"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SA-9"
+        ],
+        "iso_27001": [
+          "A.5.19"
+        ]
+      },
+      "related_controls": [
+        "CC9.1"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    },
+    {
+      "id": "soc2-a1-2",
+      "framework": "SOC 2",
+      "family": "Availability",
+      "family_id": "A1",
+      "control_id": "A1.2",
+      "name": "Recovery Objectives",
+      "description": "The entity maintains recovery objectives and tests backup and recovery procedures.",
+      "implementation_guidance": [
+        "Define RTO and RPO",
+        "Test recovery quarterly",
+        "Document recovery procedures",
+        "Validate backup integrity"
+      ],
+      "audit_evidence": [
+        "RTO/RPO documentation",
+        "Test results",
+        "Recovery procedures",
+        "Backup validation"
+      ],
+      "risk_addressed": [
+        "Extended downtime",
+        "Data loss",
+        "Business disruption"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CP-9",
+          "CP-10"
+        ],
+        "iso_27001": [
+          "A.8.13"
+        ]
+      },
+      "related_controls": [
+        "A1.1",
+        "A1.3"
+      ],
+      "references": [
+        "https://www.aicpa.org/soc2"
+      ]
+    }
+  ]
+}

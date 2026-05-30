@@ -1,0 +1,63 @@
+"""
+GRCLearn — Governance, Risk & Compliance Learning Platform
+FastAPI Backend
+
+Author: Yash Patil
+Local-first. No cloud. Educational only.
+"""
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+
+from routers import frameworks, controls, risks, policies, audit, progress, quiz
+from models.database import init_db
+from services.knowledge_base import GRCKnowledgeBase
+from services.quiz_engine import QuizEngine
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    print("🏛️  Loading GRCLearn knowledge base...")
+    app.state.kb = GRCKnowledgeBase()
+    app.state.kb.load()
+    print(f"✅ Loaded {app.state.kb.control_count} controls, {app.state.kb.risk_count} risks, {app.state.kb.framework_count} frameworks")
+    app.state.quiz_engine = QuizEngine(app.state.kb.questions if hasattr(app.state.kb, 'questions') else [])
+    await init_db()
+    print("✅ Database initialized.")
+    yield
+    print("👋 Shutting down GRCLearn.")
+
+
+app = FastAPI(
+    title="GRCLearn",
+    description="Governance, Risk & Compliance Learning Platform",
+    version="1.0.0",
+    lifespan=lifespan,
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(frameworks.router, prefix="/api/frameworks", tags=["Frameworks"])
+app.include_router(controls.router, prefix="/api/controls", tags=["Controls"])
+app.include_router(risks.router, prefix="/api/risks", tags=["Risks"])
+app.include_router(policies.router, prefix="/api/policies", tags=["Policies"])
+app.include_router(audit.router, prefix="/api/audit", tags=["Audit"])
+app.include_router(progress.router, prefix="/api/progress", tags=["Progress"])
+app.include_router(quiz.router, prefix="/api/quiz", tags=["Quiz"])
+
+
+@app.get("/")
+async def root():
+    return {"name": "GRCLearn", "version": "1.0.0", "author": "Yash Patil"}
+
+
+@app.get("/health")
+async def health():
+    return {"status": "healthy"}

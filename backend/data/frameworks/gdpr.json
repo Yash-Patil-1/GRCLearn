@@ -1,0 +1,465 @@
+{
+  "id": "gdpr",
+  "name": "GDPR",
+  "description": "General Data Protection Regulation \u2014 Key Articles",
+  "controls": [
+    {
+      "id": "gdpr-art-5",
+      "framework": "GDPR",
+      "family": "Principles",
+      "family_id": "ART",
+      "control_id": "Art.5",
+      "name": "Principles Relating to Processing of Personal Data",
+      "description": "Personal data shall be processed lawfully, fairly, transparently, with purpose limitation, data minimization, accuracy, storage limitation, and integrity.",
+      "implementation_guidance": [
+        "Define lawful basis for each processing activity",
+        "Implement data minimization",
+        "Set retention periods",
+        "Ensure accuracy of data"
+      ],
+      "audit_evidence": [
+        "Processing register",
+        "Lawful basis documentation",
+        "Retention schedules",
+        "Data quality procedures"
+      ],
+      "risk_addressed": [
+        "Regulatory fines",
+        "Reputational damage",
+        "Individual harm"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "N/A"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "Art.6",
+        "Art.13"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-5-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-6",
+      "framework": "GDPR",
+      "family": "Lawfulness",
+      "family_id": "ART",
+      "control_id": "Art.6",
+      "name": "Lawfulness of Processing",
+      "description": "Processing shall be lawful only if at least one legal basis applies (consent, contract, legal obligation, vital interests, public task, legitimate interests).",
+      "implementation_guidance": [
+        "Identify lawful basis for each activity",
+        "Document basis in processing register",
+        "Obtain consent where required",
+        "Conduct legitimate interest assessments"
+      ],
+      "audit_evidence": [
+        "Processing register",
+        "Consent records",
+        "LIA documentation",
+        "Legal basis mapping"
+      ],
+      "risk_addressed": [
+        "Unlawful processing",
+        "Regulatory fines"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "N/A"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "Art.5",
+        "Art.7",
+        "Art.9"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-6-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-13",
+      "framework": "GDPR",
+      "family": "Transparency",
+      "family_id": "ART",
+      "control_id": "Art.13",
+      "name": "Information to be Provided to Data Subjects",
+      "description": "When collecting personal data, provide identity of controller, purposes, legal basis, recipients, retention period, and rights.",
+      "implementation_guidance": [
+        "Create privacy notices",
+        "Include all required information",
+        "Make easily accessible",
+        "Update when processing changes"
+      ],
+      "audit_evidence": [
+        "Privacy notices",
+        "Website privacy policy",
+        "Collection point notices",
+        "Update records"
+      ],
+      "risk_addressed": [
+        "Transparency violations",
+        "Regulatory fines",
+        "Trust erosion"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "N/A"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "Art.14",
+        "Art.5"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-13-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-15",
+      "framework": "GDPR",
+      "family": "Data Subject Rights",
+      "family_id": "ART",
+      "control_id": "Art.15",
+      "name": "Right of Access",
+      "description": "Data subjects have the right to obtain confirmation of processing and access to their personal data.",
+      "implementation_guidance": [
+        "Implement subject access request (SAR) process",
+        "Respond within 30 days",
+        "Verify identity before disclosure",
+        "Provide data in common format"
+      ],
+      "audit_evidence": [
+        "SAR procedures",
+        "Response records",
+        "Identity verification",
+        "Data export capability"
+      ],
+      "risk_addressed": [
+        "Regulatory fines",
+        "Complaints to supervisory authority"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "N/A"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "Art.16",
+        "Art.17",
+        "Art.20"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-15-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-17",
+      "framework": "GDPR",
+      "family": "Data Subject Rights",
+      "family_id": "ART",
+      "control_id": "Art.17",
+      "name": "Right to Erasure (Right to be Forgotten)",
+      "description": "Data subjects have the right to obtain erasure of personal data without undue delay.",
+      "implementation_guidance": [
+        "Implement deletion procedures",
+        "Define exceptions (legal obligations)",
+        "Verify identity",
+        "Confirm deletion to subject"
+      ],
+      "audit_evidence": [
+        "Deletion procedures",
+        "Request records",
+        "Confirmation records",
+        "Exception documentation"
+      ],
+      "risk_addressed": [
+        "Regulatory fines",
+        "Continued processing of deleted data"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "MP-6"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "Art.15",
+        "Art.16"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-17-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-25",
+      "framework": "GDPR",
+      "family": "Data Protection by Design",
+      "family_id": "ART",
+      "control_id": "Art.25",
+      "name": "Data Protection by Design and by Default",
+      "description": "Implement appropriate technical and organizational measures to implement data protection principles.",
+      "implementation_guidance": [
+        "Privacy impact assessments for new projects",
+        "Minimize data collection by default",
+        "Implement pseudonymization",
+        "Build privacy into system design"
+      ],
+      "audit_evidence": [
+        "DPIA records",
+        "Design documentation",
+        "Default settings",
+        "Privacy architecture"
+      ],
+      "risk_addressed": [
+        "Privacy violations",
+        "Excessive data collection"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SA-8"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "Art.5",
+        "Art.35"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-25-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-28",
+      "framework": "GDPR",
+      "family": "Processors",
+      "family_id": "ART",
+      "control_id": "Art.28",
+      "name": "Processor",
+      "description": "Processing by a processor shall be governed by a contract that sets out the subject-matter, duration, nature, and purpose of processing.",
+      "implementation_guidance": [
+        "Execute data processing agreements",
+        "Define processor obligations",
+        "Include audit rights",
+        "Specify sub-processor requirements"
+      ],
+      "audit_evidence": [
+        "Data processing agreements",
+        "Processor list",
+        "Audit records",
+        "Sub-processor approvals"
+      ],
+      "risk_addressed": [
+        "Unauthorized processing",
+        "Lack of accountability"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SA-9"
+        ],
+        "iso_27001": [
+          "A.5.19"
+        ]
+      },
+      "related_controls": [
+        "Art.29",
+        "Art.32"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-28-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-30",
+      "framework": "GDPR",
+      "family": "Records",
+      "family_id": "ART",
+      "control_id": "Art.30",
+      "name": "Records of Processing Activities",
+      "description": "Maintain a record of processing activities under its responsibility.",
+      "implementation_guidance": [
+        "Document all processing activities",
+        "Include purposes, categories, recipients",
+        "Record retention periods",
+        "Keep records up to date"
+      ],
+      "audit_evidence": [
+        "Records of processing activities (ROPA)",
+        "Processing register",
+        "Update logs"
+      ],
+      "risk_addressed": [
+        "Regulatory fines",
+        "Inability to demonstrate compliance"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "N/A"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "Art.5",
+        "Art.28"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-30-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-32",
+      "framework": "GDPR",
+      "family": "Security",
+      "family_id": "ART",
+      "control_id": "Art.32",
+      "name": "Security of Processing",
+      "description": "Implement appropriate technical and organizational measures to ensure security appropriate to the risk.",
+      "implementation_guidance": [
+        "Implement encryption",
+        "Ensure confidentiality, integrity, availability",
+        "Regular testing and evaluation",
+        "Pseudonymization where appropriate"
+      ],
+      "audit_evidence": [
+        "Security measures documentation",
+        "Testing records",
+        "Risk assessments",
+        "Encryption configuration"
+      ],
+      "risk_addressed": [
+        "Data breach",
+        "Unauthorized access",
+        "Regulatory fines"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SC-8",
+          "SC-28"
+        ],
+        "iso_27001": [
+          "A.8.24"
+        ]
+      },
+      "related_controls": [
+        "Art.5",
+        "Art.33",
+        "Art.34"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-32-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-33",
+      "framework": "GDPR",
+      "family": "Breach Notification",
+      "family_id": "ART",
+      "control_id": "Art.33",
+      "name": "Notification of Personal Data Breach to Supervisory Authority",
+      "description": "Notify supervisory authority within 72 hours of becoming aware of a personal data breach.",
+      "implementation_guidance": [
+        "Establish breach detection procedures",
+        "Define 72-hour notification process",
+        "Document breach details",
+        "Assess risk to individuals"
+      ],
+      "audit_evidence": [
+        "Breach notification procedures",
+        "Notification records",
+        "Breach register",
+        "Risk assessments"
+      ],
+      "risk_addressed": [
+        "Regulatory fines (up to 4% revenue)",
+        "Delayed notification penalties"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IR-6"
+        ],
+        "iso_27001": [
+          "A.5.24",
+          "A.6.8"
+        ]
+      },
+      "related_controls": [
+        "Art.34",
+        "Art.32"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-33-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-35",
+      "framework": "GDPR",
+      "family": "Impact Assessment",
+      "family_id": "ART",
+      "control_id": "Art.35",
+      "name": "Data Protection Impact Assessment",
+      "description": "Carry out DPIA where processing is likely to result in high risk to rights and freedoms.",
+      "implementation_guidance": [
+        "Identify high-risk processing",
+        "Conduct DPIA before processing",
+        "Consult DPO",
+        "Document assessment and mitigations"
+      ],
+      "audit_evidence": [
+        "DPIA reports",
+        "Risk assessments",
+        "DPO consultation records",
+        "Mitigation plans"
+      ],
+      "risk_addressed": [
+        "High-risk processing without assessment",
+        "Regulatory enforcement"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "RA-3"
+        ],
+        "iso_27001": [
+          "A.5.7"
+        ]
+      },
+      "related_controls": [
+        "Art.25",
+        "Art.36"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-35-gdpr/"
+      ]
+    }
+  ]
+}

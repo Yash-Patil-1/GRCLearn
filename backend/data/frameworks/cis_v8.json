@@ -1,0 +1,823 @@
+{
+  "id": "cis-v8",
+  "name": "CIS Controls v8",
+  "description": "Center for Internet Security Critical Security Controls Version 8",
+  "controls": [
+    {
+      "id": "cis-1-1",
+      "framework": "CIS Controls v8",
+      "family": "Inventory and Control of Enterprise Assets",
+      "family_id": "CIS-1",
+      "control_id": "1.1",
+      "name": "Establish and Maintain Detailed Enterprise Asset Inventory",
+      "description": "Establish and maintain an accurate, detailed, and up-to-date inventory of all enterprise assets.",
+      "implementation_guidance": [
+        "Deploy automated discovery tools",
+        "Include all asset types (hardware, virtual, cloud)",
+        "Update inventory within 24 hours of changes",
+        "Assign owners to all assets"
+      ],
+      "audit_evidence": [
+        "Asset inventory database",
+        "Discovery scan results",
+        "Owner assignments",
+        "Update procedures"
+      ],
+      "risk_addressed": [
+        "Unknown assets",
+        "Shadow IT",
+        "Unmanaged vulnerabilities"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CM-8"
+        ],
+        "iso_27001": [
+          "A.5.9"
+        ]
+      },
+      "related_controls": [
+        "1.2",
+        "1.3",
+        "1.4"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-1-2",
+      "framework": "CIS Controls v8",
+      "family": "Inventory and Control of Enterprise Assets",
+      "family_id": "CIS-1",
+      "control_id": "1.2",
+      "name": "Address Unauthorized Assets",
+      "description": "Ensure unauthorized assets are either removed, denied network access, or quarantined.",
+      "implementation_guidance": [
+        "Implement NAC (802.1X)",
+        "Alert on new unknown devices",
+        "Quarantine unauthorized assets",
+        "Review weekly"
+      ],
+      "audit_evidence": [
+        "NAC configuration",
+        "Alert records",
+        "Quarantine logs",
+        "Review records"
+      ],
+      "risk_addressed": [
+        "Rogue devices",
+        "Unauthorized access",
+        "Malware introduction"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CM-8"
+        ],
+        "iso_27001": [
+          "A.5.9"
+        ]
+      },
+      "related_controls": [
+        "1.1",
+        "1.3"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-2-1",
+      "framework": "CIS Controls v8",
+      "family": "Inventory and Control of Software Assets",
+      "family_id": "CIS-2",
+      "control_id": "2.1",
+      "name": "Establish and Maintain a Software Inventory",
+      "description": "Maintain an inventory of all authorized software installed on enterprise assets.",
+      "implementation_guidance": [
+        "Use software inventory tools",
+        "Include version information",
+        "Track license compliance",
+        "Update on changes"
+      ],
+      "audit_evidence": [
+        "Software inventory",
+        "Version records",
+        "License tracking",
+        "Update logs"
+      ],
+      "risk_addressed": [
+        "Unauthorized software",
+        "License violations",
+        "Unpatched applications"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CM-8",
+          "CM-7"
+        ],
+        "iso_27001": [
+          "A.5.9"
+        ]
+      },
+      "related_controls": [
+        "2.2",
+        "2.3"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-2-3",
+      "framework": "CIS Controls v8",
+      "family": "Inventory and Control of Software Assets",
+      "family_id": "CIS-2",
+      "control_id": "2.3",
+      "name": "Address Unauthorized Software",
+      "description": "Ensure unauthorized software is removed or the inventory is updated.",
+      "implementation_guidance": [
+        "Implement application whitelisting",
+        "Block unauthorized installations",
+        "Alert on new software",
+        "Review monthly"
+      ],
+      "audit_evidence": [
+        "Whitelisting configuration",
+        "Block logs",
+        "Alert records"
+      ],
+      "risk_addressed": [
+        "Malware",
+        "Unauthorized tools",
+        "Compliance violations"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CM-7",
+          "CM-11"
+        ],
+        "iso_27001": [
+          "A.8.9"
+        ]
+      },
+      "related_controls": [
+        "2.1",
+        "2.2"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-3-3",
+      "framework": "CIS Controls v8",
+      "family": "Data Protection",
+      "family_id": "CIS-3",
+      "control_id": "3.3",
+      "name": "Configure Data Access Control Lists",
+      "description": "Configure data access control lists based on a user's need to know.",
+      "implementation_guidance": [
+        "Implement RBAC",
+        "Apply least privilege",
+        "Review access quarterly",
+        "Document access decisions"
+      ],
+      "audit_evidence": [
+        "ACL configuration",
+        "Access review records",
+        "RBAC documentation"
+      ],
+      "risk_addressed": [
+        "Unauthorized data access",
+        "Data breach",
+        "Privilege creep"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-3",
+          "AC-6"
+        ],
+        "iso_27001": [
+          "A.5.15"
+        ]
+      },
+      "related_controls": [
+        "3.1",
+        "3.2",
+        "3.4"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-3-11",
+      "framework": "CIS Controls v8",
+      "family": "Data Protection",
+      "family_id": "CIS-3",
+      "control_id": "3.11",
+      "name": "Encrypt Sensitive Data at Rest",
+      "description": "Encrypt sensitive data at rest on servers, applications, and databases.",
+      "implementation_guidance": [
+        "Use AES-256 encryption",
+        "Encrypt database columns with sensitive data",
+        "Implement full-disk encryption",
+        "Manage keys separately"
+      ],
+      "audit_evidence": [
+        "Encryption configuration",
+        "Key management procedures",
+        "FDE deployment records"
+      ],
+      "risk_addressed": [
+        "Data breach from stolen media",
+        "Unauthorized access to stored data"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SC-28"
+        ],
+        "iso_27001": [
+          "A.8.24"
+        ]
+      },
+      "related_controls": [
+        "3.10",
+        "3.12"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-4-1",
+      "framework": "CIS Controls v8",
+      "family": "Secure Configuration of Enterprise Assets and Software",
+      "family_id": "CIS-4",
+      "control_id": "4.1",
+      "name": "Establish and Maintain a Secure Configuration Process",
+      "description": "Establish and maintain a secure configuration process for enterprise assets and software.",
+      "implementation_guidance": [
+        "Define security baselines using CIS Benchmarks",
+        "Implement configuration management tools",
+        "Scan for compliance monthly",
+        "Document approved deviations"
+      ],
+      "audit_evidence": [
+        "Baseline documentation",
+        "CIS Benchmark scan results",
+        "Compliance reports",
+        "Deviation records"
+      ],
+      "risk_addressed": [
+        "Misconfigurations",
+        "Default credentials",
+        "Expanded attack surface"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CM-2",
+          "CM-6"
+        ],
+        "iso_27001": [
+          "A.8.9"
+        ]
+      },
+      "related_controls": [
+        "4.2",
+        "4.3",
+        "4.4"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-5-1",
+      "framework": "CIS Controls v8",
+      "family": "Account Management",
+      "family_id": "CIS-5",
+      "control_id": "5.1",
+      "name": "Establish and Maintain an Account Inventory",
+      "description": "Maintain an inventory of all accounts including user, admin, and service accounts.",
+      "implementation_guidance": [
+        "Inventory all account types",
+        "Include service accounts",
+        "Track privileged accounts separately",
+        "Review quarterly"
+      ],
+      "audit_evidence": [
+        "Account inventory",
+        "Privileged account list",
+        "Service account register",
+        "Review records"
+      ],
+      "risk_addressed": [
+        "Orphaned accounts",
+        "Unknown privileged access",
+        "Unauthorized accounts"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-2"
+        ],
+        "iso_27001": [
+          "A.5.16"
+        ]
+      },
+      "related_controls": [
+        "5.2",
+        "5.3",
+        "5.4"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-5-4",
+      "framework": "CIS Controls v8",
+      "family": "Account Management",
+      "family_id": "CIS-5",
+      "control_id": "5.4",
+      "name": "Restrict Administrator Privileges to Dedicated Administrator Accounts",
+      "description": "Restrict administrator privileges to dedicated administrator accounts on enterprise assets.",
+      "implementation_guidance": [
+        "Separate admin and user accounts",
+        "No daily work with admin accounts",
+        "Implement PAM for admin access",
+        "Log all admin activity"
+      ],
+      "audit_evidence": [
+        "Admin account inventory",
+        "PAM configuration",
+        "Admin activity logs",
+        "Separation policy"
+      ],
+      "risk_addressed": [
+        "Lateral movement",
+        "Credential theft",
+        "Privilege abuse"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-6"
+        ],
+        "iso_27001": [
+          "A.5.15",
+          "A.8.2"
+        ]
+      },
+      "related_controls": [
+        "5.1",
+        "5.2",
+        "5.3"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-6-3",
+      "framework": "CIS Controls v8",
+      "family": "Access Control Management",
+      "family_id": "CIS-6",
+      "control_id": "6.3",
+      "name": "Require MFA for Externally-Exposed Applications",
+      "description": "Require MFA for all externally-exposed enterprise applications.",
+      "implementation_guidance": [
+        "Implement MFA on VPN, email, cloud apps",
+        "Support hardware tokens and authenticator apps",
+        "Enforce for all external access",
+        "Monitor MFA bypass attempts"
+      ],
+      "audit_evidence": [
+        "MFA configuration",
+        "Enrollment records",
+        "Bypass attempt logs"
+      ],
+      "risk_addressed": [
+        "Credential theft",
+        "Phishing",
+        "Account compromise"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IA-2"
+        ],
+        "iso_27001": [
+          "A.8.5"
+        ]
+      },
+      "related_controls": [
+        "6.1",
+        "6.2",
+        "6.4"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-7-1",
+      "framework": "CIS Controls v8",
+      "family": "Continuous Vulnerability Management",
+      "family_id": "CIS-7",
+      "control_id": "7.1",
+      "name": "Establish and Maintain a Vulnerability Management Process",
+      "description": "Establish and maintain a documented vulnerability management process.",
+      "implementation_guidance": [
+        "Define scanning frequency",
+        "Establish remediation SLAs",
+        "Track metrics",
+        "Report to management"
+      ],
+      "audit_evidence": [
+        "VM policy",
+        "SLA definitions",
+        "Metrics dashboards",
+        "Management reports"
+      ],
+      "risk_addressed": [
+        "Unpatched vulnerabilities",
+        "Exploitation",
+        "Compliance gaps"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "RA-5",
+          "SI-2"
+        ],
+        "iso_27001": [
+          "A.8.8"
+        ]
+      },
+      "related_controls": [
+        "7.2",
+        "7.3",
+        "7.5"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-8-2",
+      "framework": "CIS Controls v8",
+      "family": "Audit Log Management",
+      "family_id": "CIS-8",
+      "control_id": "8.2",
+      "name": "Collect Audit Logs",
+      "description": "Collect audit logs from enterprise assets including endpoints, network devices, and servers.",
+      "implementation_guidance": [
+        "Configure logging on all assets",
+        "Forward to central SIEM",
+        "Include authentication, access, and change events",
+        "Ensure timestamp accuracy"
+      ],
+      "audit_evidence": [
+        "SIEM configuration",
+        "Log source inventory",
+        "Collection verification",
+        "NTP configuration"
+      ],
+      "risk_addressed": [
+        "Undetected incidents",
+        "Insufficient forensics",
+        "Compliance gaps"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AU-2",
+          "AU-12"
+        ],
+        "iso_27001": [
+          "A.8.15"
+        ]
+      },
+      "related_controls": [
+        "8.1",
+        "8.3",
+        "8.5"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-10-1",
+      "framework": "CIS Controls v8",
+      "family": "Malware Defenses",
+      "family_id": "CIS-10",
+      "control_id": "10.1",
+      "name": "Deploy and Maintain Anti-Malware Software",
+      "description": "Deploy and maintain anti-malware software on all enterprise assets.",
+      "implementation_guidance": [
+        "Deploy EDR on all endpoints and servers",
+        "Enable real-time protection",
+        "Configure automatic updates",
+        "Monitor detection events"
+      ],
+      "audit_evidence": [
+        "EDR deployment records",
+        "Coverage reports",
+        "Update status",
+        "Detection logs"
+      ],
+      "risk_addressed": [
+        "Malware infection",
+        "Ransomware",
+        "Data theft"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SI-3"
+        ],
+        "iso_27001": [
+          "A.8.7"
+        ]
+      },
+      "related_controls": [
+        "10.2",
+        "10.3",
+        "10.4"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-11-1",
+      "framework": "CIS Controls v8",
+      "family": "Data Recovery",
+      "family_id": "CIS-11",
+      "control_id": "11.1",
+      "name": "Establish and Maintain a Data Recovery Process",
+      "description": "Establish and maintain a data recovery process including scope, frequency, and testing.",
+      "implementation_guidance": [
+        "Define backup scope and frequency",
+        "Implement 3-2-1 strategy",
+        "Test restoration quarterly",
+        "Document RTO/RPO"
+      ],
+      "audit_evidence": [
+        "Backup policy",
+        "Test results",
+        "RTO/RPO documentation",
+        "Recovery procedures"
+      ],
+      "risk_addressed": [
+        "Data loss",
+        "Extended downtime",
+        "Business disruption"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CP-9"
+        ],
+        "iso_27001": [
+          "A.8.13"
+        ]
+      },
+      "related_controls": [
+        "11.2",
+        "11.3",
+        "11.4"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-13-1",
+      "framework": "CIS Controls v8",
+      "family": "Network Monitoring and Defense",
+      "family_id": "CIS-13",
+      "control_id": "13.1",
+      "name": "Centralize Security Event Alerting",
+      "description": "Centralize security event alerting across enterprise assets.",
+      "implementation_guidance": [
+        "Deploy SIEM",
+        "Define correlation rules",
+        "Establish alert priorities",
+        "Implement 24/7 monitoring or on-call"
+      ],
+      "audit_evidence": [
+        "SIEM architecture",
+        "Correlation rules",
+        "Alert procedures",
+        "On-call schedule"
+      ],
+      "risk_addressed": [
+        "Undetected attacks",
+        "Delayed response",
+        "Alert fatigue"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SI-4",
+          "AU-6"
+        ],
+        "iso_27001": [
+          "A.8.15",
+          "A.8.16"
+        ]
+      },
+      "related_controls": [
+        "13.2",
+        "13.3",
+        "13.6"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-14-1",
+      "framework": "CIS Controls v8",
+      "family": "Security Awareness and Skills Training",
+      "family_id": "CIS-14",
+      "control_id": "14.1",
+      "name": "Establish and Maintain a Security Awareness Program",
+      "description": "Establish and maintain a security awareness program to influence behavior.",
+      "implementation_guidance": [
+        "Annual training for all employees",
+        "Monthly phishing simulations",
+        "Role-based training",
+        "Track effectiveness metrics"
+      ],
+      "audit_evidence": [
+        "Training program documentation",
+        "Completion records",
+        "Phishing results",
+        "Effectiveness metrics"
+      ],
+      "risk_addressed": [
+        "Human error",
+        "Phishing susceptibility",
+        "Policy violations"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AT-2"
+        ],
+        "iso_27001": [
+          "A.6.3"
+        ]
+      },
+      "related_controls": [
+        "14.2",
+        "14.3"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-15-1",
+      "framework": "CIS Controls v8",
+      "family": "Service Provider Management",
+      "family_id": "CIS-15",
+      "control_id": "15.1",
+      "name": "Establish and Maintain an Inventory of Service Providers",
+      "description": "Maintain an inventory of service providers including classification and contact information.",
+      "implementation_guidance": [
+        "Inventory all service providers",
+        "Classify by data access level",
+        "Assign relationship owners",
+        "Review annually"
+      ],
+      "audit_evidence": [
+        "Provider inventory",
+        "Classification records",
+        "Owner assignments",
+        "Review records"
+      ],
+      "risk_addressed": [
+        "Unknown third-party risk",
+        "Unmanaged vendors",
+        "Supply chain gaps"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SA-9"
+        ],
+        "iso_27001": [
+          "A.5.19"
+        ]
+      },
+      "related_controls": [
+        "15.2",
+        "15.3",
+        "15.4"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-17-1",
+      "framework": "CIS Controls v8",
+      "family": "Incident Response Management",
+      "family_id": "CIS-17",
+      "control_id": "17.1",
+      "name": "Designate Personnel to Manage Incident Handling",
+      "description": "Designate one or more personnel to manage the incident handling process.",
+      "implementation_guidance": [
+        "Assign IR team lead",
+        "Define team roles",
+        "Establish on-call rotation",
+        "Provide training and tools"
+      ],
+      "audit_evidence": [
+        "IR team roster",
+        "Role definitions",
+        "On-call schedule",
+        "Training records"
+      ],
+      "risk_addressed": [
+        "No incident ownership",
+        "Delayed response",
+        "Confusion during incidents"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IR-1",
+          "IR-2"
+        ],
+        "iso_27001": [
+          "A.5.24"
+        ]
+      },
+      "related_controls": [
+        "17.2",
+        "17.3",
+        "17.4"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-18-1",
+      "framework": "CIS Controls v8",
+      "family": "Penetration Testing",
+      "family_id": "CIS-18",
+      "control_id": "18.1",
+      "name": "Establish and Maintain a Penetration Testing Program",
+      "description": "Establish and maintain a penetration testing program appropriate to the size and complexity of the enterprise.",
+      "implementation_guidance": [
+        "Conduct annual penetration tests",
+        "Define scope and rules of engagement",
+        "Remediate findings within SLA",
+        "Retest after remediation"
+      ],
+      "audit_evidence": [
+        "Pentest reports",
+        "Scope documents",
+        "Remediation tracking",
+        "Retest results"
+      ],
+      "risk_addressed": [
+        "Unknown exploitable vulnerabilities",
+        "False sense of security"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CA-8"
+        ],
+        "iso_27001": [
+          "A.5.35",
+          "A.8.8"
+        ]
+      },
+      "related_controls": [
+        "18.2",
+        "18.3"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    }
+  ]
+}

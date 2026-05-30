@@ -1,0 +1,1057 @@
+{
+  "id": "nist-800-53-batch3",
+  "name": "NIST 800-53 Rev 5 (Batch 3)",
+  "description": "More NIST controls",
+  "controls": [
+    {
+      "id": "nist-ac-8",
+      "framework": "NIST 800-53",
+      "family": "Access Control",
+      "family_id": "AC",
+      "control_id": "AC-8",
+      "name": "System Use Notification",
+      "description": "Display system use notification before granting access with privacy/security warnings.",
+      "implementation_guidance": [
+        "Display login banner",
+        "Include authorized use statement",
+        "Warn of monitoring",
+        "Require acknowledgment"
+      ],
+      "audit_evidence": [
+        "Banner configuration",
+        "Banner text",
+        "Acknowledgment records"
+      ],
+      "risk_addressed": [
+        "Unauthorized use claims",
+        "Legal liability"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "iso_27001": [
+          "A.5.10"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "AC-2"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-ac-10",
+      "framework": "NIST 800-53",
+      "family": "Access Control",
+      "family_id": "AC",
+      "control_id": "AC-10",
+      "name": "Concurrent Session Control",
+      "description": "Limit the number of concurrent sessions for each account.",
+      "implementation_guidance": [
+        "Set max concurrent sessions",
+        "Alert on violations",
+        "Terminate oldest session on limit",
+        "Exempt service accounts with justification"
+      ],
+      "audit_evidence": [
+        "Session limit configuration",
+        "Violation alerts",
+        "Exception documentation"
+      ],
+      "risk_addressed": [
+        "Session hijacking",
+        "Resource exhaustion"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "iso_27001": [
+          "A.8.5"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "AC-2",
+        "AC-12"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-ac-12",
+      "framework": "NIST 800-53",
+      "family": "Access Control",
+      "family_id": "AC",
+      "control_id": "AC-12",
+      "name": "Session Termination",
+      "description": "Automatically terminate a user session after defined conditions.",
+      "implementation_guidance": [
+        "Terminate after inactivity timeout",
+        "End session on logout",
+        "Clear session data",
+        "Log session terminations"
+      ],
+      "audit_evidence": [
+        "Timeout configuration",
+        "Session logs",
+        "Termination events"
+      ],
+      "risk_addressed": [
+        "Unauthorized access via abandoned sessions"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "iso_27001": [
+          "A.8.5"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "AC-11",
+        "AC-10"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-ac-20",
+      "framework": "NIST 800-53",
+      "family": "Access Control",
+      "family_id": "AC",
+      "control_id": "AC-20",
+      "name": "Use of External Systems",
+      "description": "Establish terms for authorized individuals to access the system from external systems.",
+      "implementation_guidance": [
+        "Define approved external systems",
+        "Require security controls on external devices",
+        "Limit data accessible externally",
+        "Monitor external access"
+      ],
+      "audit_evidence": [
+        "External access policy",
+        "Approved device list",
+        "Monitoring records"
+      ],
+      "risk_addressed": [
+        "Data exposure via uncontrolled devices"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.6.7"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "AC-17",
+        "AC-19"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-at-3",
+      "framework": "NIST 800-53",
+      "family": "Awareness and Training",
+      "family_id": "AT",
+      "control_id": "AT-3",
+      "name": "Role-Based Training",
+      "description": "Provide role-based security training to personnel with assigned security roles.",
+      "implementation_guidance": [
+        "Train admins on secure configuration",
+        "Train developers on secure coding",
+        "Train IR team on procedures",
+        "Update training on role changes"
+      ],
+      "audit_evidence": [
+        "Role-based training curriculum",
+        "Completion records",
+        "Skill assessments"
+      ],
+      "risk_addressed": [
+        "Inadequate skills for security roles"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.6.3"
+        ],
+        "cis_v8": [
+          "14.9"
+        ]
+      },
+      "related_controls": [
+        "AT-2",
+        "IR-2"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-au-4",
+      "framework": "NIST 800-53",
+      "family": "Audit and Accountability",
+      "family_id": "AU",
+      "control_id": "AU-4",
+      "name": "Audit Log Storage Capacity",
+      "description": "Allocate sufficient audit log storage capacity to prevent loss.",
+      "implementation_guidance": [
+        "Size storage for retention period",
+        "Implement log rotation",
+        "Alert on capacity thresholds",
+        "Archive old logs"
+      ],
+      "audit_evidence": [
+        "Storage capacity planning",
+        "Rotation configuration",
+        "Capacity alerts",
+        "Archive procedures"
+      ],
+      "risk_addressed": [
+        "Log loss",
+        "Compliance gaps"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "iso_27001": [
+          "A.8.15"
+        ],
+        "cis_v8": [
+          "8.3"
+        ]
+      },
+      "related_controls": [
+        "AU-2",
+        "AU-9"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-au-5",
+      "framework": "NIST 800-53",
+      "family": "Audit and Accountability",
+      "family_id": "AU",
+      "control_id": "AU-5",
+      "name": "Response to Audit Logging Process Failures",
+      "description": "Alert on audit logging failures and take defined actions.",
+      "implementation_guidance": [
+        "Alert when logging fails",
+        "Switch to backup logging",
+        "Shut down system if logging critical",
+        "Investigate failures immediately"
+      ],
+      "audit_evidence": [
+        "Failure alert configuration",
+        "Backup logging",
+        "Response procedures"
+      ],
+      "risk_addressed": [
+        "Unlogged activity during failures"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.8.15"
+        ],
+        "cis_v8": [
+          "8.2"
+        ]
+      },
+      "related_controls": [
+        "AU-2",
+        "AU-9"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-au-8",
+      "framework": "NIST 800-53",
+      "family": "Audit and Accountability",
+      "family_id": "AU",
+      "control_id": "AU-8",
+      "name": "Time Stamps",
+      "description": "Use internal system clocks to generate time stamps for audit records.",
+      "implementation_guidance": [
+        "Synchronize to authoritative NTP source",
+        "Use UTC for all logs",
+        "Monitor for clock drift",
+        "Alert on sync failures"
+      ],
+      "audit_evidence": [
+        "NTP configuration",
+        "Time source documentation",
+        "Drift monitoring"
+      ],
+      "risk_addressed": [
+        "Inaccurate timestamps",
+        "Forensic challenges"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "iso_27001": [
+          "A.8.17"
+        ],
+        "cis_v8": [
+          "8.4"
+        ]
+      },
+      "related_controls": [
+        "AU-3",
+        "AU-12"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-ca-8",
+      "framework": "NIST 800-53",
+      "family": "Assessment, Authorization, and Monitoring",
+      "family_id": "CA",
+      "control_id": "CA-8",
+      "name": "Penetration Testing",
+      "description": "Conduct penetration testing on the system at defined frequency.",
+      "implementation_guidance": [
+        "Annual external pentest",
+        "Internal pentest semi-annually",
+        "Remediate findings within SLA",
+        "Retest after remediation"
+      ],
+      "audit_evidence": [
+        "Pentest reports",
+        "Scope documents",
+        "Remediation records",
+        "Retest results"
+      ],
+      "risk_addressed": [
+        "Unknown exploitable vulnerabilities"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.5.35",
+          "A.8.8"
+        ],
+        "cis_v8": [
+          "18.1",
+          "18.2"
+        ]
+      },
+      "related_controls": [
+        "CA-2",
+        "RA-5"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-cm-11",
+      "framework": "NIST 800-53",
+      "family": "Configuration Management",
+      "family_id": "CM",
+      "control_id": "CM-11",
+      "name": "User-Installed Software",
+      "description": "Establish policy governing the installation of software by users.",
+      "implementation_guidance": [
+        "Define approved software list",
+        "Block unauthorized installations",
+        "Monitor for policy violations",
+        "Implement application whitelisting"
+      ],
+      "audit_evidence": [
+        "Software policy",
+        "Whitelist configuration",
+        "Violation reports"
+      ],
+      "risk_addressed": [
+        "Malware installation",
+        "Unauthorized tools",
+        "License violations"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.8.9"
+        ],
+        "cis_v8": [
+          "2.3",
+          "2.5"
+        ]
+      },
+      "related_controls": [
+        "CM-7",
+        "CM-8"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-cp-3",
+      "framework": "NIST 800-53",
+      "family": "Contingency Planning",
+      "family_id": "CP",
+      "control_id": "CP-3",
+      "name": "Contingency Training",
+      "description": "Provide contingency training to personnel consistent with assigned roles.",
+      "implementation_guidance": [
+        "Train on contingency procedures",
+        "Include tabletop exercises",
+        "Practice recovery procedures",
+        "Update training on plan changes"
+      ],
+      "audit_evidence": [
+        "Training records",
+        "Exercise results",
+        "Skill assessments"
+      ],
+      "risk_addressed": [
+        "Ineffective recovery",
+        "Untrained personnel"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "iso_27001": [
+          "A.5.29"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "CP-2",
+        "CP-4"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-cp-10",
+      "framework": "NIST 800-53",
+      "family": "Contingency Planning",
+      "family_id": "CP",
+      "control_id": "CP-10",
+      "name": "System Recovery and Reconstitution",
+      "description": "Provide for the recovery and reconstitution of the system to a known state.",
+      "implementation_guidance": [
+        "Define recovery procedures",
+        "Maintain recovery media",
+        "Test reconstitution",
+        "Document known-good state"
+      ],
+      "audit_evidence": [
+        "Recovery procedures",
+        "Recovery media",
+        "Test results",
+        "Baseline documentation"
+      ],
+      "risk_addressed": [
+        "Extended outages",
+        "Incomplete recovery"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.5.30"
+        ],
+        "cis_v8": [
+          "11.1"
+        ]
+      },
+      "related_controls": [
+        "CP-2",
+        "CP-9"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-ia-6",
+      "framework": "NIST 800-53",
+      "family": "Identification and Authentication",
+      "family_id": "IA",
+      "control_id": "IA-6",
+      "name": "Authentication Feedback",
+      "description": "Obscure feedback of authentication information during the authentication process.",
+      "implementation_guidance": [
+        "Mask password input",
+        "Don't reveal which field is wrong",
+        "Limit error information",
+        "Use generic error messages"
+      ],
+      "audit_evidence": [
+        "Login page configuration",
+        "Error message review",
+        "Authentication UI"
+      ],
+      "risk_addressed": [
+        "Credential enumeration",
+        "Username harvesting"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "iso_27001": [
+          "A.8.5"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "IA-2",
+        "IA-5"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-ia-8",
+      "framework": "NIST 800-53",
+      "family": "Identification and Authentication",
+      "family_id": "IA",
+      "control_id": "IA-8",
+      "name": "Identification and Authentication (Non-Organizational Users)",
+      "description": "Uniquely identify and authenticate non-organizational users.",
+      "implementation_guidance": [
+        "Require registration for external users",
+        "Implement MFA for external access",
+        "Verify identity before provisioning",
+        "Review external accounts quarterly"
+      ],
+      "audit_evidence": [
+        "External user registration",
+        "MFA enrollment",
+        "Identity verification",
+        "Review records"
+      ],
+      "risk_addressed": [
+        "Unauthorized external access"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.5.16"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "IA-2",
+        "AC-2"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-ir-3",
+      "framework": "NIST 800-53",
+      "family": "Incident Response",
+      "family_id": "IR",
+      "control_id": "IR-3",
+      "name": "Incident Response Testing",
+      "description": "Test the incident response capability to determine effectiveness.",
+      "implementation_guidance": [
+        "Conduct annual tabletop exercises",
+        "Perform functional exercises",
+        "Include all IR team members",
+        "Document results and improvements"
+      ],
+      "audit_evidence": [
+        "Exercise plans",
+        "Results documentation",
+        "Improvement actions",
+        "Participation records"
+      ],
+      "risk_addressed": [
+        "Untested procedures",
+        "Unknown gaps"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.5.24"
+        ],
+        "cis_v8": [
+          "17.7"
+        ]
+      },
+      "related_controls": [
+        "IR-2",
+        "IR-4",
+        "IR-8"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-ir-5",
+      "framework": "NIST 800-53",
+      "family": "Incident Response",
+      "family_id": "IR",
+      "control_id": "IR-5",
+      "name": "Incident Monitoring",
+      "description": "Track and document incidents on an ongoing basis.",
+      "implementation_guidance": [
+        "Maintain incident tracking system",
+        "Record all incident details",
+        "Track resolution status",
+        "Generate metrics"
+      ],
+      "audit_evidence": [
+        "Incident tracking system",
+        "Incident records",
+        "Status reports",
+        "Metrics dashboards"
+      ],
+      "risk_addressed": [
+        "Lost incident data",
+        "No trending analysis"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.5.25"
+        ],
+        "cis_v8": [
+          "17.4"
+        ]
+      },
+      "related_controls": [
+        "IR-4",
+        "IR-6"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-pe-2",
+      "framework": "NIST 800-53",
+      "family": "Physical and Environmental Protection",
+      "family_id": "PE",
+      "control_id": "PE-2",
+      "name": "Physical Access Authorizations",
+      "description": "Develop and maintain a list of individuals with authorized access to facilities.",
+      "implementation_guidance": [
+        "Maintain access list",
+        "Review quarterly",
+        "Remove terminated personnel immediately",
+        "Require sponsor for visitors"
+      ],
+      "audit_evidence": [
+        "Access authorization list",
+        "Review records",
+        "Removal records",
+        "Visitor procedures"
+      ],
+      "risk_addressed": [
+        "Unauthorized physical access"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.7.1"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "PE-3",
+        "PE-6"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-pe-13",
+      "framework": "NIST 800-53",
+      "family": "Physical and Environmental Protection",
+      "family_id": "PE",
+      "control_id": "PE-13",
+      "name": "Fire Protection",
+      "description": "Employ fire detection and suppression systems.",
+      "implementation_guidance": [
+        "Install fire detection systems",
+        "Deploy suppression (FM-200, sprinklers)",
+        "Test annually",
+        "Maintain clear evacuation routes"
+      ],
+      "audit_evidence": [
+        "Fire system inspection records",
+        "Test results",
+        "Suppression system documentation"
+      ],
+      "risk_addressed": [
+        "Fire damage",
+        "Data loss",
+        "Safety hazard"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.7.5"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "PE-14",
+        "PE-15"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-pe-14",
+      "framework": "NIST 800-53",
+      "family": "Physical and Environmental Protection",
+      "family_id": "PE",
+      "control_id": "PE-14",
+      "name": "Environmental Controls",
+      "description": "Maintain temperature and humidity levels within acceptable ranges.",
+      "implementation_guidance": [
+        "Monitor data center temperature",
+        "Set humidity controls",
+        "Alert on threshold violations",
+        "Maintain HVAC systems"
+      ],
+      "audit_evidence": [
+        "Environmental monitoring",
+        "HVAC maintenance",
+        "Alert records",
+        "Temperature logs"
+      ],
+      "risk_addressed": [
+        "Equipment failure",
+        "Data loss from overheating"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "iso_27001": [
+          "A.7.12"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "PE-13",
+        "PE-15"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-ps-5",
+      "framework": "NIST 800-53",
+      "family": "Personnel Security",
+      "family_id": "PS",
+      "control_id": "PS-5",
+      "name": "Personnel Transfer",
+      "description": "Review and confirm ongoing operational need for access when personnel transfer.",
+      "implementation_guidance": [
+        "Review access on role change",
+        "Remove unnecessary access",
+        "Provision new access per new role",
+        "Update access within 24 hours"
+      ],
+      "audit_evidence": [
+        "Transfer checklists",
+        "Access modification records",
+        "Review documentation"
+      ],
+      "risk_addressed": [
+        "Excessive access after transfer",
+        "Privilege accumulation"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.6.5"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "PS-4",
+        "AC-2"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-ps-6",
+      "framework": "NIST 800-53",
+      "family": "Personnel Security",
+      "family_id": "PS",
+      "control_id": "PS-6",
+      "name": "Access Agreements",
+      "description": "Require individuals to sign access agreements before being granted access.",
+      "implementation_guidance": [
+        "Define access agreement content",
+        "Include acceptable use terms",
+        "Require signature before access",
+        "Renew annually"
+      ],
+      "audit_evidence": [
+        "Signed access agreements",
+        "Agreement templates",
+        "Renewal records"
+      ],
+      "risk_addressed": [
+        "Unclear user obligations",
+        "Legal liability"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "iso_27001": [
+          "A.6.2"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "PS-3",
+        "PL-4"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-sa-3",
+      "framework": "NIST 800-53",
+      "family": "System and Services Acquisition",
+      "family_id": "SA",
+      "control_id": "SA-3",
+      "name": "System Development Life Cycle",
+      "description": "Manage the system using a system development life cycle that incorporates security.",
+      "implementation_guidance": [
+        "Integrate security into SDLC phases",
+        "Conduct security reviews at gates",
+        "Require threat modeling",
+        "Include security testing"
+      ],
+      "audit_evidence": [
+        "SDLC documentation",
+        "Gate review records",
+        "Threat models",
+        "Security test results"
+      ],
+      "risk_addressed": [
+        "Insecure systems",
+        "Missing security requirements"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.8.25"
+        ],
+        "cis_v8": [
+          "16.1"
+        ]
+      },
+      "related_controls": [
+        "SA-4",
+        "SA-11"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-sa-11",
+      "framework": "NIST 800-53",
+      "family": "System and Services Acquisition",
+      "family_id": "SA",
+      "control_id": "SA-11",
+      "name": "Developer Testing and Evaluation",
+      "description": "Require developers to create and implement a security assessment plan.",
+      "implementation_guidance": [
+        "Require SAST in CI/CD",
+        "Conduct DAST before release",
+        "Perform code reviews",
+        "Test security controls"
+      ],
+      "audit_evidence": [
+        "SAST/DAST results",
+        "Code review records",
+        "Security test plans",
+        "Vulnerability findings"
+      ],
+      "risk_addressed": [
+        "Insecure code in production"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.8.25",
+          "A.8.28"
+        ],
+        "cis_v8": [
+          "16.2",
+          "16.12"
+        ]
+      },
+      "related_controls": [
+        "SA-3",
+        "SA-4"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-sc-4",
+      "framework": "NIST 800-53",
+      "family": "System and Communications Protection",
+      "family_id": "SC",
+      "control_id": "SC-4",
+      "name": "Information in Shared System Resources",
+      "description": "Prevent unauthorized transfer of information via shared system resources.",
+      "implementation_guidance": [
+        "Clear memory after process termination",
+        "Implement object reuse controls",
+        "Isolate tenant data in shared systems",
+        "Sanitize temporary storage"
+      ],
+      "audit_evidence": [
+        "Object reuse configuration",
+        "Memory management",
+        "Isolation controls"
+      ],
+      "risk_addressed": [
+        "Information leakage between processes/tenants"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "iso_27001": [
+          "A.8.22"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "SC-7",
+        "AC-4"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-sc-23",
+      "framework": "NIST 800-53",
+      "family": "System and Communications Protection",
+      "family_id": "SC",
+      "control_id": "SC-23",
+      "name": "Session Authenticity",
+      "description": "Protect the authenticity of communications sessions.",
+      "implementation_guidance": [
+        "Implement anti-CSRF tokens",
+        "Use secure session IDs",
+        "Bind sessions to client attributes",
+        "Implement session fixation protection"
+      ],
+      "audit_evidence": [
+        "Session management configuration",
+        "CSRF protection",
+        "Session binding"
+      ],
+      "risk_addressed": [
+        "Session hijacking",
+        "CSRF attacks"
+      ],
+      "priority": "high",
+      "mappings": {
+        "iso_27001": [
+          "A.8.5"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "SC-8",
+        "AC-12"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    },
+    {
+      "id": "nist-si-12",
+      "framework": "NIST 800-53",
+      "family": "System and Information Integrity",
+      "family_id": "SI",
+      "control_id": "SI-12",
+      "name": "Information Management and Retention",
+      "description": "Manage and retain information within the system in accordance with applicable laws.",
+      "implementation_guidance": [
+        "Define retention schedules",
+        "Implement automated retention",
+        "Dispose of data per schedule",
+        "Document retention decisions"
+      ],
+      "audit_evidence": [
+        "Retention policy",
+        "Automated retention configuration",
+        "Disposal records",
+        "Legal hold procedures"
+      ],
+      "risk_addressed": [
+        "Regulatory non-compliance",
+        "Excessive data retention"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "iso_27001": [
+          "A.5.12",
+          "A.8.10"
+        ],
+        "cis_v8": [
+          "3.1"
+        ]
+      },
+      "related_controls": [
+        "MP-6",
+        "SI-4"
+      ],
+      "references": [
+        "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,546 @@
+[
+  {
+    "id": "gq-nist-01",
+    "topic_id": "nist",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What are the six functions of NIST CSF 2.0?",
+    "correct_answers": [
+      "govern identify protect detect respond recover"
+    ],
+    "validation_type": "contains_all",
+    "required_keywords": [],
+    "explanation": "NIST CSF 2.0 functions: Govern, Identify, Protect, Detect, Respond, Recover. Govern was added in version 2.0.",
+    "hints": [
+      "Six functions, one is new in v2.0"
+    ]
+  },
+  {
+    "id": "gq-nist-02",
+    "topic_id": "nist",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is the purpose of NIST 800-53?",
+    "correct_answers": [
+      "security controls",
+      "control catalog",
+      "federal",
+      "comprehensive controls"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "NIST 800-53 provides a comprehensive catalog of security and privacy controls for federal information systems and organizations.",
+    "hints": [
+      "Comprehensive control catalog"
+    ]
+  },
+  {
+    "id": "gq-nist-03",
+    "topic_id": "nist",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "Your organization needs to comply with NIST 800-53 but has limited resources. How do you prioritize which controls to implement first?",
+    "correct_answers": [
+      "baseline",
+      "impact level",
+      "high",
+      "moderate",
+      "low",
+      "categorize"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Use FIPS 199 to categorize systems by impact level (Low/Moderate/High), then select the corresponding control baseline. Start with High-impact systems.",
+    "hints": [
+      "Categorize by impact first"
+    ]
+  },
+  {
+    "id": "gq-nist-04",
+    "topic_id": "nist",
+    "type": "theory",
+    "difficulty": "easy",
+    "question": "What does the 'Identify' function in NIST CSF focus on?",
+    "correct_answers": [
+      "assets",
+      "risk",
+      "understand",
+      "inventory",
+      "business context"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Identify: understand your assets, business environment, governance, risk assessment, and supply chain risks. You can't protect what you don't know about.",
+    "hints": [
+      "Know what you have"
+    ]
+  },
+  {
+    "id": "gq-nist-05",
+    "topic_id": "nist",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "An auditor asks for evidence of your access control implementation (AC-2 Account Management). What documentation do you provide?",
+    "correct_answers": [
+      "account inventory",
+      "access review",
+      "provisioning",
+      "termination",
+      "approval"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Provide: account inventory, access provisioning/approval records, periodic access reviews, termination checklists, and shared account justifications.",
+    "hints": [
+      "Show the lifecycle of accounts"
+    ]
+  },
+  {
+    "id": "gq-iso-01",
+    "topic_id": "iso27001",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is an ISMS?",
+    "correct_answers": [
+      "information security management system",
+      "systematic approach",
+      "manage",
+      "policies procedures"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "ISMS (Information Security Management System) is a systematic approach to managing sensitive information through policies, procedures, and controls.",
+    "hints": [
+      "Systematic approach to security"
+    ]
+  },
+  {
+    "id": "gq-iso-02",
+    "topic_id": "iso27001",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is the Plan-Do-Check-Act cycle in ISO 27001?",
+    "correct_answers": [
+      "plan do check act",
+      "pdca",
+      "continuous improvement",
+      "establish implement monitor improve"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "PDCA: Plan (establish ISMS), Do (implement), Check (monitor/review), Act (improve). Drives continuous improvement.",
+    "hints": [
+      "Four-step cycle"
+    ]
+  },
+  {
+    "id": "gq-iso-03",
+    "topic_id": "iso27001",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "Your company wants ISO 27001 certification. What is the first step?",
+    "correct_answers": [
+      "scope",
+      "define scope",
+      "gap analysis",
+      "management commitment",
+      "context"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "First: define the ISMS scope (what's included), get management commitment, and conduct a gap analysis against ISO 27001 requirements.",
+    "hints": [
+      "Define what's in and what's out"
+    ]
+  },
+  {
+    "id": "gq-iso-04",
+    "topic_id": "iso27001",
+    "type": "theory",
+    "difficulty": "hard",
+    "question": "What is the Statement of Applicability (SoA) in ISO 27001?",
+    "correct_answers": [
+      "which controls",
+      "applicable",
+      "justification",
+      "selected controls",
+      "annex a"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "The SoA documents which Annex A controls are applicable, which are implemented, and justification for any exclusions. It's a key certification document.",
+    "hints": [
+      "Which controls apply and why"
+    ]
+  },
+  {
+    "id": "gq-iso-05",
+    "topic_id": "iso27001",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "How many controls are in ISO 27001:2022 Annex A?",
+    "correct_answers": [
+      "93",
+      "93 controls"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "ISO 27001:2022 has 93 controls in Annex A (reduced from 114 in 2013 version), organized into 4 themes: Organizational, People, Physical, Technological.",
+    "hints": [
+      "Less than 100, organized in 4 themes"
+    ]
+  },
+  {
+    "id": "gq-risk-01",
+    "topic_id": "risk",
+    "type": "theory",
+    "difficulty": "easy",
+    "question": "What is the risk formula?",
+    "correct_answers": [
+      "likelihood times impact",
+      "likelihood x impact",
+      "probability x impact",
+      "likelihood * impact"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Risk = Likelihood \u00d7 Impact. A high-likelihood, high-impact event is critical. Low-likelihood, low-impact is acceptable.",
+    "hints": [
+      "Two factors multiplied"
+    ]
+  },
+  {
+    "id": "gq-risk-02",
+    "topic_id": "risk",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What are the four risk treatment options?",
+    "correct_answers": [
+      "mitigate transfer accept avoid",
+      "reduce transfer accept avoid",
+      "treat",
+      "accept",
+      "transfer",
+      "avoid"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Four options: Mitigate (reduce risk), Transfer (insurance/outsource), Accept (acknowledge and monitor), Avoid (eliminate the activity).",
+    "hints": [
+      "Four choices for each risk"
+    ]
+  },
+  {
+    "id": "gq-risk-03",
+    "topic_id": "risk",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "Your risk assessment shows a critical risk of ransomware. The board asks for options. What do you present?",
+    "correct_answers": [
+      "mitigate",
+      "backup",
+      "insurance",
+      "controls",
+      "accept"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Present: Mitigate (backups, EDR, patching, training), Transfer (cyber insurance), Accept (document residual risk). Avoid is impractical for most organizations.",
+    "hints": [
+      "Multiple treatment options for the board"
+    ]
+  },
+  {
+    "id": "gq-risk-04",
+    "topic_id": "risk",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is residual risk?",
+    "correct_answers": [
+      "remaining risk",
+      "after controls",
+      "risk that remains",
+      "leftover"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Residual risk is the risk remaining after controls are applied. No control eliminates risk completely. Residual risk must be formally accepted by management.",
+    "hints": [
+      "What's left after you apply controls"
+    ]
+  },
+  {
+    "id": "gq-risk-05",
+    "topic_id": "risk",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "A department head says 'we accept the risk' of not encrypting laptops. What governance process should follow?",
+    "correct_answers": [
+      "document",
+      "sign",
+      "risk register",
+      "formal acceptance",
+      "management approval",
+      "review"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Formal risk acceptance requires: documented justification, appropriate authority level (not just the department head), entry in risk register, periodic review, and sign-off.",
+    "hints": [
+      "Formal process, not just verbal"
+    ]
+  },
+  {
+    "id": "gq-comp-01",
+    "topic_id": "compliance",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is the maximum GDPR fine?",
+    "correct_answers": [
+      "4%",
+      "4% of revenue",
+      "20 million",
+      "whichever is greater"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "GDPR maximum fine: \u20ac20 million or 4% of global annual revenue, whichever is greater.",
+    "hints": [
+      "Percentage of revenue"
+    ]
+  },
+  {
+    "id": "gq-comp-02",
+    "topic_id": "compliance",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is the GDPR right to erasure?",
+    "correct_answers": [
+      "delete data",
+      "right to be forgotten",
+      "remove personal data",
+      "erasure"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Right to erasure (right to be forgotten): data subjects can request deletion of their personal data when it's no longer necessary or consent is withdrawn.",
+    "hints": [
+      "Delete my data"
+    ]
+  },
+  {
+    "id": "gq-comp-03",
+    "topic_id": "compliance",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "A customer requests all their personal data under GDPR Article 15. What is your response deadline?",
+    "correct_answers": [
+      "30 days",
+      "one month",
+      "without undue delay"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Respond within 30 days (one month). Can extend by 2 months for complex requests, but must inform the requester within the first 30 days.",
+    "hints": [
+      "One month"
+    ]
+  },
+  {
+    "id": "gq-comp-04",
+    "topic_id": "compliance",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What does PCI DSS protect?",
+    "correct_answers": [
+      "cardholder data",
+      "payment card",
+      "credit card",
+      "card data"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "PCI DSS protects cardholder data (card numbers, expiry, CVV) and sensitive authentication data during storage, processing, and transmission.",
+    "hints": [
+      "Payment card information"
+    ]
+  },
+  {
+    "id": "gq-comp-05",
+    "topic_id": "compliance",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "Your company processes credit cards and suffers a breach. Under PCI DSS, what must happen within 72 hours?",
+    "correct_answers": [
+      "notify",
+      "report",
+      "acquirer",
+      "card brand",
+      "forensic investigation"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Notify your acquiring bank and card brands within 72 hours. Engage a PCI Forensic Investigator (PFI). Contain the breach and preserve evidence.",
+    "hints": [
+      "Notify payment partners quickly"
+    ]
+  },
+  {
+    "id": "gq-comp-06",
+    "topic_id": "compliance",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is HIPAA and what does it protect?",
+    "correct_answers": [
+      "health information",
+      "phi",
+      "protected health information",
+      "healthcare",
+      "patient data"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "HIPAA protects Protected Health Information (PHI) \u2014 any individually identifiable health information held by covered entities and business associates.",
+    "hints": [
+      "Patient health data"
+    ]
+  },
+  {
+    "id": "gq-comp-07",
+    "topic_id": "compliance",
+    "type": "theory",
+    "difficulty": "hard",
+    "question": "What is the difference between a data controller and a data processor under GDPR?",
+    "correct_answers": [
+      "determines purpose",
+      "processes on behalf",
+      "controller decides",
+      "processor acts on instructions"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Controller determines WHY and HOW data is processed (makes decisions). Processor processes data ON BEHALF of the controller (follows instructions).",
+    "hints": [
+      "One decides, one executes"
+    ]
+  },
+  {
+    "id": "gq-comp-08",
+    "topic_id": "compliance",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "Your SaaS vendor stores customer data in the EU but wants to move to US servers. What GDPR mechanism is needed?",
+    "correct_answers": [
+      "standard contractual clauses",
+      "scc",
+      "adequacy",
+      "transfer impact assessment",
+      "schrems"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Need Standard Contractual Clauses (SCCs) or other transfer mechanism since the US lacks an adequacy decision. Conduct a Transfer Impact Assessment (TIA).",
+    "hints": [
+      "Legal mechanism for international transfer"
+    ]
+  },
+  {
+    "id": "gq-audit-01",
+    "topic_id": "audit",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is the difference between an internal and external audit?",
+    "correct_answers": [
+      "internal self",
+      "external independent",
+      "first party",
+      "third party"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Internal audit: conducted by the organization itself (first party). External audit: conducted by independent third party (certification body, regulator).",
+    "hints": [
+      "Self vs independent"
+    ]
+  },
+  {
+    "id": "gq-audit-02",
+    "topic_id": "audit",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What are the three types of audit findings?",
+    "correct_answers": [
+      "nonconformity",
+      "observation",
+      "opportunity",
+      "major",
+      "minor"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Major nonconformity (critical gap), Minor nonconformity (partial gap), Observation/Opportunity for Improvement (suggestion, not a failure).",
+    "hints": [
+      "Severity levels of findings"
+    ]
+  },
+  {
+    "id": "gq-audit-03",
+    "topic_id": "audit",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "During an ISO 27001 audit, the auditor finds you have no evidence of management review meetings. What severity is this finding?",
+    "correct_answers": [
+      "major nonconformity",
+      "major",
+      "critical"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Major nonconformity \u2014 management review is a mandatory ISO 27001 requirement (Clause 9.3). Missing it entirely indicates a systemic ISMS failure.",
+    "hints": [
+      "Mandatory requirement completely missing"
+    ]
+  },
+  {
+    "id": "gq-audit-04",
+    "topic_id": "audit",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is audit evidence?",
+    "correct_answers": [
+      "records",
+      "documents",
+      "observations",
+      "proof",
+      "logs",
+      "screenshots"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Audit evidence: records, documents, logs, screenshots, interview notes, and observations that prove controls are implemented and effective.",
+    "hints": [
+      "Proof that controls work"
+    ]
+  },
+  {
+    "id": "gq-audit-05",
+    "topic_id": "audit",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "An auditor asks 'show me evidence that access reviews are performed quarterly.' What do you provide?",
+    "correct_answers": [
+      "review records",
+      "screenshots",
+      "sign-off",
+      "dates",
+      "quarterly reports",
+      "access review reports"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Provide: dated access review reports/screenshots, reviewer sign-offs, remediation records for revoked access, and evidence of quarterly cadence.",
+    "hints": [
+      "Dated proof of regular reviews"
+    ]
+  }
+]

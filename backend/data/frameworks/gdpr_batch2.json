@@ -1,0 +1,494 @@
+{
+  "id": "gdpr-batch2",
+  "name": "GDPR (Batch 2)",
+  "description": "Expanded GDPR articles",
+  "controls": [
+    {
+      "id": "gdpr-art-15",
+      "framework": "GDPR",
+      "family": "Data Subject Rights",
+      "family_id": "CH3",
+      "control_id": "Art.15",
+      "name": "Right of Access",
+      "description": "Data subjects have the right to obtain confirmation and access to their personal data.",
+      "implementation_guidance": [
+        "Implement subject access request (SAR) process",
+        "Respond within 30 days",
+        "Provide data in portable format",
+        "Verify requester identity before disclosure"
+      ],
+      "audit_evidence": [
+        "SAR procedures",
+        "Response templates",
+        "Identity verification process",
+        "Response time tracking"
+      ],
+      "risk_addressed": [
+        "Non-compliance fines",
+        "Data subject complaints"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IP-2"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "gdpr-art-17",
+        "gdpr-art-20"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-15-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-17",
+      "framework": "GDPR",
+      "family": "Data Subject Rights",
+      "family_id": "CH3",
+      "control_id": "Art.17",
+      "name": "Right to Erasure",
+      "description": "Data subjects can request deletion of personal data when no longer necessary.",
+      "implementation_guidance": [
+        "Define erasure criteria",
+        "Implement deletion workflows",
+        "Notify third parties of erasure",
+        "Document erasure decisions and exceptions"
+      ],
+      "audit_evidence": [
+        "Erasure request log",
+        "Deletion confirmation",
+        "Third-party notifications",
+        "Exception documentation"
+      ],
+      "risk_addressed": [
+        "Regulatory fines",
+        "Reputation damage"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SI-12"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "gdpr-art-15",
+        "gdpr-art-18"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-17-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-20",
+      "framework": "GDPR",
+      "family": "Data Subject Rights",
+      "family_id": "CH3",
+      "control_id": "Art.20",
+      "name": "Right to Data Portability",
+      "description": "Data subjects can receive their data in a structured, machine-readable format.",
+      "implementation_guidance": [
+        "Provide data in JSON/CSV format",
+        "Enable direct transfer to another controller",
+        "Implement automated export",
+        "Cover only data provided by subject"
+      ],
+      "audit_evidence": [
+        "Export functionality",
+        "Format documentation",
+        "Transfer mechanisms",
+        "Scope documentation"
+      ],
+      "risk_addressed": [
+        "Non-compliance",
+        "Operational burden"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "nist_800_53": [
+          "N/A"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "gdpr-art-15"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-20-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-25",
+      "framework": "GDPR",
+      "family": "Data Protection by Design",
+      "family_id": "CH4",
+      "control_id": "Art.25",
+      "name": "Data Protection by Design and Default",
+      "description": "Implement appropriate technical and organizational measures at design time.",
+      "implementation_guidance": [
+        "Conduct privacy impact assessments",
+        "Minimize data collection by default",
+        "Implement pseudonymization",
+        "Apply least privilege to data access"
+      ],
+      "audit_evidence": [
+        "DPIA records",
+        "Design documentation",
+        "Default settings evidence",
+        "Pseudonymization implementation"
+      ],
+      "risk_addressed": [
+        "Privacy violations",
+        "Excessive data collection"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SA-8"
+        ],
+        "iso_27001": [
+          "A.5.12",
+          "A.8.11"
+        ]
+      },
+      "related_controls": [
+        "gdpr-art-35"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-25-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-28",
+      "framework": "GDPR",
+      "family": "Processor Obligations",
+      "family_id": "CH4",
+      "control_id": "Art.28",
+      "name": "Processor",
+      "description": "Processing by a processor shall be governed by a contract with specific requirements.",
+      "implementation_guidance": [
+        "Execute Data Processing Agreements (DPA)",
+        "Include required clauses",
+        "Verify processor compliance",
+        "Audit processor annually"
+      ],
+      "audit_evidence": [
+        "DPA contracts",
+        "Required clause checklist",
+        "Compliance verification",
+        "Audit reports"
+      ],
+      "risk_addressed": [
+        "Unauthorized processing",
+        "Liability exposure"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SA-9"
+        ],
+        "iso_27001": [
+          "A.5.19",
+          "A.5.20"
+        ]
+      },
+      "related_controls": [
+        "gdpr-art-32"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-28-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-30",
+      "framework": "GDPR",
+      "family": "Records of Processing",
+      "family_id": "CH4",
+      "control_id": "Art.30",
+      "name": "Records of Processing Activities",
+      "description": "Maintain records of processing activities under controller responsibility.",
+      "implementation_guidance": [
+        "Document all processing activities",
+        "Include purposes and categories",
+        "Record data transfers",
+        "Update records on changes"
+      ],
+      "audit_evidence": [
+        "Records of processing (ROPA)",
+        "Processing inventory",
+        "Transfer documentation",
+        "Update log"
+      ],
+      "risk_addressed": [
+        "Regulatory non-compliance",
+        "Inability to demonstrate compliance"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "PM-5"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "gdpr-art-28"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-30-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-33",
+      "framework": "GDPR",
+      "family": "Breach Notification",
+      "family_id": "CH4",
+      "control_id": "Art.33",
+      "name": "Notification to Supervisory Authority",
+      "description": "Notify supervisory authority within 72 hours of becoming aware of a personal data breach.",
+      "implementation_guidance": [
+        "Implement breach detection mechanisms",
+        "Define 72-hour notification process",
+        "Prepare notification templates",
+        "Assign breach response team"
+      ],
+      "audit_evidence": [
+        "Breach detection tools",
+        "Notification procedures",
+        "Templates",
+        "Team assignments"
+      ],
+      "risk_addressed": [
+        "Regulatory fines (up to 4% revenue)",
+        "Delayed notification penalties"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IR-6"
+        ],
+        "iso_27001": [
+          "A.5.24",
+          "A.5.26"
+        ]
+      },
+      "related_controls": [
+        "gdpr-art-34"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-33-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-34",
+      "framework": "GDPR",
+      "family": "Breach Notification",
+      "family_id": "CH4",
+      "control_id": "Art.34",
+      "name": "Communication to Data Subject",
+      "description": "Communicate personal data breach to data subjects when high risk to rights and freedoms.",
+      "implementation_guidance": [
+        "Define high-risk criteria",
+        "Prepare subject notification templates",
+        "Implement mass notification capability",
+        "Document notification decisions"
+      ],
+      "audit_evidence": [
+        "Risk assessment criteria",
+        "Notification templates",
+        "Communication records",
+        "Decision documentation"
+      ],
+      "risk_addressed": [
+        "Reputation damage",
+        "Data subject harm"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IR-6"
+        ],
+        "iso_27001": [
+          "A.5.26"
+        ]
+      },
+      "related_controls": [
+        "gdpr-art-33"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-34-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-35",
+      "framework": "GDPR",
+      "family": "Impact Assessment",
+      "family_id": "CH4",
+      "control_id": "Art.35",
+      "name": "Data Protection Impact Assessment",
+      "description": "Carry out DPIA where processing is likely to result in high risk.",
+      "implementation_guidance": [
+        "Identify high-risk processing",
+        "Conduct systematic DPIA",
+        "Consult DPO",
+        "Implement mitigations before processing"
+      ],
+      "audit_evidence": [
+        "DPIA methodology",
+        "Completed DPIAs",
+        "DPO consultation records",
+        "Mitigation plans"
+      ],
+      "risk_addressed": [
+        "Unmitigated privacy risks",
+        "Regulatory action"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "RA-3"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "gdpr-art-25",
+        "gdpr-art-36"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-35-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-37",
+      "framework": "GDPR",
+      "family": "Data Protection Officer",
+      "family_id": "CH4",
+      "control_id": "Art.37",
+      "name": "Designation of DPO",
+      "description": "Designate a Data Protection Officer where required by regulation.",
+      "implementation_guidance": [
+        "Assess DPO requirement",
+        "Appoint qualified DPO",
+        "Ensure independence",
+        "Provide adequate resources"
+      ],
+      "audit_evidence": [
+        "DPO appointment letter",
+        "Qualification evidence",
+        "Independence documentation",
+        "Resource allocation"
+      ],
+      "risk_addressed": [
+        "Non-compliance",
+        "Lack of oversight"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "PM-2"
+        ],
+        "iso_27001": [
+          "A.5.1"
+        ]
+      },
+      "related_controls": [
+        "gdpr-art-38",
+        "gdpr-art-39"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-37-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-44",
+      "framework": "GDPR",
+      "family": "International Transfers",
+      "family_id": "CH5",
+      "control_id": "Art.44",
+      "name": "General Principle for Transfers",
+      "description": "Transfer of personal data to third countries only with adequate safeguards.",
+      "implementation_guidance": [
+        "Assess adequacy decisions",
+        "Implement Standard Contractual Clauses (SCCs)",
+        "Conduct Transfer Impact Assessments",
+        "Document transfer mechanisms"
+      ],
+      "audit_evidence": [
+        "Adequacy assessment",
+        "SCCs",
+        "TIA documentation",
+        "Transfer records"
+      ],
+      "risk_addressed": [
+        "Illegal data transfers",
+        "Regulatory fines"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "N/A"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "gdpr-art-46"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-44-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-46",
+      "framework": "GDPR",
+      "family": "International Transfers",
+      "family_id": "CH5",
+      "control_id": "Art.46",
+      "name": "Transfers Subject to Appropriate Safeguards",
+      "description": "Transfers may take place where appropriate safeguards are provided.",
+      "implementation_guidance": [
+        "Use Standard Contractual Clauses",
+        "Implement Binding Corporate Rules",
+        "Obtain certification under approved mechanism",
+        "Supplement with additional measures if needed"
+      ],
+      "audit_evidence": [
+        "SCCs signed",
+        "BCR documentation",
+        "Certification evidence",
+        "Supplementary measures"
+      ],
+      "risk_addressed": [
+        "Invalid transfer basis",
+        "Regulatory enforcement"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "N/A"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "gdpr-art-44"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-46-gdpr/"
+      ]
+    }
+  ]
+}

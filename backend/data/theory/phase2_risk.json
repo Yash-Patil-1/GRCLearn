@@ -1,0 +1,24 @@
+{
+  "phase_id": 2,
+  "title": "Risk Management — Making Informed Security Decisions",
+  "sections": [
+    {
+      "id": "risk-why",
+      "title": "Why Risk Management is the Core of Security",
+      "content": "You cannot protect everything equally — budgets are finite, resources are limited. Risk management helps you focus protection where it matters most.\n\n**Risk = Likelihood × Impact**\n\nA vulnerability in an internet-facing payment system (high likelihood, catastrophic impact) demands immediate attention. The same vulnerability on an isolated test server (low likelihood, minimal impact) can wait.\n\n**Risk management is NOT about eliminating all risk.** It's about understanding risk, making conscious decisions about acceptable levels, and communicating those decisions to stakeholders.",
+      "key_concepts": ["Risk formula", "Prioritization", "Risk appetite", "Informed decisions"]
+    },
+    {
+      "id": "risk-assessment",
+      "title": "Risk Assessment Process",
+      "content": "**Step 1: Asset Identification**\nWhat are you protecting? Data, systems, people, reputation.\n\n**Step 2: Threat Identification**\nWhat could go wrong? External attackers, insider threats, natural disasters, human error.\n\n**Step 3: Vulnerability Assessment**\nWhat weaknesses exist? Unpatched systems, weak passwords, lack of encryption.\n\n**Step 4: Likelihood Determination**\nHow probable is this threat exploiting this vulnerability? (1-5 scale)\n\n**Step 5: Impact Analysis**\nIf it happens, how bad is it? Financial loss, reputation damage, regulatory fines, operational disruption.\n\n**Step 6: Risk Rating**\nLikelihood × Impact = Risk Level (Critical/High/Medium/Low)\n\n**Step 7: Risk Treatment**\nFor each risk, choose: Mitigate (reduce), Transfer (insurance/outsource), Accept (document and monitor), or Avoid (eliminate the activity).",
+      "key_concepts": ["Asset identification", "Threat modeling", "Likelihood × Impact", "Risk treatment options"]
+    },
+    {
+      "id": "risk-frameworks",
+      "title": "Risk Frameworks: FAIR vs Qualitative",
+      "content": "**Qualitative Risk Assessment (most common):**\n- Uses scales: High/Medium/Low or 1-5\n- Fast, easy to understand\n- Subjective — different people rate differently\n- Good for: initial assessments, smaller organizations\n\n**FAIR (Factor Analysis of Information Risk):**\n- Quantitative — produces dollar amounts\n- Uses: Threat Event Frequency × Vulnerability × Loss Magnitude\n- More objective and defensible\n- Good for: justifying security budgets, executive communication\n\n**When to use which:**\n- Start qualitative (quick, gets the conversation going)\n- Move to FAIR for high-value decisions (should we spend $2M on this control?)\n- Use qualitative for operational decisions, FAIR for strategic/budget decisions",
+      "key_concepts": ["Qualitative vs quantitative", "FAIR model", "Budget justification"]
+    }
+  ]
+}

@@ -1,0 +1,1224 @@
+{
+  "id": "iso-27001",
+  "name": "ISO 27001:2022",
+  "description": "Information Security Management System \u2014 Annex A Controls",
+  "controls": [
+    {
+      "id": "iso-5-1",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.1",
+      "name": "Policies for Information Security",
+      "description": "Management shall define, approve, publish, and communicate information security policies.",
+      "implementation_guidance": [
+        "Define information security policy",
+        "Get management approval",
+        "Communicate to all employees",
+        "Review annually"
+      ],
+      "audit_evidence": [
+        "Approved policy document",
+        "Communication records",
+        "Review/approval history",
+        "Employee acknowledgments"
+      ],
+      "risk_addressed": [
+        "Lack of direction",
+        "Inconsistent security practices"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-1",
+          "AT-1",
+          "PL-1"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "A.5.2",
+        "A.5.3"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-3",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.3",
+      "name": "Segregation of Duties",
+      "description": "Conflicting duties shall be segregated to reduce opportunities for unauthorized modification or misuse.",
+      "implementation_guidance": [
+        "Identify conflicting roles",
+        "Implement RBAC",
+        "Require dual authorization for critical changes",
+        "Document segregation matrix"
+      ],
+      "audit_evidence": [
+        "Segregation matrix",
+        "Role definitions",
+        "Dual-control procedures"
+      ],
+      "risk_addressed": [
+        "Fraud",
+        "Unauthorized changes",
+        "Collusion"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-5"
+        ],
+        "cis_v8": [
+          "6.8"
+        ]
+      },
+      "related_controls": [
+        "A.5.15",
+        "A.5.16"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-7",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.7",
+      "name": "Threat Intelligence",
+      "description": "Information about threats shall be collected and analyzed to produce threat intelligence.",
+      "implementation_guidance": [
+        "Subscribe to threat feeds",
+        "Participate in ISACs",
+        "Analyze threats relevant to organization",
+        "Share intelligence with peers"
+      ],
+      "audit_evidence": [
+        "Threat intelligence reports",
+        "Feed subscriptions",
+        "Analysis documents",
+        "Sharing agreements"
+      ],
+      "risk_addressed": [
+        "Unknown threats",
+        "Delayed response to emerging attacks"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "nist_800_53": [
+          "RA-3",
+          "PM-16"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "A.5.24",
+        "A.8.8"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-9",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.9",
+      "name": "Inventory of Information and Other Associated Assets",
+      "description": "An inventory of information and associated assets shall be identified and maintained.",
+      "implementation_guidance": [
+        "Maintain asset register",
+        "Classify assets by criticality",
+        "Assign owners",
+        "Update on changes"
+      ],
+      "audit_evidence": [
+        "Asset inventory",
+        "Classification records",
+        "Owner assignments",
+        "Update logs"
+      ],
+      "risk_addressed": [
+        "Unknown assets",
+        "Shadow IT",
+        "Unmanaged risk"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CM-8"
+        ],
+        "cis_v8": [
+          "1.1",
+          "1.2",
+          "2.1"
+        ]
+      },
+      "related_controls": [
+        "A.5.10",
+        "A.5.12"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-10",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.10",
+      "name": "Acceptable Use of Information and Other Associated Assets",
+      "description": "Rules for acceptable use of information and assets shall be identified and documented.",
+      "implementation_guidance": [
+        "Define acceptable use policy",
+        "Cover email, internet, mobile devices",
+        "Include consequences of violation",
+        "Get employee acknowledgment"
+      ],
+      "audit_evidence": [
+        "Acceptable use policy",
+        "Acknowledgment records",
+        "Violation reports"
+      ],
+      "risk_addressed": [
+        "Misuse of resources",
+        "Legal liability",
+        "Data exposure"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "nist_800_53": [
+          "PL-4"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "A.5.9",
+        "A.5.12"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-12",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.12",
+      "name": "Classification of Information",
+      "description": "Information shall be classified according to information security needs based on confidentiality, integrity, and availability.",
+      "implementation_guidance": [
+        "Define classification levels (Public, Internal, Confidential, Restricted)",
+        "Label all information assets",
+        "Define handling procedures per level",
+        "Train employees on classification"
+      ],
+      "audit_evidence": [
+        "Classification policy",
+        "Labeled documents",
+        "Handling procedures",
+        "Training records"
+      ],
+      "risk_addressed": [
+        "Data exposure",
+        "Inappropriate handling",
+        "Compliance violations"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "RA-2"
+        ],
+        "cis_v8": [
+          "3.7"
+        ]
+      },
+      "related_controls": [
+        "A.5.9",
+        "A.5.13"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-15",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.15",
+      "name": "Access Control",
+      "description": "Rules to control physical and logical access to information shall be established based on business and security requirements.",
+      "implementation_guidance": [
+        "Implement role-based access",
+        "Apply least privilege",
+        "Review access quarterly",
+        "Require formal access requests"
+      ],
+      "audit_evidence": [
+        "Access control policy",
+        "RBAC configuration",
+        "Access review records",
+        "Request/approval forms"
+      ],
+      "risk_addressed": [
+        "Unauthorized access",
+        "Privilege creep",
+        "Data breach"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-1",
+          "AC-2",
+          "AC-3"
+        ],
+        "cis_v8": [
+          "5.1",
+          "6.1"
+        ]
+      },
+      "related_controls": [
+        "A.5.16",
+        "A.5.18",
+        "A.8.3"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-16",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.16",
+      "name": "Identity Management",
+      "description": "The full lifecycle of identities shall be managed.",
+      "implementation_guidance": [
+        "Unique identifiers for all users",
+        "Disable accounts on termination",
+        "Review identities periodically",
+        "Manage service accounts separately"
+      ],
+      "audit_evidence": [
+        "Identity lifecycle procedures",
+        "Termination checklists",
+        "Review records",
+        "Service account inventory"
+      ],
+      "risk_addressed": [
+        "Orphaned accounts",
+        "Identity theft",
+        "Unauthorized access"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IA-2",
+          "IA-4"
+        ],
+        "cis_v8": [
+          "5.1",
+          "5.2"
+        ]
+      },
+      "related_controls": [
+        "A.5.15",
+        "A.5.17",
+        "A.5.18"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-17",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.17",
+      "name": "Authentication Information",
+      "description": "Allocation and management of authentication information shall be controlled.",
+      "implementation_guidance": [
+        "Enforce strong passwords",
+        "Implement MFA",
+        "Protect credential storage",
+        "Rotate service account passwords"
+      ],
+      "audit_evidence": [
+        "Password policy",
+        "MFA enrollment",
+        "Credential management procedures"
+      ],
+      "risk_addressed": [
+        "Credential compromise",
+        "Brute-force attacks"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IA-5"
+        ],
+        "cis_v8": [
+          "5.2",
+          "5.3"
+        ]
+      },
+      "related_controls": [
+        "A.5.15",
+        "A.5.16"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-19",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.19",
+      "name": "Information Security in Supplier Relationships",
+      "description": "Processes shall be defined to manage information security risks associated with suppliers.",
+      "implementation_guidance": [
+        "Assess supplier security posture",
+        "Include security in contracts",
+        "Monitor supplier compliance",
+        "Define data handling requirements"
+      ],
+      "audit_evidence": [
+        "Vendor assessments",
+        "Contract security clauses",
+        "Monitoring reports",
+        "Data processing agreements"
+      ],
+      "risk_addressed": [
+        "Supply chain compromise",
+        "Third-party breach",
+        "Data exposure"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SA-9",
+          "SR-1"
+        ],
+        "cis_v8": [
+          "15.1",
+          "15.2"
+        ]
+      },
+      "related_controls": [
+        "A.5.20",
+        "A.5.21",
+        "A.5.22"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-23",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.23",
+      "name": "Information Security for Use of Cloud Services",
+      "description": "Processes for acquisition, use, management, and exit from cloud services shall be established.",
+      "implementation_guidance": [
+        "Define cloud security requirements",
+        "Assess cloud provider security",
+        "Implement shared responsibility model",
+        "Plan for cloud exit"
+      ],
+      "audit_evidence": [
+        "Cloud security policy",
+        "Provider assessments",
+        "Shared responsibility documentation",
+        "Exit strategy"
+      ],
+      "risk_addressed": [
+        "Cloud misconfiguration",
+        "Data sovereignty issues",
+        "Vendor lock-in"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SA-9"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "A.5.19",
+        "A.5.21"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-24",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.24",
+      "name": "Information Security Incident Management Planning and Preparation",
+      "description": "The organization shall plan and prepare for managing information security incidents.",
+      "implementation_guidance": [
+        "Develop incident response plan",
+        "Define roles and responsibilities",
+        "Establish communication procedures",
+        "Conduct regular exercises"
+      ],
+      "audit_evidence": [
+        "IR plan",
+        "Role assignments",
+        "Communication templates",
+        "Exercise reports"
+      ],
+      "risk_addressed": [
+        "Delayed response",
+        "Uncoordinated handling",
+        "Regulatory non-compliance"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IR-1",
+          "IR-8"
+        ],
+        "cis_v8": [
+          "17.1",
+          "17.2",
+          "17.3"
+        ]
+      },
+      "related_controls": [
+        "A.5.25",
+        "A.5.26",
+        "A.5.27"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-29",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.29",
+      "name": "Information Security During Disruption",
+      "description": "The organization shall plan how to maintain information security during disruption.",
+      "implementation_guidance": [
+        "Include security in BCP",
+        "Maintain security controls during incidents",
+        "Test continuity of security measures",
+        "Define minimum security requirements during disruption"
+      ],
+      "audit_evidence": [
+        "BCP with security requirements",
+        "Test results",
+        "Minimum security standards"
+      ],
+      "risk_addressed": [
+        "Security gaps during incidents",
+        "Exploitation during disruption"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CP-2",
+          "CP-4"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "A.5.24",
+        "A.5.30"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-5-35",
+      "framework": "ISO 27001",
+      "family": "Organizational Controls",
+      "family_id": "A.5",
+      "control_id": "A.5.35",
+      "name": "Independent Review of Information Security",
+      "description": "The organization's approach to managing information security shall be independently reviewed.",
+      "implementation_guidance": [
+        "Conduct annual independent audits",
+        "Use qualified assessors",
+        "Address findings with action plans",
+        "Report results to management"
+      ],
+      "audit_evidence": [
+        "Audit reports",
+        "Assessor qualifications",
+        "Action plans",
+        "Management review minutes"
+      ],
+      "risk_addressed": [
+        "Unidentified weaknesses",
+        "False sense of security",
+        "Compliance gaps"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CA-2",
+          "CA-7"
+        ],
+        "cis_v8": [
+          "18.1",
+          "18.2"
+        ]
+      },
+      "related_controls": [
+        "A.5.36"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-6-1",
+      "framework": "ISO 27001",
+      "family": "People Controls",
+      "family_id": "A.6",
+      "control_id": "A.6.1",
+      "name": "Screening",
+      "description": "Background verification checks on candidates shall be carried out prior to joining.",
+      "implementation_guidance": [
+        "Conduct background checks",
+        "Verify qualifications",
+        "Check references",
+        "Re-screen for sensitive roles"
+      ],
+      "audit_evidence": [
+        "Screening policy",
+        "Background check records",
+        "Verification results"
+      ],
+      "risk_addressed": [
+        "Insider threat",
+        "Unvetted personnel",
+        "Fraud"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "PS-3"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "A.6.2",
+        "A.6.5"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-6-3",
+      "framework": "ISO 27001",
+      "family": "People Controls",
+      "family_id": "A.6",
+      "control_id": "A.6.3",
+      "name": "Information Security Awareness, Education and Training",
+      "description": "Personnel shall receive appropriate security awareness education and training.",
+      "implementation_guidance": [
+        "Provide annual awareness training",
+        "Conduct phishing simulations",
+        "Role-based training for IT/security",
+        "Track completion and effectiveness"
+      ],
+      "audit_evidence": [
+        "Training records",
+        "Simulation results",
+        "Completion rates",
+        "Effectiveness metrics"
+      ],
+      "risk_addressed": [
+        "Human error",
+        "Phishing susceptibility",
+        "Policy violations"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AT-2",
+          "AT-3"
+        ],
+        "cis_v8": [
+          "14.1",
+          "14.2",
+          "14.3"
+        ]
+      },
+      "related_controls": [
+        "A.6.1",
+        "A.6.4"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-7-1",
+      "framework": "ISO 27001",
+      "family": "Physical Controls",
+      "family_id": "A.7",
+      "control_id": "A.7.1",
+      "name": "Physical Security Perimeters",
+      "description": "Security perimeters shall be defined and used to protect areas containing information.",
+      "implementation_guidance": [
+        "Define security zones",
+        "Implement physical barriers",
+        "Control entry points",
+        "Monitor perimeters"
+      ],
+      "audit_evidence": [
+        "Zone definitions",
+        "Physical security plans",
+        "Access control systems",
+        "Monitoring records"
+      ],
+      "risk_addressed": [
+        "Unauthorized physical access",
+        "Theft",
+        "Sabotage"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "PE-3"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "A.7.2",
+        "A.7.3",
+        "A.7.4"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-8-1",
+      "framework": "ISO 27001",
+      "family": "Technological Controls",
+      "family_id": "A.8",
+      "control_id": "A.8.1",
+      "name": "User Endpoint Devices",
+      "description": "Information stored on, processed by, or accessible via user endpoint devices shall be protected.",
+      "implementation_guidance": [
+        "Implement endpoint protection (EDR)",
+        "Enable full-disk encryption",
+        "Apply security baselines",
+        "Manage via MDM"
+      ],
+      "audit_evidence": [
+        "EDR deployment records",
+        "Encryption status",
+        "Baseline compliance",
+        "MDM enrollment"
+      ],
+      "risk_addressed": [
+        "Data theft from lost devices",
+        "Malware infection",
+        "Unauthorized access"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SC-28",
+          "CM-6"
+        ],
+        "cis_v8": [
+          "4.1",
+          "10.1"
+        ]
+      },
+      "related_controls": [
+        "A.8.5",
+        "A.8.7"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-8-5",
+      "framework": "ISO 27001",
+      "family": "Technological Controls",
+      "family_id": "A.8",
+      "control_id": "A.8.5",
+      "name": "Secure Authentication",
+      "description": "Secure authentication technologies and procedures shall be established.",
+      "implementation_guidance": [
+        "Implement MFA for all remote access",
+        "Use certificate-based auth where possible",
+        "Enforce strong password policies",
+        "Implement SSO with MFA"
+      ],
+      "audit_evidence": [
+        "MFA configuration",
+        "Authentication architecture",
+        "Password policy settings",
+        "SSO implementation"
+      ],
+      "risk_addressed": [
+        "Credential theft",
+        "Unauthorized access",
+        "Account compromise"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IA-2",
+          "IA-5"
+        ],
+        "cis_v8": [
+          "5.2",
+          "6.3",
+          "6.4"
+        ]
+      },
+      "related_controls": [
+        "A.5.16",
+        "A.5.17",
+        "A.8.3"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-8-7",
+      "framework": "ISO 27001",
+      "family": "Technological Controls",
+      "family_id": "A.8",
+      "control_id": "A.8.7",
+      "name": "Protection Against Malware",
+      "description": "Protection against malware shall be implemented and supported by user awareness.",
+      "implementation_guidance": [
+        "Deploy EDR/AV on all endpoints",
+        "Enable real-time protection",
+        "Update signatures automatically",
+        "Educate users on malware risks"
+      ],
+      "audit_evidence": [
+        "EDR deployment records",
+        "Update logs",
+        "Scan results",
+        "User training records"
+      ],
+      "risk_addressed": [
+        "Malware infection",
+        "Ransomware",
+        "Data theft"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SI-3"
+        ],
+        "cis_v8": [
+          "10.1",
+          "10.2",
+          "10.3"
+        ]
+      },
+      "related_controls": [
+        "A.8.1",
+        "A.6.3"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-8-8",
+      "framework": "ISO 27001",
+      "family": "Technological Controls",
+      "family_id": "A.8",
+      "control_id": "A.8.8",
+      "name": "Management of Technical Vulnerabilities",
+      "description": "Information about technical vulnerabilities shall be obtained, evaluated, and appropriate measures taken.",
+      "implementation_guidance": [
+        "Implement vulnerability scanning",
+        "Define remediation SLAs",
+        "Track patch compliance",
+        "Conduct penetration testing"
+      ],
+      "audit_evidence": [
+        "Scan reports",
+        "Remediation records",
+        "SLA metrics",
+        "Pentest reports"
+      ],
+      "risk_addressed": [
+        "Exploitation of known vulnerabilities",
+        "Compliance gaps"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "RA-5",
+          "SI-2"
+        ],
+        "cis_v8": [
+          "7.1",
+          "7.2",
+          "7.5"
+        ]
+      },
+      "related_controls": [
+        "A.8.9",
+        "A.5.7"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-8-9",
+      "framework": "ISO 27001",
+      "family": "Technological Controls",
+      "family_id": "A.8",
+      "control_id": "A.8.9",
+      "name": "Configuration Management",
+      "description": "Configurations including security configurations shall be established, documented, and managed.",
+      "implementation_guidance": [
+        "Define security baselines",
+        "Use CIS benchmarks",
+        "Scan for compliance",
+        "Manage changes formally"
+      ],
+      "audit_evidence": [
+        "Baseline documentation",
+        "Compliance scan results",
+        "Change records",
+        "Deviation approvals"
+      ],
+      "risk_addressed": [
+        "Misconfigurations",
+        "Drift from secure state",
+        "Unauthorized changes"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CM-2",
+          "CM-6"
+        ],
+        "cis_v8": [
+          "4.1",
+          "4.2"
+        ]
+      },
+      "related_controls": [
+        "A.8.8",
+        "A.8.32"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-8-13",
+      "framework": "ISO 27001",
+      "family": "Technological Controls",
+      "family_id": "A.8",
+      "control_id": "A.8.13",
+      "name": "Information Backup",
+      "description": "Backup copies of information, software, and systems shall be maintained and regularly tested.",
+      "implementation_guidance": [
+        "Implement 3-2-1 backup strategy",
+        "Test restoration monthly",
+        "Encrypt backups",
+        "Store offsite copies"
+      ],
+      "audit_evidence": [
+        "Backup schedules",
+        "Test results",
+        "Encryption records",
+        "Offsite storage"
+      ],
+      "risk_addressed": [
+        "Data loss",
+        "Ransomware impact",
+        "Business disruption"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CP-9"
+        ],
+        "cis_v8": [
+          "11.1",
+          "11.2",
+          "11.3"
+        ]
+      },
+      "related_controls": [
+        "A.8.14",
+        "A.5.29"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-8-15",
+      "framework": "ISO 27001",
+      "family": "Technological Controls",
+      "family_id": "A.8",
+      "control_id": "A.8.15",
+      "name": "Logging",
+      "description": "Logs that record activities, exceptions, faults, and other relevant events shall be produced and protected.",
+      "implementation_guidance": [
+        "Define logging requirements",
+        "Centralize logs in SIEM",
+        "Protect log integrity",
+        "Retain logs per policy"
+      ],
+      "audit_evidence": [
+        "Logging configuration",
+        "SIEM architecture",
+        "Retention policy",
+        "Log access controls"
+      ],
+      "risk_addressed": [
+        "Undetected incidents",
+        "Insufficient forensic evidence"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AU-2",
+          "AU-3",
+          "AU-9"
+        ],
+        "cis_v8": [
+          "8.2",
+          "8.5",
+          "8.9"
+        ]
+      },
+      "related_controls": [
+        "A.8.16",
+        "A.8.17"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-8-20",
+      "framework": "ISO 27001",
+      "family": "Technological Controls",
+      "family_id": "A.8",
+      "control_id": "A.8.20",
+      "name": "Networks Security",
+      "description": "Networks and network devices shall be managed and controlled to protect information.",
+      "implementation_guidance": [
+        "Segment networks by sensitivity",
+        "Implement firewalls",
+        "Monitor network traffic",
+        "Restrict management access"
+      ],
+      "audit_evidence": [
+        "Network diagrams",
+        "Firewall rules",
+        "Monitoring configuration",
+        "Access controls"
+      ],
+      "risk_addressed": [
+        "Lateral movement",
+        "Unauthorized access",
+        "Data exfiltration"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SC-7"
+        ],
+        "cis_v8": [
+          "4.4",
+          "13.1"
+        ]
+      },
+      "related_controls": [
+        "A.8.21",
+        "A.8.22",
+        "A.8.23"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-8-24",
+      "framework": "ISO 27001",
+      "family": "Technological Controls",
+      "family_id": "A.8",
+      "control_id": "A.8.24",
+      "name": "Use of Cryptography",
+      "description": "Rules for effective use of cryptography including key management shall be defined.",
+      "implementation_guidance": [
+        "Define cryptographic standards",
+        "Use approved algorithms (AES-256, RSA-2048+)",
+        "Implement key management lifecycle",
+        "Protect key storage"
+      ],
+      "audit_evidence": [
+        "Cryptographic policy",
+        "Algorithm standards",
+        "Key management procedures",
+        "Key storage configuration"
+      ],
+      "risk_addressed": [
+        "Data exposure",
+        "Weak encryption",
+        "Key compromise"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SC-13",
+          "SC-12"
+        ],
+        "cis_v8": [
+          "3.11"
+        ]
+      },
+      "related_controls": [
+        "A.8.20",
+        "A.5.12"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-8-25",
+      "framework": "ISO 27001",
+      "family": "Technological Controls",
+      "family_id": "A.8",
+      "control_id": "A.8.25",
+      "name": "Secure Development Life Cycle",
+      "description": "Rules for secure development of software and systems shall be established.",
+      "implementation_guidance": [
+        "Implement SSDLC",
+        "Conduct code reviews",
+        "Perform SAST/DAST",
+        "Train developers on secure coding"
+      ],
+      "audit_evidence": [
+        "SSDLC documentation",
+        "Code review records",
+        "Scan results",
+        "Training records"
+      ],
+      "risk_addressed": [
+        "Software vulnerabilities",
+        "Insecure code",
+        "Exploitation"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SA-3",
+          "SA-11"
+        ],
+        "cis_v8": [
+          "16.1",
+          "16.2"
+        ]
+      },
+      "related_controls": [
+        "A.8.26",
+        "A.8.28",
+        "A.8.31"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    },
+    {
+      "id": "iso-8-28",
+      "framework": "ISO 27001",
+      "family": "Technological Controls",
+      "family_id": "A.8",
+      "control_id": "A.8.28",
+      "name": "Secure Coding",
+      "description": "Secure coding principles shall be applied to software development.",
+      "implementation_guidance": [
+        "Follow OWASP guidelines",
+        "Use parameterized queries",
+        "Implement input validation",
+        "Apply output encoding"
+      ],
+      "audit_evidence": [
+        "Coding standards",
+        "OWASP compliance checks",
+        "Code review findings",
+        "SAST results"
+      ],
+      "risk_addressed": [
+        "Injection vulnerabilities",
+        "XSS",
+        "Buffer overflows"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SA-11",
+          "SI-10"
+        ],
+        "cis_v8": [
+          "16.12"
+        ]
+      },
+      "related_controls": [
+        "A.8.25",
+        "A.8.29"
+      ],
+      "references": [
+        "https://www.iso.org/standard/27001"
+      ]
+    }
+  ]
+}

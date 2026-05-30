@@ -1,0 +1,613 @@
+{
+  "id": "cis-v8-batch3",
+  "name": "CIS Controls v8 (Batch 3)",
+  "description": "More CIS controls",
+  "controls": [
+    {
+      "id": "cis-2-5",
+      "framework": "CIS Controls v8",
+      "family": "Inventory and Control of Software Assets",
+      "family_id": "CIS-2",
+      "control_id": "2.5",
+      "name": "Allowlist Authorized Software",
+      "description": "Use technical controls to ensure only authorized software can execute.",
+      "implementation_guidance": [
+        "Implement application whitelisting",
+        "Use AppLocker/WDAC on Windows",
+        "Block unauthorized executables",
+        "Monitor for bypass attempts"
+      ],
+      "audit_evidence": [
+        "Whitelisting configuration",
+        "Policy rules",
+        "Block logs",
+        "Bypass alerts"
+      ],
+      "risk_addressed": [
+        "Malware execution",
+        "Unauthorized tools"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CM-7",
+          "CM-11"
+        ],
+        "iso_27001": [
+          "A.8.9"
+        ]
+      },
+      "related_controls": [
+        "2.1",
+        "2.3"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-3-5",
+      "framework": "CIS Controls v8",
+      "family": "Data Protection",
+      "family_id": "CIS-3",
+      "control_id": "3.5",
+      "name": "Securely Dispose of Data",
+      "description": "Securely dispose of data as outlined in the data management process.",
+      "implementation_guidance": [
+        "Define disposal methods per data type",
+        "Use secure deletion tools",
+        "Obtain destruction certificates",
+        "Verify disposal completeness"
+      ],
+      "audit_evidence": [
+        "Disposal procedures",
+        "Destruction certificates",
+        "Verification records"
+      ],
+      "risk_addressed": [
+        "Data recovery from disposed media"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "nist_800_53": [
+          "MP-6"
+        ],
+        "iso_27001": [
+          "A.8.10"
+        ]
+      },
+      "related_controls": [
+        "3.1"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-3-7",
+      "framework": "CIS Controls v8",
+      "family": "Data Protection",
+      "family_id": "CIS-3",
+      "control_id": "3.7",
+      "name": "Establish and Maintain a Data Classification Scheme",
+      "description": "Establish and maintain an overall data classification scheme.",
+      "implementation_guidance": [
+        "Define classification levels",
+        "Document handling requirements per level",
+        "Train employees",
+        "Label data appropriately"
+      ],
+      "audit_evidence": [
+        "Classification scheme",
+        "Handling procedures",
+        "Training records",
+        "Labeling standards"
+      ],
+      "risk_addressed": [
+        "Inappropriate data handling",
+        "Over/under protection"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "RA-2"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "3.1",
+        "3.3"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-4-3",
+      "framework": "CIS Controls v8",
+      "family": "Secure Configuration",
+      "family_id": "CIS-4",
+      "control_id": "4.3",
+      "name": "Configure Automatic Session Locking on Enterprise Assets",
+      "description": "Configure automatic session locking after a defined period of inactivity.",
+      "implementation_guidance": [
+        "Set 15-minute inactivity timeout",
+        "Require authentication to unlock",
+        "Apply via GPO/MDM",
+        "Include all device types"
+      ],
+      "audit_evidence": [
+        "Timeout configuration",
+        "GPO/MDM settings",
+        "Compliance reports"
+      ],
+      "risk_addressed": [
+        "Unauthorized access to unattended devices"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "nist_800_53": [
+          "AC-11"
+        ],
+        "iso_27001": [
+          "A.8.1"
+        ]
+      },
+      "related_controls": [
+        "4.1"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-4-8",
+      "framework": "CIS Controls v8",
+      "family": "Secure Configuration",
+      "family_id": "CIS-4",
+      "control_id": "4.8",
+      "name": "Uninstall or Disable Unnecessary Services on Enterprise Assets",
+      "description": "Uninstall or disable unnecessary services on enterprise assets and software.",
+      "implementation_guidance": [
+        "Identify unnecessary services",
+        "Disable or remove",
+        "Document exceptions",
+        "Verify quarterly"
+      ],
+      "audit_evidence": [
+        "Service inventory",
+        "Disabled services list",
+        "Exception documentation",
+        "Verification scans"
+      ],
+      "risk_addressed": [
+        "Expanded attack surface",
+        "Unnecessary vulnerabilities"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CM-7"
+        ],
+        "iso_27001": [
+          "A.8.9"
+        ]
+      },
+      "related_controls": [
+        "4.1",
+        "4.4"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-5-3",
+      "framework": "CIS Controls v8",
+      "family": "Account Management",
+      "family_id": "CIS-5",
+      "control_id": "5.3",
+      "name": "Disable Dormant Accounts",
+      "description": "Delete or disable any dormant accounts after 45 days of inactivity.",
+      "implementation_guidance": [
+        "Identify inactive accounts (45 days)",
+        "Disable automatically",
+        "Notify account owners",
+        "Review monthly"
+      ],
+      "audit_evidence": [
+        "Inactive account reports",
+        "Disable records",
+        "Notification logs"
+      ],
+      "risk_addressed": [
+        "Orphaned accounts",
+        "Unauthorized access"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-2"
+        ],
+        "iso_27001": [
+          "A.5.16"
+        ]
+      },
+      "related_controls": [
+        "5.1",
+        "5.2"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-6-4",
+      "framework": "CIS Controls v8",
+      "family": "Access Control Management",
+      "family_id": "CIS-6",
+      "control_id": "6.4",
+      "name": "Require MFA for Remote Network Access",
+      "description": "Require MFA for all remote network access.",
+      "implementation_guidance": [
+        "Implement MFA on VPN",
+        "Require for all remote access methods",
+        "Support multiple MFA factors",
+        "Monitor for MFA bypass"
+      ],
+      "audit_evidence": [
+        "MFA configuration",
+        "VPN settings",
+        "Factor enrollment",
+        "Bypass alerts"
+      ],
+      "risk_addressed": [
+        "Credential theft enabling remote access"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IA-2"
+        ],
+        "iso_27001": [
+          "A.8.5"
+        ]
+      },
+      "related_controls": [
+        "6.3"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-7-2",
+      "framework": "CIS Controls v8",
+      "family": "Continuous Vulnerability Management",
+      "family_id": "CIS-7",
+      "control_id": "7.2",
+      "name": "Establish and Maintain a Remediation Process",
+      "description": "Establish and maintain a risk-based remediation strategy with monthly review.",
+      "implementation_guidance": [
+        "Define remediation SLAs by severity",
+        "Track remediation progress",
+        "Escalate overdue items",
+        "Report metrics monthly"
+      ],
+      "audit_evidence": [
+        "SLA definitions",
+        "Tracking dashboard",
+        "Escalation records",
+        "Monthly reports"
+      ],
+      "risk_addressed": [
+        "Unpatched vulnerabilities",
+        "SLA violations"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SI-2"
+        ],
+        "iso_27001": [
+          "A.8.8"
+        ]
+      },
+      "related_controls": [
+        "7.1",
+        "7.5"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-7-6",
+      "framework": "CIS Controls v8",
+      "family": "Continuous Vulnerability Management",
+      "family_id": "CIS-7",
+      "control_id": "7.6",
+      "name": "Perform Automated Vulnerability Scans of Externally-Exposed Assets",
+      "description": "Perform automated vulnerability scans of externally-exposed assets monthly.",
+      "implementation_guidance": [
+        "Scan external assets monthly minimum",
+        "Use authenticated scans where possible",
+        "Prioritize by CVSS",
+        "Track remediation"
+      ],
+      "audit_evidence": [
+        "External scan reports",
+        "Scan schedules",
+        "Remediation tracking"
+      ],
+      "risk_addressed": [
+        "External exploitation",
+        "Compliance gaps"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "RA-5"
+        ],
+        "iso_27001": [
+          "A.8.8"
+        ]
+      },
+      "related_controls": [
+        "7.1",
+        "7.5"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-8-11",
+      "framework": "CIS Controls v8",
+      "family": "Audit Log Management",
+      "family_id": "CIS-8",
+      "control_id": "8.11",
+      "name": "Conduct Audit Log Reviews",
+      "description": "Conduct reviews of audit logs to detect anomalies or abnormal events.",
+      "implementation_guidance": [
+        "Review critical system logs daily",
+        "Implement automated correlation",
+        "Investigate anomalies",
+        "Document findings"
+      ],
+      "audit_evidence": [
+        "Review procedures",
+        "Correlation rules",
+        "Investigation records",
+        "Finding documentation"
+      ],
+      "risk_addressed": [
+        "Undetected attacks",
+        "Delayed response"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AU-6"
+        ],
+        "iso_27001": [
+          "A.8.16"
+        ]
+      },
+      "related_controls": [
+        "8.2",
+        "8.9"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-10-3",
+      "framework": "CIS Controls v8",
+      "family": "Malware Defenses",
+      "family_id": "CIS-10",
+      "control_id": "10.3",
+      "name": "Disable Autorun and Autoplay for Removable Media",
+      "description": "Disable autorun and autoplay auto-execute functionality for removable media.",
+      "implementation_guidance": [
+        "Disable autorun via GPO",
+        "Block autoplay",
+        "Alert on removable media insertion",
+        "Consider blocking USB entirely for sensitive systems"
+      ],
+      "audit_evidence": [
+        "GPO configuration",
+        "Autorun disabled evidence",
+        "USB policy"
+      ],
+      "risk_addressed": [
+        "Malware via USB",
+        "Autorun exploitation"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "nist_800_53": [
+          "CM-7"
+        ],
+        "iso_27001": [
+          "A.8.9"
+        ]
+      },
+      "related_controls": [
+        "10.1",
+        "10.2"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-13-3",
+      "framework": "CIS Controls v8",
+      "family": "Network Monitoring and Defense",
+      "family_id": "CIS-13",
+      "control_id": "13.3",
+      "name": "Deploy a Network Intrusion Detection Solution",
+      "description": "Deploy a network intrusion detection solution on enterprise assets.",
+      "implementation_guidance": [
+        "Deploy IDS at network boundaries",
+        "Configure signature and anomaly detection",
+        "Tune to reduce false positives",
+        "Monitor alerts 24/7"
+      ],
+      "audit_evidence": [
+        "IDS deployment",
+        "Rule configuration",
+        "Tuning records",
+        "Alert monitoring"
+      ],
+      "risk_addressed": [
+        "Undetected network attacks",
+        "Lateral movement"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SI-4"
+        ],
+        "iso_27001": [
+          "A.8.16"
+        ]
+      },
+      "related_controls": [
+        "13.1",
+        "13.6"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-13-6",
+      "framework": "CIS Controls v8",
+      "family": "Network Monitoring and Defense",
+      "family_id": "CIS-13",
+      "control_id": "13.6",
+      "name": "Collect Network Traffic Flow Logs",
+      "description": "Collect network traffic flow logs and/or network traffic to review and alert upon.",
+      "implementation_guidance": [
+        "Implement NetFlow/sFlow collection",
+        "Store flow data for analysis",
+        "Correlate with SIEM",
+        "Alert on anomalous flows"
+      ],
+      "audit_evidence": [
+        "Flow collection configuration",
+        "Storage retention",
+        "SIEM integration",
+        "Alert rules"
+      ],
+      "risk_addressed": [
+        "Undetected data exfiltration",
+        "Missed lateral movement"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AU-12",
+          "SI-4"
+        ],
+        "iso_27001": [
+          "A.8.16"
+        ]
+      },
+      "related_controls": [
+        "13.1",
+        "13.3"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-14-3",
+      "framework": "CIS Controls v8",
+      "family": "Security Awareness and Skills Training",
+      "family_id": "CIS-14",
+      "control_id": "14.3",
+      "name": "Train Workforce on Authentication Best Practices",
+      "description": "Train workforce members on authentication best practices.",
+      "implementation_guidance": [
+        "Train on password hygiene",
+        "Educate on MFA importance",
+        "Warn about credential phishing",
+        "Promote password managers"
+      ],
+      "audit_evidence": [
+        "Training materials",
+        "Completion records",
+        "Assessment results"
+      ],
+      "risk_addressed": [
+        "Weak passwords",
+        "MFA resistance",
+        "Credential theft"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AT-2"
+        ],
+        "iso_27001": [
+          "A.6.3"
+        ]
+      },
+      "related_controls": [
+        "14.1",
+        "14.2"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    },
+    {
+      "id": "cis-17-7",
+      "framework": "CIS Controls v8",
+      "family": "Incident Response Management",
+      "family_id": "CIS-17",
+      "control_id": "17.7",
+      "name": "Conduct Routine Incident Response Exercises",
+      "description": "Conduct routine incident response exercises and scenarios.",
+      "implementation_guidance": [
+        "Conduct tabletop exercises quarterly",
+        "Include technical exercises annually",
+        "Involve all IR team members",
+        "Document lessons learned"
+      ],
+      "audit_evidence": [
+        "Exercise plans",
+        "Participation records",
+        "Results documentation",
+        "Improvement actions"
+      ],
+      "risk_addressed": [
+        "Untested procedures",
+        "Unprepared team"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IR-3"
+        ],
+        "iso_27001": [
+          "A.5.24"
+        ]
+      },
+      "related_controls": [
+        "17.1",
+        "17.4"
+      ],
+      "references": [
+        "https://www.cisecurity.org/controls/v8"
+      ]
+    }
+  ]
+}

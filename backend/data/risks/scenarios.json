@@ -1,0 +1,498 @@
+[
+  {
+    "id": "risk-unpatched-servers",
+    "name": "Unpatched Servers",
+    "category": "Vulnerability Management",
+    "description": "Critical servers running outdated software with known CVEs.",
+    "threat_source": "External attacker, automated scanners",
+    "vulnerability": "Missing security patches",
+    "likelihood": 4,
+    "impact": 5,
+    "risk_score": 20,
+    "risk_level": "Critical",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement automated patch management",
+      "Define patch SLAs (critical: 72hrs)",
+      "Deploy compensating controls for legacy"
+    ],
+    "controls": [
+      "NIST SI-2",
+      "CIS 7.1",
+      "ISO A.8.8"
+    ],
+    "kri": "% systems with critical patches > 30 days old"
+  },
+  {
+    "id": "risk-phishing",
+    "name": "Phishing Attacks",
+    "category": "Social Engineering",
+    "description": "Employees targeted by phishing emails leading to credential theft or malware.",
+    "threat_source": "External attacker",
+    "vulnerability": "Lack of security awareness",
+    "likelihood": 5,
+    "impact": 4,
+    "risk_score": 20,
+    "risk_level": "Critical",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement security awareness training",
+      "Deploy email filtering",
+      "Enable MFA for all accounts",
+      "Conduct phishing simulations"
+    ],
+    "controls": [
+      "NIST AT-2",
+      "CIS 14.1",
+      "ISO A.6.3"
+    ],
+    "kri": "Phishing simulation click rate"
+  },
+  {
+    "id": "risk-insider-threat",
+    "name": "Insider Threat",
+    "category": "Personnel Security",
+    "description": "Malicious or negligent insider accessing or exfiltrating sensitive data.",
+    "threat_source": "Disgruntled employee, negligent user",
+    "vulnerability": "Excessive privileges, lack of monitoring",
+    "likelihood": 3,
+    "impact": 5,
+    "risk_score": 15,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement least privilege",
+      "Deploy DLP solutions",
+      "Monitor user behavior analytics",
+      "Conduct background checks"
+    ],
+    "controls": [
+      "NIST AC-6",
+      "NIST PS-3",
+      "CIS 6.8"
+    ],
+    "kri": "Number of DLP policy violations per month"
+  },
+  {
+    "id": "risk-ransomware",
+    "name": "Ransomware Attack",
+    "category": "Malware",
+    "description": "Ransomware encrypting critical business data and demanding payment.",
+    "threat_source": "Cybercriminal groups",
+    "vulnerability": "Unpatched systems, phishing, weak backups",
+    "likelihood": 4,
+    "impact": 5,
+    "risk_score": 20,
+    "risk_level": "Critical",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement offline backups (3-2-1 rule)",
+      "Deploy EDR/XDR",
+      "Segment networks",
+      "Test backup restoration regularly"
+    ],
+    "controls": [
+      "NIST CP-9",
+      "NIST SI-3",
+      "CIS 11.1"
+    ],
+    "kri": "Backup restoration test success rate"
+  },
+  {
+    "id": "risk-data-breach",
+    "name": "Data Breach",
+    "category": "Data Protection",
+    "description": "Unauthorized access to sensitive customer or business data.",
+    "threat_source": "External attacker, insider",
+    "vulnerability": "Weak access controls, unencrypted data",
+    "likelihood": 3,
+    "impact": 5,
+    "risk_score": 15,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Encrypt data at rest and in transit",
+      "Implement DLP",
+      "Classify data by sensitivity",
+      "Monitor data access patterns"
+    ],
+    "controls": [
+      "NIST SC-28",
+      "NIST MP-5",
+      "ISO A.5.12"
+    ],
+    "kri": "Number of unauthorized data access attempts"
+  },
+  {
+    "id": "risk-third-party",
+    "name": "Third-Party Risk",
+    "category": "Vendor Management",
+    "description": "Security breach through a third-party vendor or supplier.",
+    "threat_source": "Compromised vendor",
+    "vulnerability": "Insufficient vendor security assessment",
+    "likelihood": 3,
+    "impact": 4,
+    "risk_score": 12,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Conduct vendor security assessments",
+      "Include security clauses in contracts",
+      "Monitor vendor security posture",
+      "Limit vendor access to minimum necessary"
+    ],
+    "controls": [
+      "NIST SA-9",
+      "ISO A.5.19",
+      "CIS 15.1"
+    ],
+    "kri": "% of critical vendors with completed security assessments"
+  },
+  {
+    "id": "risk-weak-passwords",
+    "name": "Weak Passwords",
+    "category": "Authentication",
+    "description": "Users using weak or reused passwords enabling credential attacks.",
+    "threat_source": "Brute-force attacks, credential stuffing",
+    "vulnerability": "Weak password policy, no MFA",
+    "likelihood": 4,
+    "impact": 3,
+    "risk_score": 12,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Enforce 14+ character passwords",
+      "Implement MFA everywhere",
+      "Deploy password manager",
+      "Check against breach databases"
+    ],
+    "controls": [
+      "NIST IA-5",
+      "CIS 5.2",
+      "ISO A.8.5"
+    ],
+    "kri": "% of accounts without MFA enabled"
+  },
+  {
+    "id": "risk-no-backups",
+    "name": "Inadequate Backups",
+    "category": "Business Continuity",
+    "description": "Critical data loss due to insufficient or untested backup procedures.",
+    "threat_source": "Hardware failure, ransomware, human error",
+    "vulnerability": "No backup testing, single point of failure",
+    "likelihood": 3,
+    "impact": 5,
+    "risk_score": 15,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement 3-2-1 backup strategy",
+      "Test restoration monthly",
+      "Encrypt backup data",
+      "Store offsite copies"
+    ],
+    "controls": [
+      "NIST CP-9",
+      "ISO A.8.13",
+      "CIS 11.2"
+    ],
+    "kri": "Days since last successful backup restoration test"
+  },
+  {
+    "id": "risk-misconfig",
+    "name": "Cloud/System Misconfiguration",
+    "category": "Configuration Management",
+    "description": "Systems deployed with insecure default configurations exposing data or services.",
+    "threat_source": "Automated scanners, opportunistic attackers",
+    "vulnerability": "Default credentials, open ports, public storage",
+    "likelihood": 4,
+    "impact": 4,
+    "risk_score": 16,
+    "risk_level": "Critical",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement CIS benchmarks",
+      "Use infrastructure-as-code with security checks",
+      "Conduct regular configuration audits",
+      "Deploy CSPM tools"
+    ],
+    "controls": [
+      "NIST CM-2",
+      "NIST CM-6",
+      "CIS 4.1"
+    ],
+    "kri": "Number of critical misconfigurations found per scan"
+  },
+  {
+    "id": "risk-no-ir-plan",
+    "name": "No Incident Response Plan",
+    "category": "Incident Management",
+    "description": "Organization lacks documented incident response procedures.",
+    "threat_source": "Any security incident",
+    "vulnerability": "No IR plan, untrained staff",
+    "likelihood": 2,
+    "impact": 5,
+    "risk_score": 10,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Develop IR plan",
+      "Define roles and responsibilities",
+      "Conduct tabletop exercises",
+      "Establish communication procedures"
+    ],
+    "controls": [
+      "NIST IR-1",
+      "NIST IR-8",
+      "ISO A.5.24"
+    ],
+    "kri": "Months since last IR tabletop exercise"
+  },
+  {
+    "id": "risk-privilege-escalation",
+    "name": "Privilege Escalation",
+    "category": "Access Control",
+    "description": "Attackers or insiders escalating from standard user to admin/root access.",
+    "threat_source": "External attacker, malicious insider",
+    "vulnerability": "Misconfigurations, unpatched systems, weak access controls",
+    "likelihood": 3,
+    "impact": 5,
+    "risk_score": 15,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement least privilege",
+      "Patch systems regularly",
+      "Monitor privilege changes",
+      "Use PAM solutions"
+    ],
+    "controls": [
+      "NIST AC-6",
+      "CIS 5.4",
+      "ISO A.5.15"
+    ],
+    "kri": "Number of unauthorized privilege escalation attempts per month"
+  },
+  {
+    "id": "risk-supply-chain",
+    "name": "Supply Chain Attack",
+    "category": "Third Party",
+    "description": "Compromise through a trusted vendor's software update or service.",
+    "threat_source": "Nation-state, APT groups",
+    "vulnerability": "Trusted vendor relationships, auto-updates",
+    "likelihood": 2,
+    "impact": 5,
+    "risk_score": 10,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Vendor security assessments",
+      "Software composition analysis",
+      "Monitor vendor security advisories",
+      "Implement zero-trust for vendor access"
+    ],
+    "controls": [
+      "NIST SA-9",
+      "ISO A.5.19",
+      "CIS 15.1"
+    ],
+    "kri": "% of critical vendors with completed security assessments"
+  },
+  {
+    "id": "risk-cloud-misconfig",
+    "name": "Cloud Storage Exposure",
+    "category": "Cloud Security",
+    "description": "Publicly accessible cloud storage (S3, Azure Blob) containing sensitive data.",
+    "threat_source": "Automated scanners, opportunistic attackers",
+    "vulnerability": "Default public access, misconfigured permissions",
+    "likelihood": 4,
+    "impact": 4,
+    "risk_score": 16,
+    "risk_level": "Critical",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Enable bucket-level access controls",
+      "Block public access by default",
+      "Scan for public buckets regularly",
+      "Implement CSPM tools"
+    ],
+    "controls": [
+      "NIST AC-3",
+      "ISO A.5.23",
+      "CIS 3.3"
+    ],
+    "kri": "Number of publicly accessible storage resources"
+  },
+  {
+    "id": "risk-shadow-it",
+    "name": "Shadow IT",
+    "category": "Asset Management",
+    "description": "Employees using unauthorized applications and services without IT knowledge.",
+    "threat_source": "Employees seeking convenience",
+    "vulnerability": "Lack of approved alternatives, no discovery tools",
+    "likelihood": 4,
+    "impact": 3,
+    "risk_score": 12,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Deploy CASB",
+      "Provide approved alternatives",
+      "Educate employees",
+      "Monitor for unauthorized services"
+    ],
+    "controls": [
+      "NIST CM-8",
+      "CIS 2.1",
+      "ISO A.5.9"
+    ],
+    "kri": "Number of unauthorized SaaS applications discovered per quarter"
+  },
+  {
+    "id": "risk-dos-ddos",
+    "name": "Denial of Service (DDoS)",
+    "category": "Availability",
+    "description": "Distributed denial of service attacks overwhelming systems and causing outages.",
+    "threat_source": "Hacktivists, competitors, extortionists",
+    "vulnerability": "Insufficient capacity, no DDoS protection",
+    "likelihood": 3,
+    "impact": 4,
+    "risk_score": 12,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement DDoS protection service",
+      "Configure rate limiting",
+      "Develop incident response for DDoS",
+      "Maintain redundant infrastructure"
+    ],
+    "controls": [
+      "NIST SC-5",
+      "ISO A.8.20"
+    ],
+    "kri": "Number of DDoS incidents per year and mean time to mitigate"
+  },
+  {
+    "id": "risk-api-exposure",
+    "name": "API Security Vulnerabilities",
+    "category": "Application Security",
+    "description": "Exposed or poorly secured APIs allowing unauthorized data access or manipulation.",
+    "threat_source": "External attackers, automated tools",
+    "vulnerability": "Broken authentication, excessive data exposure, injection",
+    "likelihood": 4,
+    "impact": 4,
+    "risk_score": 16,
+    "risk_level": "Critical",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement API gateway",
+      "Require authentication on all endpoints",
+      "Rate limiting",
+      "Regular API security testing"
+    ],
+    "controls": [
+      "NIST AC-3",
+      "ISO A.8.25",
+      "CIS 16.1"
+    ],
+    "kri": "Number of critical API vulnerabilities found per scan"
+  },
+  {
+    "id": "risk-data-retention",
+    "name": "Excessive Data Retention",
+    "category": "Data Protection",
+    "description": "Retaining personal or sensitive data beyond legal requirements, increasing breach impact.",
+    "threat_source": "Regulatory enforcement, data breach",
+    "vulnerability": "No retention policy, no automated deletion",
+    "likelihood": 3,
+    "impact": 4,
+    "risk_score": 12,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Define retention schedules",
+      "Implement automated deletion",
+      "Classify data by retention requirements",
+      "Audit compliance quarterly"
+    ],
+    "controls": [
+      "NIST MP-6",
+      "ISO A.5.12"
+    ],
+    "kri": "Volume of data retained beyond policy requirements"
+  },
+  {
+    "id": "risk-byod",
+    "name": "BYOD Security",
+    "category": "Endpoint Security",
+    "description": "Personal devices accessing corporate data without adequate security controls.",
+    "threat_source": "Lost/stolen devices, malware on personal devices",
+    "vulnerability": "No MDM, no encryption, no remote wipe",
+    "likelihood": 4,
+    "impact": 3,
+    "risk_score": 12,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement MDM/MAM",
+      "Require device encryption",
+      "Enable remote wipe",
+      "Containerize corporate data"
+    ],
+    "controls": [
+      "NIST AC-19",
+      "ISO A.8.1",
+      "CIS 4.1"
+    ],
+    "kri": "% of BYOD devices enrolled in MDM"
+  },
+  {
+    "id": "risk-social-media",
+    "name": "Social Media Information Leakage",
+    "category": "Information Disclosure",
+    "description": "Employees inadvertently sharing sensitive information on social media platforms.",
+    "threat_source": "Employees, social engineering reconnaissance",
+    "vulnerability": "Lack of awareness, no social media policy",
+    "likelihood": 3,
+    "impact": 3,
+    "risk_score": 9,
+    "risk_level": "Medium",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Establish social media policy",
+      "Security awareness training",
+      "Monitor for data leaks",
+      "Implement DLP for social platforms"
+    ],
+    "controls": [
+      "NIST AT-2",
+      "ISO A.6.3"
+    ],
+    "kri": "Number of social media policy violations detected"
+  },
+  {
+    "id": "risk-legacy-systems",
+    "name": "Legacy System Vulnerabilities",
+    "category": "Technology",
+    "description": "End-of-life systems that no longer receive security patches.",
+    "threat_source": "Any attacker targeting known vulnerabilities",
+    "vulnerability": "No patches available, outdated protocols",
+    "likelihood": 4,
+    "impact": 4,
+    "risk_score": 16,
+    "risk_level": "Critical",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Isolate legacy systems",
+      "Implement compensating controls",
+      "Plan migration/replacement",
+      "Monitor heavily"
+    ],
+    "controls": [
+      "NIST SI-2",
+      "ISO A.8.8",
+      "CIS 7.1"
+    ],
+    "kri": "Number of EOL systems still in production"
+  }
+]

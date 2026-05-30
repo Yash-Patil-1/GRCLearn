@@ -1,0 +1,24 @@
+{
+  "phase_id": 1,
+  "title": "Governance Fundamentals — Why Security Needs Structure",
+  "sections": [
+    {
+      "id": "gov-why",
+      "title": "Why Governance Matters",
+      "content": "Security governance is the framework that ensures security decisions align with business objectives. Without governance, security becomes reactive — patching holes after breaches instead of preventing them.\n\n**Governance answers:**\n- WHO is responsible for security decisions?\n- WHAT level of risk is acceptable?\n- HOW are security policies enforced?\n- WHEN are security reviews conducted?\n\n**The business case:** Organizations with mature governance frameworks experience 53% fewer breaches and recover 40% faster when incidents occur. Governance isn't bureaucracy — it's the difference between organized defense and chaos.",
+      "key_concepts": ["Accountability", "Risk appetite", "Policy enforcement", "Business alignment"]
+    },
+    {
+      "id": "gov-frameworks",
+      "title": "Understanding Security Frameworks",
+      "content": "Frameworks provide structured approaches to security. They're not checklists — they're thinking tools:\n\n**NIST CSF 2.0** — Organize security into: Govern, Identify, Protect, Detect, Respond, Recover. Best for: organizations starting their security program.\n\n**ISO 27001** — International standard for Information Security Management Systems (ISMS). Requires certification audit. Best for: organizations needing formal certification.\n\n**CIS Controls v8** — Prioritized, actionable security controls. Implementation Groups (IG1-IG3) scale by maturity. Best for: practical implementation guidance.\n\n**NIST 800-53** — Comprehensive control catalog (1000+ controls). Used by US federal agencies. Best for: detailed control selection.\n\n**When to use which:** Start with NIST CSF for strategy, CIS Controls for quick wins, ISO 27001 for certification, and NIST 800-53 for comprehensive coverage.",
+      "key_concepts": ["NIST CSF", "ISO 27001", "CIS Controls", "Framework selection"]
+    },
+    {
+      "id": "gov-roles",
+      "title": "Security Roles and Responsibilities",
+      "content": "Clear ownership prevents the 'someone else's problem' syndrome:\n\n**Board/Executive Level:**\n- Sets risk appetite and security strategy\n- Approves security budget\n- Receives regular security reports\n\n**CISO/Security Director:**\n- Translates business risk into security programs\n- Manages security team and vendors\n- Reports to board on security posture\n\n**Security Team:**\n- Implements controls and monitors threats\n- Responds to incidents\n- Conducts assessments and audits\n\n**All Employees:**\n- Follow security policies\n- Report suspicious activity\n- Complete security training\n\n**Data Owners vs Data Custodians:**\n- Owner: Business unit that creates/uses the data (decides classification, access)\n- Custodian: IT team that stores/protects the data (implements technical controls)\n\nThis separation ensures business context drives security decisions while IT implements them.",
+      "key_concepts": ["CISO role", "Board oversight", "Data ownership", "Separation of duties"]
+    }
+  ]
+}

@@ -1,0 +1,626 @@
+{
+  "id": "pci-dss-batch2",
+  "name": "PCI DSS 4.0 (Batch 2)",
+  "description": "More PCI DSS requirements",
+  "controls": [
+    {
+      "id": "pci-1-2",
+      "framework": "PCI DSS 4.0",
+      "family": "Network Security Controls",
+      "family_id": "REQ-1",
+      "control_id": "1.2",
+      "name": "Network Security Controls Configured and Maintained",
+      "description": "NSCs are configured and maintained to restrict inbound and outbound traffic.",
+      "implementation_guidance": [
+        "Restrict inbound to necessary only",
+        "Deny all by default",
+        "Review rules semi-annually",
+        "Document business justification for each rule"
+      ],
+      "audit_evidence": [
+        "Firewall rules",
+        "Rule review records",
+        "Business justifications",
+        "Default deny evidence"
+      ],
+      "risk_addressed": [
+        "Unauthorized access",
+        "Data exfiltration"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SC-7"
+        ],
+        "iso_27001": [
+          "A.8.20"
+        ],
+        "cis_v8": [
+          "4.4"
+        ]
+      },
+      "related_controls": [
+        "1.1",
+        "1.3"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-1-4",
+      "framework": "PCI DSS 4.0",
+      "family": "Network Security Controls",
+      "family_id": "REQ-1",
+      "control_id": "1.4",
+      "name": "Network Connections Between Trusted and Untrusted Networks are Controlled",
+      "description": "NSCs are installed between all trusted and untrusted networks.",
+      "implementation_guidance": [
+        "Implement DMZ",
+        "Control all internet-facing connections",
+        "Restrict CDE access",
+        "Monitor boundary traffic"
+      ],
+      "audit_evidence": [
+        "DMZ architecture",
+        "Boundary controls",
+        "CDE segmentation",
+        "Monitoring records"
+      ],
+      "risk_addressed": [
+        "Direct CDE exposure",
+        "Unauthorized access"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SC-7"
+        ],
+        "iso_27001": [
+          "A.8.22"
+        ],
+        "cis_v8": [
+          "13.4"
+        ]
+      },
+      "related_controls": [
+        "1.1",
+        "1.2"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-3-1",
+      "framework": "PCI DSS 4.0",
+      "family": "Protect Stored Account Data",
+      "family_id": "REQ-3",
+      "control_id": "3.1",
+      "name": "Processes for Protection of Stored Account Data are Defined",
+      "description": "Processes and mechanisms for protecting stored account data are defined and understood.",
+      "implementation_guidance": [
+        "Define data retention policy",
+        "Minimize stored data",
+        "Implement secure deletion",
+        "Document storage locations"
+      ],
+      "audit_evidence": [
+        "Retention policy",
+        "Data flow diagrams",
+        "Deletion procedures",
+        "Storage inventory"
+      ],
+      "risk_addressed": [
+        "Excessive data storage",
+        "Compliance violation"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "MP-6",
+          "SI-12"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ],
+        "cis_v8": [
+          "3.1"
+        ]
+      },
+      "related_controls": [
+        "3.2",
+        "3.4"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-5-1",
+      "framework": "PCI DSS 4.0",
+      "family": "Protect from Malicious Software",
+      "family_id": "REQ-5",
+      "control_id": "5.1",
+      "name": "Processes for Protection from Malicious Software are Defined",
+      "description": "Processes and mechanisms for protecting systems from malicious software are defined and understood.",
+      "implementation_guidance": [
+        "Define anti-malware strategy",
+        "Cover all system types",
+        "Include detection and prevention",
+        "Address emerging threats"
+      ],
+      "audit_evidence": [
+        "Anti-malware policy",
+        "Coverage documentation",
+        "Strategy reviews"
+      ],
+      "risk_addressed": [
+        "Malware infection",
+        "Ransomware"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SI-3"
+        ],
+        "iso_27001": [
+          "A.8.7"
+        ],
+        "cis_v8": [
+          "10.1"
+        ]
+      },
+      "related_controls": [
+        "5.2",
+        "5.3"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-6-2",
+      "framework": "PCI DSS 4.0",
+      "family": "Develop Secure Systems",
+      "family_id": "REQ-6",
+      "control_id": "6.2",
+      "name": "Bespoke and Custom Software is Developed Securely",
+      "description": "Bespoke and custom software is developed securely following industry standards.",
+      "implementation_guidance": [
+        "Train developers on secure coding",
+        "Conduct code reviews",
+        "Perform SAST/DAST",
+        "Address OWASP Top 10"
+      ],
+      "audit_evidence": [
+        "Training records",
+        "Code review records",
+        "SAST/DAST results",
+        "OWASP coverage"
+      ],
+      "risk_addressed": [
+        "Application vulnerabilities",
+        "Data breach via application"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SA-11",
+          "SI-10"
+        ],
+        "iso_27001": [
+          "A.8.25",
+          "A.8.28"
+        ],
+        "cis_v8": [
+          "16.1",
+          "16.12"
+        ]
+      },
+      "related_controls": [
+        "6.1",
+        "6.3"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-8-2",
+      "framework": "PCI DSS 4.0",
+      "family": "Identify Users and Authenticate Access",
+      "family_id": "REQ-8",
+      "control_id": "8.2",
+      "name": "User Identification and Related Accounts are Managed",
+      "description": "User identification and related accounts for users and administrators are strictly managed.",
+      "implementation_guidance": [
+        "Assign unique IDs",
+        "Disable inactive accounts (90 days)",
+        "Manage shared accounts with justification",
+        "Remove terminated users immediately"
+      ],
+      "audit_evidence": [
+        "User ID inventory",
+        "Inactive account reports",
+        "Shared account justifications",
+        "Termination records"
+      ],
+      "risk_addressed": [
+        "Shared account abuse",
+        "Orphaned accounts"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-2",
+          "IA-4"
+        ],
+        "iso_27001": [
+          "A.5.16"
+        ],
+        "cis_v8": [
+          "5.1"
+        ]
+      },
+      "related_controls": [
+        "8.1",
+        "8.3"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-9-1",
+      "framework": "PCI DSS 4.0",
+      "family": "Restrict Physical Access",
+      "family_id": "REQ-9",
+      "control_id": "9.1",
+      "name": "Processes for Restricting Physical Access are Defined",
+      "description": "Processes and mechanisms for restricting physical access to cardholder data are defined.",
+      "implementation_guidance": [
+        "Define physical security zones",
+        "Implement access controls",
+        "Monitor sensitive areas",
+        "Restrict media access"
+      ],
+      "audit_evidence": [
+        "Physical security policy",
+        "Zone definitions",
+        "Access controls",
+        "Monitoring records"
+      ],
+      "risk_addressed": [
+        "Physical theft",
+        "Unauthorized access to CDE"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "PE-3"
+        ],
+        "iso_27001": [
+          "A.7.1"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "9.2",
+        "9.3"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-10-2",
+      "framework": "PCI DSS 4.0",
+      "family": "Log and Monitor",
+      "family_id": "REQ-10",
+      "control_id": "10.2",
+      "name": "Audit Logs are Implemented to Support Detection of Anomalies",
+      "description": "Audit logs are implemented to support the detection of anomalies and suspicious activity.",
+      "implementation_guidance": [
+        "Log all access to CDE",
+        "Include admin actions",
+        "Record authentication events",
+        "Log security events"
+      ],
+      "audit_evidence": [
+        "Log configuration",
+        "Event coverage",
+        "Sample logs"
+      ],
+      "risk_addressed": [
+        "Undetected breaches",
+        "Insufficient forensics"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AU-2",
+          "AU-12"
+        ],
+        "iso_27001": [
+          "A.8.15"
+        ],
+        "cis_v8": [
+          "8.2",
+          "8.5"
+        ]
+      },
+      "related_controls": [
+        "10.1",
+        "10.3"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-10-4",
+      "framework": "PCI DSS 4.0",
+      "family": "Log and Monitor",
+      "family_id": "REQ-10",
+      "control_id": "10.4",
+      "name": "Audit Logs are Reviewed to Identify Anomalies",
+      "description": "Audit logs are reviewed to identify anomalies or suspicious activity.",
+      "implementation_guidance": [
+        "Review logs daily",
+        "Implement automated alerting",
+        "Investigate anomalies",
+        "Document review activities"
+      ],
+      "audit_evidence": [
+        "Review procedures",
+        "Alert configuration",
+        "Investigation records",
+        "Review logs"
+      ],
+      "risk_addressed": [
+        "Missed security events",
+        "Delayed detection"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AU-6"
+        ],
+        "iso_27001": [
+          "A.8.15",
+          "A.8.16"
+        ],
+        "cis_v8": [
+          "8.11"
+        ]
+      },
+      "related_controls": [
+        "10.1",
+        "10.2"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-11-4",
+      "framework": "PCI DSS 4.0",
+      "family": "Test Security",
+      "family_id": "REQ-11",
+      "control_id": "11.4",
+      "name": "External and Internal Penetration Testing is Performed",
+      "description": "External and internal penetration testing is regularly performed and exploitable vulnerabilities are corrected.",
+      "implementation_guidance": [
+        "Annual external pentest",
+        "Annual internal pentest",
+        "Pentest after significant changes",
+        "Remediate and retest findings"
+      ],
+      "audit_evidence": [
+        "Pentest reports",
+        "Remediation records",
+        "Retest results",
+        "Scope documents"
+      ],
+      "risk_addressed": [
+        "Unknown exploitable vulnerabilities"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CA-8"
+        ],
+        "iso_27001": [
+          "A.5.35"
+        ],
+        "cis_v8": [
+          "18.1",
+          "18.2"
+        ]
+      },
+      "related_controls": [
+        "11.3"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-12-3",
+      "framework": "PCI DSS 4.0",
+      "family": "Information Security Policy",
+      "family_id": "REQ-12",
+      "control_id": "12.3",
+      "name": "Cryptographic Cipher Suites and Protocols are Documented",
+      "description": "Cryptographic cipher suites and protocols in use are documented and reviewed.",
+      "implementation_guidance": [
+        "Document all cryptographic usage",
+        "Review annually",
+        "Remove weak algorithms",
+        "Plan for crypto agility"
+      ],
+      "audit_evidence": [
+        "Cryptographic inventory",
+        "Review records",
+        "Algorithm standards",
+        "Migration plans"
+      ],
+      "risk_addressed": [
+        "Weak encryption",
+        "Compliance gaps"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "nist_800_53": [
+          "SC-13"
+        ],
+        "iso_27001": [
+          "A.8.24"
+        ],
+        "cis_v8": [
+          "3.11"
+        ]
+      },
+      "related_controls": [
+        "12.1"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-12-6",
+      "framework": "PCI DSS 4.0",
+      "family": "Information Security Policy",
+      "family_id": "REQ-12",
+      "control_id": "12.6",
+      "name": "Security Awareness Education is an Ongoing Activity",
+      "description": "Security awareness education is an ongoing activity for all personnel.",
+      "implementation_guidance": [
+        "Annual security training",
+        "Include PCI-specific content",
+        "Conduct phishing simulations",
+        "Track completion"
+      ],
+      "audit_evidence": [
+        "Training program",
+        "Completion records",
+        "Phishing results",
+        "Content materials"
+      ],
+      "risk_addressed": [
+        "Human error",
+        "Phishing",
+        "Policy violations"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AT-2"
+        ],
+        "iso_27001": [
+          "A.6.3"
+        ],
+        "cis_v8": [
+          "14.1"
+        ]
+      },
+      "related_controls": [
+        "12.1"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-12-8",
+      "framework": "PCI DSS 4.0",
+      "family": "Information Security Policy",
+      "family_id": "REQ-12",
+      "control_id": "12.8",
+      "name": "Risk to Information Assets from Third-Party Service Providers is Managed",
+      "description": "Risk to information assets associated with TPSP relationships is managed.",
+      "implementation_guidance": [
+        "Maintain TPSP inventory",
+        "Conduct due diligence",
+        "Monitor compliance",
+        "Include PCI requirements in agreements"
+      ],
+      "audit_evidence": [
+        "TPSP inventory",
+        "Due diligence records",
+        "Compliance monitoring",
+        "Agreements"
+      ],
+      "risk_addressed": [
+        "Third-party breach",
+        "Compliance gaps"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SA-9"
+        ],
+        "iso_27001": [
+          "A.5.19"
+        ],
+        "cis_v8": [
+          "15.1"
+        ]
+      },
+      "related_controls": [
+        "12.1"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-12-10",
+      "framework": "PCI DSS 4.0",
+      "family": "Information Security Policy",
+      "family_id": "REQ-12",
+      "control_id": "12.10",
+      "name": "Suspected and Confirmed Security Incidents are Responded to Immediately",
+      "description": "Suspected and confirmed security incidents that could impact the CDE are responded to immediately.",
+      "implementation_guidance": [
+        "Implement IR plan for CDE",
+        "Define response procedures",
+        "Include notification requirements",
+        "Test plan annually"
+      ],
+      "audit_evidence": [
+        "IR plan",
+        "Response procedures",
+        "Notification records",
+        "Test results"
+      ],
+      "risk_addressed": [
+        "Delayed breach response",
+        "Regulatory penalties"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IR-1",
+          "IR-4"
+        ],
+        "iso_27001": [
+          "A.5.24"
+        ],
+        "cis_v8": [
+          "17.1"
+        ]
+      },
+      "related_controls": [
+        "12.1"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    }
+  ]
+}

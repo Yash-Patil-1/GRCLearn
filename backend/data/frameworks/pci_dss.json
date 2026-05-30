@@ -1,0 +1,508 @@
+{
+  "id": "pci-dss-4",
+  "name": "PCI DSS 4.0",
+  "description": "Payment Card Industry Data Security Standard v4.0",
+  "controls": [
+    {
+      "id": "pci-1-1",
+      "framework": "PCI DSS 4.0",
+      "family": "Network Security Controls",
+      "family_id": "REQ-1",
+      "control_id": "1.1",
+      "name": "Install and Maintain Network Security Controls",
+      "description": "Processes and mechanisms for installing and maintaining network security controls are defined and understood.",
+      "implementation_guidance": [
+        "Document firewall policies",
+        "Define allowed traffic flows",
+        "Review rules semi-annually",
+        "Implement change management for rules"
+      ],
+      "audit_evidence": [
+        "Firewall policy",
+        "Rule review records",
+        "Network diagrams",
+        "Change logs"
+      ],
+      "risk_addressed": [
+        "Unauthorized network access",
+        "Data breach"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SC-7"
+        ],
+        "iso_27001": [
+          "A.8.20"
+        ],
+        "cis_v8": [
+          "4.4"
+        ]
+      },
+      "related_controls": [
+        "1.2",
+        "1.3",
+        "1.4"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-2-2",
+      "framework": "PCI DSS 4.0",
+      "family": "Secure Configurations",
+      "family_id": "REQ-2",
+      "control_id": "2.2",
+      "name": "System Components are Configured and Managed Securely",
+      "description": "System components are configured and managed securely by applying industry-accepted hardening standards.",
+      "implementation_guidance": [
+        "Apply CIS benchmarks",
+        "Remove default accounts",
+        "Disable unnecessary services",
+        "Document configurations"
+      ],
+      "audit_evidence": [
+        "Hardening standards",
+        "Configuration scans",
+        "Default account removal",
+        "Service inventory"
+      ],
+      "risk_addressed": [
+        "Misconfigurations",
+        "Default credentials",
+        "Expanded attack surface"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CM-6",
+          "CM-7"
+        ],
+        "iso_27001": [
+          "A.8.9"
+        ],
+        "cis_v8": [
+          "4.1"
+        ]
+      },
+      "related_controls": [
+        "2.1",
+        "2.3"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-3-4",
+      "framework": "PCI DSS 4.0",
+      "family": "Protect Stored Account Data",
+      "family_id": "REQ-3",
+      "control_id": "3.4",
+      "name": "Render PAN Unreadable Anywhere it is Stored",
+      "description": "PAN is rendered unreadable anywhere it is stored using strong cryptography.",
+      "implementation_guidance": [
+        "Encrypt PAN with AES-256",
+        "Implement tokenization",
+        "Use one-way hashes where appropriate",
+        "Manage encryption keys securely"
+      ],
+      "audit_evidence": [
+        "Encryption configuration",
+        "Tokenization system",
+        "Key management procedures",
+        "Storage scan results"
+      ],
+      "risk_addressed": [
+        "Cardholder data exposure",
+        "Compliance violation"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SC-28"
+        ],
+        "iso_27001": [
+          "A.8.24"
+        ],
+        "cis_v8": [
+          "3.11"
+        ]
+      },
+      "related_controls": [
+        "3.1",
+        "3.5",
+        "3.6"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-4-1",
+      "framework": "PCI DSS 4.0",
+      "family": "Protect Data in Transit",
+      "family_id": "REQ-4",
+      "control_id": "4.1",
+      "name": "Strong Cryptography Protects Cardholder Data During Transmission",
+      "description": "Strong cryptography and security protocols protect cardholder data during transmission over open networks.",
+      "implementation_guidance": [
+        "Use TLS 1.2+ for all transmissions",
+        "Disable weak protocols",
+        "Implement certificate management",
+        "Monitor for downgrade attacks"
+      ],
+      "audit_evidence": [
+        "TLS configuration",
+        "Protocol scan results",
+        "Certificate inventory",
+        "Monitoring records"
+      ],
+      "risk_addressed": [
+        "Data interception",
+        "Man-in-the-middle",
+        "Eavesdropping"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SC-8"
+        ],
+        "iso_27001": [
+          "A.8.24"
+        ],
+        "cis_v8": [
+          "3.10"
+        ]
+      },
+      "related_controls": [
+        "4.2"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-5-2",
+      "framework": "PCI DSS 4.0",
+      "family": "Protect from Malicious Software",
+      "family_id": "REQ-5",
+      "control_id": "5.2",
+      "name": "Malicious Software is Prevented or Detected and Addressed",
+      "description": "Malicious software is prevented, or detected and addressed on all system components.",
+      "implementation_guidance": [
+        "Deploy anti-malware on all systems",
+        "Enable real-time scanning",
+        "Update signatures automatically",
+        "Perform periodic full scans"
+      ],
+      "audit_evidence": [
+        "AV/EDR deployment records",
+        "Signature update logs",
+        "Scan schedules",
+        "Detection reports"
+      ],
+      "risk_addressed": [
+        "Malware infection",
+        "Ransomware",
+        "Data theft"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SI-3"
+        ],
+        "iso_27001": [
+          "A.8.7"
+        ],
+        "cis_v8": [
+          "10.1"
+        ]
+      },
+      "related_controls": [
+        "5.1",
+        "5.3"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-6-3",
+      "framework": "PCI DSS 4.0",
+      "family": "Develop Secure Systems",
+      "family_id": "REQ-6",
+      "control_id": "6.3",
+      "name": "Security Vulnerabilities are Identified and Addressed",
+      "description": "Security vulnerabilities are identified and addressed in a timely manner.",
+      "implementation_guidance": [
+        "Implement patch management",
+        "Define SLAs (critical: 30 days)",
+        "Track remediation",
+        "Validate with re-scanning"
+      ],
+      "audit_evidence": [
+        "Patch records",
+        "SLA compliance",
+        "Vulnerability tracking",
+        "Re-scan results"
+      ],
+      "risk_addressed": [
+        "Exploitation of known vulnerabilities"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "SI-2",
+          "RA-5"
+        ],
+        "iso_27001": [
+          "A.8.8"
+        ],
+        "cis_v8": [
+          "7.1"
+        ]
+      },
+      "related_controls": [
+        "6.1",
+        "6.2"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-7-1",
+      "framework": "PCI DSS 4.0",
+      "family": "Restrict Access",
+      "family_id": "REQ-7",
+      "control_id": "7.1",
+      "name": "Access to System Components and Cardholder Data is Restricted",
+      "description": "Access to system components and cardholder data is limited to only those individuals whose job requires such access.",
+      "implementation_guidance": [
+        "Implement need-to-know access",
+        "Define access by job function",
+        "Review access semi-annually",
+        "Document access decisions"
+      ],
+      "audit_evidence": [
+        "Access control policy",
+        "Role definitions",
+        "Review records",
+        "Access matrices"
+      ],
+      "risk_addressed": [
+        "Unauthorized data access",
+        "Insider threat",
+        "Compliance violation"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-3",
+          "AC-6"
+        ],
+        "iso_27001": [
+          "A.5.15"
+        ],
+        "cis_v8": [
+          "3.3"
+        ]
+      },
+      "related_controls": [
+        "7.2",
+        "7.3"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-8-3",
+      "framework": "PCI DSS 4.0",
+      "family": "Identify Users and Authenticate Access",
+      "family_id": "REQ-8",
+      "control_id": "8.3",
+      "name": "Strong Authentication for Users and Administrators",
+      "description": "Strong authentication for users and administrators is established and managed.",
+      "implementation_guidance": [
+        "Implement MFA for all admin access",
+        "Enforce password complexity",
+        "Implement account lockout",
+        "Use unique IDs for all users"
+      ],
+      "audit_evidence": [
+        "MFA configuration",
+        "Password policy",
+        "Lockout settings",
+        "User ID inventory"
+      ],
+      "risk_addressed": [
+        "Credential theft",
+        "Brute-force",
+        "Shared account abuse"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IA-2",
+          "IA-5"
+        ],
+        "iso_27001": [
+          "A.8.5"
+        ],
+        "cis_v8": [
+          "5.2",
+          "6.3"
+        ]
+      },
+      "related_controls": [
+        "8.1",
+        "8.2",
+        "8.4"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-10-1",
+      "framework": "PCI DSS 4.0",
+      "family": "Log and Monitor",
+      "family_id": "REQ-10",
+      "control_id": "10.1",
+      "name": "Audit Trails are Implemented",
+      "description": "Audit trails are implemented to link all access to system components to each individual user.",
+      "implementation_guidance": [
+        "Log all access to cardholder data",
+        "Include user ID, timestamp, action",
+        "Centralize logs",
+        "Protect log integrity"
+      ],
+      "audit_evidence": [
+        "Logging configuration",
+        "Sample logs",
+        "SIEM setup",
+        "Log protection measures"
+      ],
+      "risk_addressed": [
+        "Undetected breaches",
+        "Insufficient forensics",
+        "Non-compliance"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AU-2",
+          "AU-3"
+        ],
+        "iso_27001": [
+          "A.8.15"
+        ],
+        "cis_v8": [
+          "8.2"
+        ]
+      },
+      "related_controls": [
+        "10.2",
+        "10.3",
+        "10.4"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-11-3",
+      "framework": "PCI DSS 4.0",
+      "family": "Test Security",
+      "family_id": "REQ-11",
+      "control_id": "11.3",
+      "name": "External and Internal Vulnerabilities are Regularly Identified and Addressed",
+      "description": "External and internal vulnerabilities are regularly identified, prioritized, and addressed.",
+      "implementation_guidance": [
+        "Scan internally quarterly",
+        "Scan externally quarterly (ASV)",
+        "Remediate critical within 30 days",
+        "Rescan after remediation"
+      ],
+      "audit_evidence": [
+        "Internal scan reports",
+        "ASV scan reports",
+        "Remediation records",
+        "Rescan results"
+      ],
+      "risk_addressed": [
+        "Unpatched vulnerabilities",
+        "Compliance failure"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "RA-5"
+        ],
+        "iso_27001": [
+          "A.8.8"
+        ],
+        "cis_v8": [
+          "7.1",
+          "7.5"
+        ]
+      },
+      "related_controls": [
+        "11.1",
+        "11.4"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    },
+    {
+      "id": "pci-12-1",
+      "framework": "PCI DSS 4.0",
+      "family": "Information Security Policy",
+      "family_id": "REQ-12",
+      "control_id": "12.1",
+      "name": "Information Security Policy is Established",
+      "description": "A comprehensive information security policy that governs and provides direction for protection of the entity's information assets.",
+      "implementation_guidance": [
+        "Establish security policy",
+        "Review annually",
+        "Communicate to all personnel",
+        "Address all PCI DSS requirements"
+      ],
+      "audit_evidence": [
+        "Security policy",
+        "Review records",
+        "Communication records",
+        "Acknowledgments"
+      ],
+      "risk_addressed": [
+        "Lack of direction",
+        "Inconsistent practices",
+        "Audit failure"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "PL-1",
+          "PL-2"
+        ],
+        "iso_27001": [
+          "A.5.1"
+        ],
+        "cis_v8": [
+          "N/A"
+        ]
+      },
+      "related_controls": [
+        "12.2",
+        "12.3"
+      ],
+      "references": [
+        "https://www.pcisecuritystandards.org"
+      ]
+    }
+  ]
+}
