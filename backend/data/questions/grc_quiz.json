@@ -542,5 +542,310 @@
     "hints": [
       "Dated proof of regular reviews"
     ]
+  },
+  {
+    "id": "gq-ac-01",
+    "topic_id": "access_control",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is the difference between RBAC and ABAC?",
+    "correct_answers": [
+      "roles",
+      "attributes",
+      "rbac uses roles",
+      "abac uses attributes",
+      "policy based"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "RBAC assigns permissions to roles, users are assigned to roles. ABAC uses policies combining user/resource/environment attributes for dynamic access decisions.",
+    "hints": [
+      "One uses pre-defined roles, the other uses attribute-based policies"
+    ]
+  },
+  {
+    "id": "gq-ac-02",
+    "topic_id": "access_control",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is segregation of duties (SoD) and why is it important?",
+    "correct_answers": [
+      "no single person",
+      "fraud prevention",
+      "separation",
+      "conflicting duties",
+      "split responsibilities"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "SoD ensures no single person has enough control to commit fraud alone. For example, the same person should not create vendors AND approve payments.",
+    "hints": [
+      "Prevents one person from having too much power"
+    ]
+  },
+  {
+    "id": "gq-ac-03",
+    "topic_id": "access_control",
+    "type": "theory",
+    "difficulty": "hard",
+    "question": "What is Just-in-Time (JIT) privileged access?",
+    "correct_answers": [
+      "temporary elevation",
+      "on demand",
+      "time bound",
+      "auto expire",
+      "request approve expire"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "JIT grants elevated privileges only when needed, for a specific task, with automatic expiry. Eliminates permanent standing privileges that attackers target.",
+    "hints": [
+      "Privileges on demand, not permanent"
+    ]
+  },
+  {
+    "id": "gq-ac-04",
+    "topic_id": "access_control",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "An employee moves from Finance to Marketing IT. They kept their Finance system access. After 6 months, they see competitor financial data. What access control failure occurred?",
+    "correct_answers": [
+      "privilege creep",
+      "role change",
+      "transfer",
+      "de-provisioning",
+      "old role not revoked"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Privilege creep: when employees accumulate permissions across role changes. Fix: enforce role-based provisioning on transfer \u2014 revoke old role, assign new role.",
+    "hints": [
+      "Permissions accumulated over time across role changes"
+    ]
+  },
+  {
+    "id": "gq-ac-05",
+    "topic_id": "access_control",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "Your PAM tool shows 5 IT staff have permanent Global Admin in Azure. What best practice should they follow?",
+    "correct_answers": [
+      "jit",
+      "just in time",
+      "pim",
+      "privileged identity management",
+      "temporary elevation",
+      "break glass"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Replace permanent Global Admin with JIT elevation via Azure PIM \u2014 request elevation with approval, 4-hour window, auto-expiry, and session logging.",
+    "hints": [
+      "Temporary roles instead of permanent admin"
+    ]
+  },
+  {
+    "id": "gq-aev-01",
+    "topic_id": "audit_evidence",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What are the four characteristics of good audit evidence?",
+    "correct_answers": [
+      "sufficient reliable relevant timely",
+      "sufficient",
+      "reliable",
+      "relevant",
+      "timely"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Sufficient (enough to conclude), Reliable (trustworthy source), Relevant (directly related), Timely (current enough).",
+    "hints": [
+      "Four qualities, think S.R.R.T"
+    ]
+  },
+  {
+    "id": "gq-aev-02",
+    "topic_id": "audit_evidence",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is the evidence hierarchy?",
+    "correct_answers": [
+      "direct observation",
+      "system generated",
+      "documentary",
+      "analytical",
+      "testimonial"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "From most to least reliable: 1) Direct observation, 2) System-generated logs/reports, 3) Documentary, 4) Analytical, 5) Testimonial. Collect as close to the source as possible.",
+    "hints": [
+      "Levels of reliability from highest to lowest"
+    ]
+  },
+  {
+    "id": "gq-aev-03",
+    "topic_id": "audit_evidence",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "An auditor is testing whether terminated employees lose access within 24 hours. What evidence type is most reliable?",
+    "correct_answers": [
+      "system log",
+      "access log",
+      "automated report",
+      "identity provider log",
+      "direct observation"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "System-generated evidence (automated access revocation logs from IdP) is most reliable. A manual spreadsheet would be less reliable because it depends on human accuracy.",
+    "hints": [
+      "Automated system evidence beats manual documentation"
+    ]
+  },
+  {
+    "id": "gq-aev-04",
+    "topic_id": "audit_evidence",
+    "type": "theory",
+    "difficulty": "hard",
+    "question": "What is chain of custody and when is it required?",
+    "correct_answers": [
+      "tracking",
+      "who what when",
+      "integrity",
+      "forensic",
+      "legal proceedings",
+      "evidence handling"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Chain of custody documents who collected evidence, when, where it was stored, and who accessed it. Required for legal proceedings, fraud investigations, and regulatory enforcement.",
+    "hints": [
+      "Documenting the complete history of evidence handling"
+    ]
+  },
+  {
+    "id": "gq-aev-05",
+    "topic_id": "audit_evidence",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "Your team spends 3 weeks scrambling for evidence before each ISO surveillance audit. What should change?",
+    "correct_answers": [
+      "continuous readiness",
+      "year round",
+      "evidence repository",
+      "operational evidence",
+      "embed collection"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Adopt continuous readiness \u2014 collect and file evidence throughout the year as part of normal operations. The pre-audit scramble indicates evidence collection isn't embedded.",
+    "hints": [
+      "Evidence should be collected year-round, not before the audit"
+    ]
+  },
+  {
+    "id": "gq-fmap-01",
+    "topic_id": "framework_mapping",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "Why do organizations map controls across multiple frameworks?",
+    "correct_answers": [
+      "avoid duplication",
+      "gap analysis",
+      "reduce work",
+      "audit preparation",
+      "translate languages"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Mapping avoids re-implementing controls, identifies coverage gaps, helps answer audits in different frameworks, and simplifies post-merger program unification.",
+    "hints": [
+      "Connect different framework languages to save work"
+    ]
+  },
+  {
+    "id": "gq-fmap-02",
+    "topic_id": "framework_mapping",
+    "type": "theory",
+    "difficulty": "hard",
+    "question": "What are the three types of cross-framework mapping relationships?",
+    "correct_answers": [
+      "direct",
+      "partial",
+      "no match",
+      "exact",
+      "overlapping",
+      "none"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Direct (exact scope/intent match), Partial (overlapping but one is broader), No match (no equivalent control in target framework). Be honest about mapping types.",
+    "hints": [
+      "Three types of relationships between controls"
+    ]
+  },
+  {
+    "id": "gq-fmap-03",
+    "topic_id": "framework_mapping",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "Your ISO 27001-certified company is asked by a customer whether you meet SOC 2 CC6.1. How do you respond?",
+    "correct_answers": [
+      "map",
+      "mapping",
+      "show coverage",
+      "iso controls",
+      "cross reference",
+      "existing controls"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Map your existing ISO controls to SOC 2 CC6.1. Your ISO A.5.15-5.18 controls likely provide coverage. You don't need new controls \u2014 just demonstrate the mapping.",
+    "hints": [
+      "Don't re-implement; translate and show coverage"
+    ]
+  },
+  {
+    "id": "gq-fmap-04",
+    "topic_id": "framework_mapping",
+    "type": "theory",
+    "difficulty": "medium",
+    "question": "What is the most common mistake when mapping controls between frameworks?",
+    "correct_answers": [
+      "1 to 1",
+      "one to one",
+      "assuming direct",
+      "mapping by name",
+      "ignoring enhancements"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "The 1:1 mapping fallacy \u2014 assuming each control has exactly one equivalent. In reality, one NIST control (AC-2) maps to 3+ ISO controls, 3 CIS safeguards, and 2 SOC 2 points.",
+    "hints": [
+      "Most common fallacy starts with 'one...'"
+    ]
+  },
+  {
+    "id": "gq-fmap-05",
+    "topic_id": "framework_mapping",
+    "type": "scenario",
+    "difficulty": "hard",
+    "question": "Two companies merge \u2014 one uses NIST CSF, the other uses CIS Controls. How do you unify?",
+    "correct_answers": [
+      "cross map",
+      "map both",
+      "control mapping",
+      "identify gaps",
+      "unified framework",
+      "document overlaps"
+    ],
+    "validation_type": "contains_any",
+    "required_keywords": [],
+    "explanation": "Cross-map both frameworks to identify overlapping controls and gaps. Choose a primary framework for the merged entity, then map the other to it and remediate gaps.",
+    "hints": [
+      "Map first, then choose a primary framework"
+    ]
   }
 ]

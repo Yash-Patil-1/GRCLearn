@@ -1,26 +1,25 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyc
-venv/
-.env
-
-# Database
-*.db
-data/database/*.db
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Node
-node_modules/
-dist/
 
 # Build
+# Database
+data/database/*.db
+*.db
+dist/
+.DS_Store
 *.egg-info/
+.env
+frontend/dist/
+frontend/test-results/
+# IDE
+.idea/
+# Node
+node_modules/
+# OS
+*.pyc
+__pycache__/
+*.py[cod]
 .pytest_cache/
+# Python
+Thumbs.db
+.venv/
+venv/
+.vscode/

@@ -1,39 +1,56 @@
 @import "tailwindcss";
 
 @theme {
-  --color-void: #080808;
-  --color-midnight: #101010;
-  --color-carbon: #333333;
-  --color-ash: #949494;
-  --color-polar: #F3F3F3;
-  --color-amber: #E7C59A;
-  --color-green: #00AC5C;
-  --color-red: #E74C3C;
-  --color-yellow: #F39C12;
-  --color-orange: #E67E22;
+  --color-racing-green: #004D2B;
+  --color-racing-green-light: #1A7A4A;
+  --color-bone-white: #F4EFE6;
+  --color-ivory: #F9F6F0;
+  --color-champagne: #C9A96E;
+  --color-champagne-light: #D9C08E;
+  --color-charcoal: #2C2C2C;
+  --color-warm-gray: #8C8273;
+  --color-parchment: #E0D8CC;
+  --color-white: #FFFFFF;
+  --color-british-red: #A52A2A;
+  --color-racing-green-dark: #00361F;
+
+  /* Legacy token aliases for compatibility */
+  --color-void: #F4EFE6;
+  --color-midnight: #FFFFFF;
+  --color-carbon: #E0D8CC;
+  --color-ash: #8C8273;
+  --color-polar: #2C2C2C;
+  --color-amber: #C9A96E;
+  --color-green: #004D2B;
+  --color-red: #A52A2A;
+  --color-yellow: #D4AF37;
+  --color-orange: #B8860B;
+
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  --radius-default: 8px;
-  --radius-tag: 20px;
+  --radius-default: 6px;
+  --radius-tag: 16px;
   --animate-fade-in: fade-in 0.3s ease-out forwards;
   @keyframes fade-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 }
 
 @layer base {
-  * { border-color: #333333; }
-  body { background-color: var(--color-midnight); color: var(--color-polar); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+  * { border-color: var(--color-parchment); }
+  body { background-color: var(--color-bone-white); color: var(--color-charcoal); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
 }
 
-@utility card { background-color: var(--color-midnight); border: 1px solid var(--color-carbon); border-radius: var(--radius-default); padding: 1.5rem; }
-@utility btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; border-radius: var(--radius-default); background-color: var(--color-amber); color: var(--color-midnight); font-weight: 700; font-size: 0.875rem; &:hover { opacity: 0.85; } }
-@utility btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; border-radius: var(--radius-default); border: 1px solid var(--color-carbon); color: var(--color-polar); font-size: 0.875rem; &:hover { border-color: var(--color-ash); } }
-@utility input-field { width: 100%; background-color: var(--color-void); border: 1px solid var(--color-carbon); border-radius: var(--radius-default); padding: 0.625rem 1rem; color: var(--color-polar); font-size: 0.875rem; &::placeholder { color: var(--color-ash); } &:focus { outline: none; border-color: var(--color-amber); } }
-@utility tag-amber { display: inline-flex; padding: 0.2rem 0.6rem; border-radius: var(--radius-tag); border: 1px solid var(--color-amber); color: var(--color-amber); font-family: var(--font-mono); font-size: 0.7rem; }
-@utility tag-green { display: inline-flex; padding: 0.2rem 0.6rem; border-radius: var(--radius-tag); border: 1px solid var(--color-green); color: var(--color-green); font-family: var(--font-mono); font-size: 0.7rem; }
-@utility tag-red { display: inline-flex; padding: 0.2rem 0.6rem; border-radius: var(--radius-tag); border: 1px solid var(--color-red); color: var(--color-red); font-family: var(--font-mono); font-size: 0.7rem; }
-@utility tag-default { display: inline-flex; padding: 0.2rem 0.6rem; border-radius: var(--radius-tag); border: 1px solid var(--color-carbon); color: var(--color-ash); font-family: var(--font-mono); font-size: 0.7rem; }
-@utility nav-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; border-radius: var(--radius-default); color: var(--color-ash); font-size: 0.875rem; &:hover { color: var(--color-polar); background-color: rgba(255,255,255,0.03); } }
-@utility nav-active { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; border-radius: var(--radius-default); color: var(--color-amber); font-size: 0.875rem; background-color: rgba(231,197,154,0.05); }
+@utility card { background-color: var(--color-white); border: 1px solid var(--color-parchment); border-radius: var(--radius-default); padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+@utility btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; border-radius: var(--radius-default); background-color: var(--color-racing-green); color: white; font-weight: 600; font-size: 0.875rem; &:hover { background-color: var(--color-racing-green-light); } }
+@utility btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; border-radius: var(--radius-default); border: 1px solid var(--color-parchment); color: var(--color-charcoal); font-size: 0.875rem; &:hover { border-color: var(--color-champagne); color: var(--color-racing-green); } }
+@utility input-field { width: 100%; background-color: var(--color-ivory); border: 1px solid var(--color-parchment); border-radius: var(--radius-default); padding: 0.625rem 1rem; color: var(--color-charcoal); font-size: 0.875rem; &::placeholder { color: var(--color-warm-gray); } &:focus { outline: none; border-color: var(--color-champagne); } }
+@utility tag-racing { display: inline-flex; padding: 0.2rem 0.6rem; border-radius: var(--radius-tag); border: 1px solid var(--color-racing-green); color: var(--color-racing-green); font-family: var(--font-mono); font-size: 0.7rem; background-color: rgba(0, 77, 43, 0.04); }
+@utility tag-green { display: inline-flex; padding: 0.2rem 0.6rem; border-radius: var(--radius-tag); border: 1px solid var(--color-racing-green); color: var(--color-racing-green); font-family: var(--font-mono); font-size: 0.7rem; }
+@utility tag-red { display: inline-flex; padding: 0.2rem 0.6rem; border-radius: var(--radius-tag); border: 1px solid var(--color-british-red); color: var(--color-british-red); font-family: var(--font-mono); font-size: 0.7rem; }
+@utility tag-default { display: inline-flex; padding: 0.2rem 0.6rem; border-radius: var(--radius-tag); border: 1px solid var(--color-parchment); color: var(--color-warm-gray); font-family: var(--font-mono); font-size: 0.7rem; }
+@utility tag-champagne { display: inline-flex; padding: 0.2rem 0.6rem; border-radius: var(--radius-tag); border: 1px solid var(--color-champagne); color: var(--color-champagne); font-family: var(--font-mono); font-size: 0.7rem; }
+@utility nav-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; border-radius: var(--radius-default); color: var(--color-warm-gray); font-size: 0.875rem; &:hover { color: var(--color-racing-green); background-color: rgba(0, 77, 43, 0.04); } }
+@utility nav-active { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; border-radius: var(--radius-default); color: var(--color-racing-green); font-size: 0.875rem; font-weight: 600; background-color: rgba(0, 77, 43, 0.06); }
 
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: var(--color-parchment); border-radius: 2px; }
+::-webkit-scrollbar-track { background: transparent; }

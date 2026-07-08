@@ -19,6 +19,22 @@ async def init_db():
     DB_DIR.mkdir(parents=True, exist_ok=True)
     conn = get_connection()
     conn.executescript("""
+        CREATE TABLE IF NOT EXISTS user_stats (
+            id INTEGER PRIMARY KEY CHECK (id = 1),
+            total_xp INTEGER NOT NULL DEFAULT 0,
+            current_streak INTEGER NOT NULL DEFAULT 0,
+            longest_streak INTEGER NOT NULL DEFAULT 0,
+            last_active_date TEXT
+        );
+        INSERT OR IGNORE INTO user_stats (id) VALUES (1);
+
+        CREATE TABLE IF NOT EXISTS daily_activity (
+            date TEXT PRIMARY KEY,
+            xp INTEGER NOT NULL DEFAULT 0,
+            lessons INTEGER NOT NULL DEFAULT 0,
+            quizzes INTEGER NOT NULL DEFAULT 0
+        );
+
         CREATE TABLE IF NOT EXISTS progress (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             item_id TEXT NOT NULL,

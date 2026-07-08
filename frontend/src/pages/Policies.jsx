@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { FileText } from 'lucide-react'
 import axios from 'axios'
 
 export default function Policies() {
@@ -15,23 +16,43 @@ export default function Policies() {
 
   return (
     <div className="max-w-5xl">
-      <h1 className="text-3xl font-bold mb-2">Policy Library</h1>
-      <p className="text-ash mb-8">Security policy templates for learning and reference.</p>
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-10 h-10 rounded-lg bg-racing-green flex items-center justify-center shadow-sm">
+          <FileText className="w-5 h-5 text-white" />
+        </div>
+        <div>
+          <h1 className="text-3xl font-bold text-charcoal tracking-tight">Policy Library</h1>
+          <p className="text-warm-gray text-sm">Security policy templates for learning and reference.</p>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-6">
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           {policies.map(p => (
             <button key={p.id} onClick={() => loadPolicy(p.id)}
-              className={`card w-full text-left text-sm ${selected === p.id ? 'border-amber/50' : 'hover:border-amber/30'} transition-colors`}>
+              className={`w-full text-left text-sm transition-all duration-200 rounded-lg px-3 py-2 ${
+                selected === p.id
+                  ? 'bg-[rgba(0,77,43,0.06)] text-racing-green font-medium border border-racing-green/20'
+                  : 'text-warm-gray hover:text-racing-green hover:bg-[rgba(0,77,43,0.03)] border border-transparent'
+              }`}>
               {p.name}
             </button>
           ))}
         </div>
-        <div className="card">
+        <div className="card min-h-[300px]">
           {content ? (
-            <pre className="whitespace-pre-wrap text-sm text-slate font-sans leading-relaxed">{content}</pre>
+            <div>
+              <h2 className="text-lg font-bold text-charcoal mb-4 pb-3 border-b border-parchment">
+                {policies.find(p => p.id === selected)?.name || 'Policy'}
+              </h2>
+              <pre className="whitespace-pre-wrap text-sm text-warm-gray font-sans leading-relaxed">{content}</pre>
+            </div>
           ) : (
-            <p className="text-ash text-center py-12">Select a policy to view</p>
+            <div className="text-center py-16">
+              <FileText className="w-12 h-12 mx-auto mb-3 text-warm-gray/40" />
+              <p className="text-warm-gray">Select a policy to view</p>
+              <p className="text-xs text-warm-gray/60 mt-1">Choose from the list on the left</p>
+            </div>
           )}
         </div>
       </div>

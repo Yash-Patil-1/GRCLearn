@@ -10,7 +10,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
-from routers import frameworks, controls, risks, policies, audit, progress, quiz
+from routers import frameworks, controls, risks, policies, audit, progress, quiz, streak, lessons
 from models.database import init_db
 from services.knowledge_base import GRCKnowledgeBase
 from services.quiz_engine import QuizEngine
@@ -38,7 +38,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:5174", "http://127.0.0.1:5174"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -51,6 +51,8 @@ app.include_router(policies.router, prefix="/api/policies", tags=["Policies"])
 app.include_router(audit.router, prefix="/api/audit", tags=["Audit"])
 app.include_router(progress.router, prefix="/api/progress", tags=["Progress"])
 app.include_router(quiz.router, prefix="/api/quiz", tags=["Quiz"])
+app.include_router(streak.router, prefix="/api/streak", tags=["Streak"])
+app.include_router(lessons.router, prefix="/api/lessons", tags=["Lessons"])
 
 
 @app.get("/")

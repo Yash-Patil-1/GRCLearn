@@ -5,6 +5,8 @@ import Controls from './pages/Controls'
 import Risks from './pages/Risks'
 import Policies from './pages/Policies'
 import Quiz from './pages/Quiz'
+import Learn from './pages/Learn'
+import LessonView from './pages/LessonView'
 
 export default function App() {
   return (
@@ -17,6 +19,8 @@ export default function App() {
           <Route path="/risks" element={<Risks />} />
           <Route path="/policies" element={<Policies />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/learn" element={<Learn />} />
+          <Route path="/learn/:id" element={<LessonView />} />
         </Routes>
       </main>
     </div>

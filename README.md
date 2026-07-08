@@ -1,25 +1,26 @@
 # 🏛️ GRCLearn — Governance, Risk & Compliance Learning Platform
 
-> **Master GRC frameworks, controls, risk management, and compliance — with interactive exploration and policy templates.**
+> **Master GRC frameworks, controls, risk management, and compliance — with interactive exploration, guided lessons, and policy templates.**
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?logo=fastapi)
-![Tests](https://img.shields.io/badge/Tests-15%20passing-brightgreen)
+![Tests](https://img.shields.io/badge/Tests-27%20passing-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
-## What is this?
+## 🖼️ Screenshots
 
-GRCLearn is a local-first learning platform for Governance, Risk & Compliance. It covers major compliance frameworks (NIST, ISO 27001, SOC 2, PCI DSS, HIPAA, GDPR, CIS), risk assessment methodologies, policy templates, and audit preparation — all running on your machine.
+| Dashboard & Streak | Lesson Viewer | Quiz Engine |
+|:--:|:--:|:--:|
+| ![Dashboard](https://raw.githubusercontent.com/Yash-Patil-1/GRCLearn/main/docs/screenshots/grclearn-dashboard.png) | ![Lesson](https://raw.githubusercontent.com/Yash-Patil-1/GRCLearn/main/docs/screenshots/grclearn-lesson.png) | ![Quiz](https://raw.githubusercontent.com/Yash-Patil-1/GRCLearn/main/docs/screenshots/grclearn-quiz.png) |
 
-**For each control, you get:**
-- Framework mapping (which standard requires it)
-- Implementation guidance
-- Audit evidence requirements
-- Risk context and impact
-- Cross-framework mappings
+| Control Library | Risk Management | Policy Templates |
+|:--:|:--:|:--:|
+| ![Controls](https://raw.githubusercontent.com/Yash-Patil-1/GRCLearn/main/docs/screenshots/grclearn-controls.png) | ![Risks](https://raw.githubusercontent.com/Yash-Patil-1/GRCLearn/main/docs/screenshots/grclearn-risks.png) | ![Policies](https://raw.githubusercontent.com/Yash-Patil-1/GRCLearn/main/docs/screenshots/grclearn-policies.png) |
+
+> **Note:** Screenshots are stored in `docs/screenshots/` for local reference.
 
 ---
 
@@ -27,15 +28,16 @@ GRCLearn is a local-first learning platform for Governance, Risk & Compliance. I
 
 | Feature | Description |
 |---------|-------------|
-| 📋 Control Explorer | 305 controls across 7 frameworks |
-| 🏗️ Framework Browser | NIST 800-53, ISO 27001, SOC 2, PCI DSS, HIPAA, GDPR, CIS v8 |
-| ⚠️ Risk Scenarios | 20 real-world risk scenarios with assessment |
-| 📝 Policy Templates | 8 ready-to-use policy templates |
-| 📖 Theory Modules | 2 chapters on Governance & Risk fundamentals |
-| 🧠 Quiz Engine | 28 quiz questions to test knowledge |
-| 🔍 Cross-Mapping | See how controls map across frameworks |
-| 📊 Progress Tracking | Track your learning journey |
-| 🎨 Hyperstudio Theme | Monochrome terminal + amber accents |
+| 📋 **Control Explorer** | 305 controls across 7 frameworks with search, filter, and family grouping |
+| 🏗️ **Framework Browser** | NIST 800-53, ISO 27001, SOC 2, PCI DSS, HIPAA, GDPR, CIS v8 |
+| ⚠️ **Risk Scenarios** | 20 real-world risk scenarios with assessment and registration |
+| 📝 **Policy Templates** | 8 ready-to-use policy templates with full content |
+| 📖 **Guided Lessons** | Step-by-step theory chapters with checkpoints, progress tracking, and XP rewards |
+| 🧠 **Quiz Engine** | 28 quiz questions across 7 topic areas with scoring and streak tracking |
+| 🔍 **Cross-Mapping** | See how controls map across frameworks |
+| 📊 **Progress Tracking** | XP, streaks, daily goals, and learning progress |
+| 🏆 **Gamification** | Levels, streaks, checkpoints, and daily goals keep you motivated |
+| 🎨 **Aston Martin Theme** | Light theme — Racing Green, Bone White, Champagne Gold |
 
 ---
 
@@ -47,9 +49,9 @@ GRCLearn is a local-first learning platform for Governance, Risk & Compliance. I
 | Frameworks | 7 |
 | Risk Scenarios | 20 |
 | Policy Templates | 8 |
-| Theory Chapters | 2 |
+| Theory Chapters / Lessons | 5 |
 | Quiz Questions | 28 |
-| Automated Tests | 15 |
+| Automated Tests | 27 |
 
 ---
 
@@ -87,10 +89,10 @@ cd backend
 
 # Terminal 2 — Frontend
 cd frontend
-npm run dev
+npm run dev    # Starts on http://localhost:5174
 ```
 
-Open **http://localhost:5173**
+Open **http://localhost:5174**
 
 ---
 
@@ -98,11 +100,11 @@ Open **http://localhost:5173**
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | React 18, Vite, Tailwind CSS v4 |
+| Frontend | React 18, Vite 5, Tailwind CSS v4, Lucide Icons, Recharts |
 | Backend | FastAPI, Python 3.10+ |
-| Database | SQLite (progress tracking) |
-| Knowledge Base | JSON (controls, frameworks, risks, policies) |
-| Design | Hyperstudio — monochrome terminal + amber (#E7C59A) + green (#00AC5C) |
+| Database | SQLite (progress, streaks, XP) |
+| Knowledge Base | JSON (controls, frameworks, risks, policies, lessons, questions) |
+| Design | **Aston Martin** — Racing Green (#004D2B), Bone White (#F4EFE6), Champagne Gold (#C9A96E), Charcoal (#2C2C2C) |
 
 ---
 
@@ -121,8 +123,13 @@ Open **http://localhost:5173**
 | GET | `/api/policies` | List policy templates |
 | GET | `/api/policies/{id}` | Get policy content |
 | GET | `/api/audit/checklist` | Audit preparation checklist |
-| GET | `/api/quiz/questions` | Get quiz questions |
-| POST | `/api/quiz/submit` | Submit quiz answers |
+| GET | `/api/lessons` | List guided lessons with checkpoint counts |
+| GET | `/api/lessons/{id}` | Get lesson content with sections |
+| GET | `/api/quiz/next` | Get next quiz question |
+| POST | `/api/quiz/answer` | Submit quiz answer |
+| GET | `/api/quiz/question/{id}` | Get checkpoint question by ID |
+| GET | `/api/quiz/stats` | Quiz performance stats |
+| GET | `/api/streak` | XP, streak, level, daily goal |
 | POST | `/api/progress/mark` | Mark item as learned |
 | GET | `/api/progress` | Get learning progress |
 
@@ -133,30 +140,33 @@ Open **http://localhost:5173**
 ```
 GRCLearn/
 ├── backend/
-│   ├── main.py                 # FastAPI application
-│   ├── requirements.txt        # Python dependencies
+│   ├── main.py                   # FastAPI application
+│   ├── requirements.txt          # Python dependencies
 │   ├── data/
-│   │   ├── frameworks/         # Framework JSON files (7 frameworks, 305 controls)
-│   │   ├── risks/              # Risk scenarios (20)
-│   │   ├── policies/           # Policy templates (8)
-│   │   ├── theory/             # Learning chapters (2)
-│   │   ├── questions/          # Quiz questions (28)
-│   │   ├── mappings.json       # Cross-framework mappings
-│   │   └── phases.json         # GRC implementation phases
-│   ├── models/                 # Database models
-│   ├── routers/                # API route handlers
-│   ├── services/               # Business logic
-│   └── tests/                  # Test suite (15 tests)
+│   │   ├── frameworks/           # Framework JSON files (7 frameworks, 305 controls)
+│   │   ├── risks/                # Risk scenarios (20)
+│   │   ├── policies/             # Policy templates (8)
+│   │   ├── theory/               # Learning chapters (5 lessons)
+│   │   ├── questions/            # Quiz questions (28)
+│   │   ├── mappings.json         # Cross-framework mappings
+│   │   └── phases.json           # GRC implementation phases
+│   ├── models/                   # Database models
+│   ├── routers/                  # API route handlers
+│   ├── services/                 # Business logic
+│   └── tests/                    # Test suite (27 tests)
 ├── frontend/
 │   ├── src/
-│   │   ├── components/         # React components
-│   │   ├── pages/              # Page views
-│   │   └── styles/             # Tailwind styles
+│   │   ├── components/           # React components (Sidebar, StreakBadge, etc.)
+│   │   ├── pages/                # Page views (Dashboard, Learn, Quiz, etc.)
+│   │   └── styles/               # Tailwind CSS with Aston Martin theme tokens
 │   ├── index.html
 │   ├── package.json
 │   └── vite.config.js
+├── docs/
+│   ├── screenshots/              # UI screenshots
+│   └── ...                       # Design docs, PRD, TRD, plans
 ├── data/
-│   └── database/               # SQLite database
+│   └── database/                 # SQLite database
 ├── .gitignore
 ├── LICENSE
 └── README.md
@@ -171,7 +181,7 @@ cd backend
 ./venv/bin/python -m pytest tests/ -v
 ```
 
-**15 tests passing** — API endpoints, control search, risk register, policy retrieval, audit checklist, progress tracking.
+**27 tests passing** — API endpoints, control search, risk register, policy retrieval, audit checklist, quiz engine, progress tracking, streak system, lessons.
 
 ---
 
@@ -191,11 +201,14 @@ cd backend
 
 ## 🎨 Design
 
-Hyperstudio design language:
-- Dark monochrome terminal aesthetic
-- Amber accent (#E7C59A) for highlights
-- Green accent (#00AC5C) for success states
-- Minimal, professional, distraction-free
+**Aston Martin Design Language:**
+- **Light theme** with bone-white (#F4EFE6) backgrounds
+- **Racing Green** (#004D2B) as primary brand color
+- **Champagne Gold** (#C9A96E) for accents and highlights
+- **Warm Gray** (#8C8273) for secondary text
+- **British Red** (#A52A2A) for errors and warnings
+- Clean, editorial spacing with generous whitespace
+- Elegant hover transitions and micro-interactions
 
 ---
 

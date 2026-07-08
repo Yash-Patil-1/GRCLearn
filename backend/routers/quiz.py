@@ -2,6 +2,7 @@
 from fastapi import APIRouter, Request, HTTPException
 from pydantic import BaseModel
 from models.database import get_connection
+from services.stats import award_xp, XP_QUIZ_CORRECT
 
 router = APIRouter()
 
@@ -42,6 +43,22 @@ async def get_next_question(request: Request, framework: str):
     }
 
 
+@router.get("/question/{question_id}")
+async def get_question(question_id: str, request: Request):
+    """Get a single question by ID (for lesson checkpoints, no seen tracking)."""
+    for q in request.app.state.kb.questions:
+        if q["id"] == question_id:
+            return {
+                "id": q["id"],
+                "topic_id": q.get("topic_id", "general"),
+                "type": q.get("type", "theory"),
+                "difficulty": q.get("difficulty", "medium"),
+                "question": q["question"],
+                "hints": q.get("hints", []),
+            }
+    raise HTTPException(404, "Question not found")
+
+
 @router.post("/answer")
 async def submit_answer(request: Request, body: AnswerSubmit):
     """Submit answer and get validation result."""
@@ -59,7 +76,13 @@ async def submit_answer(request: Request, body: AnswerSubmit):
     )
     conn.commit()
     conn.close()
-    return result
+
+    # Award XP if correct
+    xp_result = {}
+    if result["correct"]:
+        xp_result = award_xp(XP_QUIZ_CORRECT, "quiz")
+
+    return {**result, "xp_awarded": XP_QUIZ_CORRECT if result["correct"] else 0, **xp_result}
 
 
 @router.get("/stats")
