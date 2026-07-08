@@ -43,7 +43,7 @@ export default function Controls() {
             <button key={c.id} onClick={() => setSelected(c)}
               className={`card w-full text-left transition-all duration-200 ${
                 selected?.id === c.id
-                  ? 'border-racing-green/40 shadow-sm bg-[rgba(0,77,43,0.02)]'
+                  ? 'border-racing-green/40 shadow-sm bg-[var(--bg-green-subtle)]'
                   : 'hover:border-racing-green/20 hover:shadow-sm'
               }`}>
               <div className="flex items-center justify-between">
@@ -121,7 +121,7 @@ export default function Controls() {
                           const found = controls.find(c => c.control_id === rc)
                           if (found) setSelected(found)
                         }}
-                          className="text-[10px] font-mono text-racing-green bg-[rgba(0,77,43,0.04)] px-2 py-0.5 rounded border border-racing-green/20 hover:bg-[rgba(0,77,43,0.08)] transition-colors">
+                          className="text-[10px] font-mono text-racing-green bg-[var(--bg-green-subtle)] px-2 py-0.5 rounded border border-racing-green/20 hover:bg-[var(--bg-green-tag)] transition-colors">
                           {rc}
                         </button>
                       ))}

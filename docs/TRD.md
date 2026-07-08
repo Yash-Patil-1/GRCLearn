@@ -103,8 +103,16 @@ Same Hyperstudio theme as VAPTLearn (monochrome + amber) for portfolio cohesion.
 | GET | `/api/phases` | Learning phases |
 | GET | `/api/progress` | User progress |
 | POST | `/api/progress/mark` | Mark item learned |
+| POST | `/api/lessons/{id}/complete` | Complete lesson (awards XP) |
+| GET | `/api/quiz/next?framework=` | Next quiz question |
+| POST | `/api/quiz/answer` | Submit quiz answer (streak tracking, no XP) |
+| GET | `/api/quiz/question/{id}` | Get single question by ID (for lesson checkpoints) |
+| GET | `/api/quiz/stats` | Quiz performance stats |
+| GET | `/api/streak` | Current streak, XP, level, daily activity |
 | GET | `/api/bookmarks` | Bookmarks |
 | POST | `/api/bookmarks` | Add bookmark |
+| GET | `/api/lessons` | List all lessons with section counts |
+| GET | `/api/lessons/{id}` | Get lesson content + checkpoint question IDs |
 
 ---
 
@@ -193,54 +201,72 @@ All employees, contractors, and third parties.
 ```
 GRCLearn/
 ├── backend/
-│   ├── main.py
+│   ├── main.py                    # FastAPI app, CORS, router includes
 │   ├── requirements.txt
 │   ├── routers/
-│   │   ├── frameworks.py
-│   │   ├── controls.py
-│   │   ├── risks.py
-│   │   ├── policies.py
-│   │   ├── audit.py
-│   │   ├── mappings.py
-│   │   └── progress.py
+│   │   ├── frameworks.py          # Framework listing/detail
+│   │   ├── controls.py            # Control library (list, filter, search)
+│   │   ├── risks.py               # Risk scenarios + risk register CRUD
+│   │   ├── policies.py            # Policy templates
+│   │   ├── quiz.py                # Quiz engine (next, answer, stats)
+│   │   ├── lessons.py             # Theory lessons + checkpoints
+│   │   ├── streak.py              # XP, level, streak endpoint
+│   │   ├── progress.py            # User progress tracking
+│   │   └── mappings.py            # Cross-framework mappings
 │   ├── services/
-│   │   ├── knowledge_base.py
-│   │   ├── mapping_engine.py
-│   │   ├── risk_engine.py
-│   │   └── search.py
+│   │   ├── knowledge_base.py      # Loads all JSON data
+│   │   ├── quiz_engine.py         # Question selection + validation
+│   │   └── stats.py               # XP, level thresholds, streak logic
 │   ├── models/
-│   │   ├── database.py
-│   │   └── schemas.py
+│   │   └── database.py            # SQLite setup + connection
+│   ├── scripts/                   # Bulk data generation scripts
+│   ├── tests/
+│   │   ├── test_api.py
+│   │   ├── test_streak.py
+│   │   └── test_lessons.py
 │   └── data/
 │       ├── frameworks/
-│       │   ├── nist_800_53.json
-│       │   ├── nist_csf.json
-│       │   ├── iso_27001.json
-│       │   ├── cis_v8.json
-│       │   ├── soc2.json
-│       │   └── pci_dss.json
+│       │   └── nist_800_53.json   # 324 NIST controls
 │       ├── risks/
-│       │   └── scenarios.json
-│       ├── policies/
-│       │   ├── access_control.md
-│       │   ├── password.md
-│       │   ├── incident_response.md
-│       │   └── ...
+│       │   └── scenarios.json     # 35 risk scenarios
+│       ├── theory/
+│       │   ├── phase1_governance.json
+│       │   ├── phase2_risk.json
+│       │   ├── phase3_controls.json
+│       │   ├── access_control.json
+│       │   ├── audit_evidence.json
+│       │   └── cross_framework_mapping.json
+│       ├── questions/
+│       │   └── grc_quiz.json      # Framework-specific quiz questions
+│       ├── policies/              # Markdown policy templates
 │       ├── mappings.json
 │       └── phases.json
 ├── frontend/
 │   ├── src/
 │   │   ├── pages/
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── Frameworks.jsx
-│   │   │   ├── Controls.jsx
-│   │   │   ├── RiskRegister.jsx
-│   │   │   ├── Policies.jsx
-│   │   │   ├── Audit.jsx
-│   │   │   └── Mappings.jsx
-│   │   └── components/
+│   │   │   ├── Dashboard.jsx      # Stats cards, StreakBadge
+│   │   │   ├── Controls.jsx       # Control library browser
+│   │   │   ├── Risks.jsx          # Risk scenarios + register
+│   │   │   ├── Policies.jsx       # Policy viewer
+│   │   │   ├── Quiz.jsx           # Quiz with session tracking
+│   │   │   ├── Learn.jsx          # Lesson listing
+│   │   │   └── LessonView.jsx     # Theory content + checkpoints
+│   │   ├── components/
+│   │   │   ├── Sidebar.jsx        # Navigation sidebar
+│   │   │   ├── StreakBadge.jsx    # Level, XP, streak
+│   │   │   ├── QuizResults.jsx    # Session results breakdown
+│   │   │   ├── SkeletonLoader.jsx
+│   │   │   └── ErrorMessage.jsx
+│   │   └── styles/
+│   │       └── globals.css        # Tailwind v4, Hyperstudio theme
 │   └── ...
 ├── docs/
+│   ├── PRD.md
+│   ├── TRD.md
+│   ├── APP_FLOW.md
+│   ├── UI_UX_DESIGN_BRIEF.md
+│   ├── BACKEND_SCHEMA.md
+│   └── IMPLEMENTATION_PLAN.md
 ├── README.md
 ├── LICENSE
 └── setup.sh

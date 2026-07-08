@@ -32,8 +32,8 @@ export default function Policies() {
             <button key={p.id} onClick={() => loadPolicy(p.id)}
               className={`w-full text-left text-sm transition-all duration-200 rounded-lg px-3 py-2 ${
                 selected === p.id
-                  ? 'bg-[rgba(0,77,43,0.06)] text-racing-green font-medium border border-racing-green/20'
-                  : 'text-warm-gray hover:text-racing-green hover:bg-[rgba(0,77,43,0.03)] border border-transparent'
+                  ? 'bg-[var(--bg-green-faint)] text-racing-green font-medium border border-racing-green/20'
+                  : 'text-warm-gray hover:text-racing-green hover:bg-[var(--bg-green-subtle)] border border-transparent'
               }`}>
               {p.name}
             </button>

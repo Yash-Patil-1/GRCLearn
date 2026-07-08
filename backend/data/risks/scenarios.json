@@ -494,5 +494,408 @@
       "CIS 7.1"
     ],
     "kri": "Number of EOL systems still in production"
+  },
+  {
+    "id": "risk-cloud-compliance-drift",
+    "name": "Cloud Compliance Drift",
+    "category": "Cloud Security",
+    "description": "Cloud infrastructure drifts from compliance baselines (PCI, HIPAA, SOC 2) as teams make unauthorized changes or misconfigure resources during rapid development.",
+    "threat_source": "Developers, automated deployment pipelines, configuration drift",
+    "vulnerability": "No cloud posture management, IaC without compliance checks, manual change approvals bypassed",
+    "likelihood": 4,
+    "impact": 4,
+    "risk_score": 16,
+    "risk_level": "Critical",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement CSPM with compliance scanning",
+      "Add policy-as-code to CI/CD pipelines",
+      "Enforce infrastructure-as-code with mandatory security review",
+      "Deploy drift detection with automated remediation"
+    ],
+    "controls": [
+      "NIST CM-6",
+      "NIST CA-7",
+      "NIST SI-4",
+      "CIS 4.2",
+      "ISO A.8.32"
+    ],
+    "kri": "Number of compliance drift events detected per week"
+  },
+  {
+    "id": "risk-ci-cd-pipeline",
+    "name": "CI/CD Pipeline Compromise",
+    "category": "Cloud Security",
+    "description": "Attackers compromise the CI/CD pipeline to inject malicious code, exfiltrate secrets, or tamper with build artifacts.",
+    "threat_source": "External attackers, compromised credentials, supply chain actors",
+    "vulnerability": "Over-privileged CI/CD service accounts, unverified third-party actions, secrets in pipeline variables",
+    "likelihood": 3,
+    "impact": 5,
+    "risk_score": 15,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Lock down CI/CD service accounts with least privilege",
+      "Pin third-party actions to specific commit hashes",
+      "Use ephemeral secrets with rotation",
+      "Implement signed commits and artifact signing",
+      "Conduct pipeline security reviews quarterly"
+    ],
+    "controls": [
+      "NIST SA-10",
+      "NIST SC-12",
+      "CIS 16.3",
+      "ISO A.8.25"
+    ],
+    "kri": "Number of unauthorized CI/CD pipeline changes detected per month"
+  },
+  {
+    "id": "risk-container-escape",
+    "name": "Container Escape",
+    "category": "Cloud Security",
+    "description": "A compromised container breaks out of its isolation boundary to access the host operating system or other containers.",
+    "threat_source": "External attacker exploiting container runtime vulnerability",
+    "vulnerability": "Outdated container runtime, containers running as root, privileged containers, missing seccomp/AppArmor profiles",
+    "likelihood": 2,
+    "impact": 5,
+    "risk_score": 10,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Run containers as non-root user",
+      "Apply seccomp, AppArmor, and SELinux profiles",
+      "Avoid privileged containers",
+      "Keep container runtime updated",
+      "Scan images for vulnerabilities in CI/CD"
+    ],
+    "controls": [
+      "NIST AC-6",
+      "NIST CM-7",
+      "CIS 5.4",
+      "ISO A.8.23"
+    ],
+    "kri": "Number of containers running with elevated privileges"
+  },
+  {
+    "id": "risk-serverless-abuse",
+    "name": "Serverless Function Abuse",
+    "category": "Cloud Security",
+    "description": "Attackers exploit serverless functions through event injection, excessive permissions, or denial of service via resource exhaustion.",
+    "threat_source": "External attacker, malicious input via event triggers",
+    "vulnerability": "Over-permissioned IAM roles on functions, no input validation, no rate limiting, exposed function URLs",
+    "likelihood": 4,
+    "impact": 3,
+    "risk_score": 12,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Apply least privilege IAM roles per function",
+      "Validate all event inputs",
+      "Configure function concurrency and rate limits",
+      "Use private endpoints for internal functions",
+      "Monitor for unexpected invocation patterns"
+    ],
+    "controls": [
+      "NIST AC-3",
+      "NIST SC-5",
+      "CIS 16.4",
+      "ISO A.8.25"
+    ],
+    "kri": "Number of anonymous or unauthorized function invocations per day"
+  },
+  {
+    "id": "risk-multi-cloud-complexity",
+    "name": "Multi-Cloud Security Complexity",
+    "category": "Cloud Security",
+    "description": "Using multiple cloud providers (AWS, Azure, GCP) creates inconsistent security policies, blind spots, and increased attack surface.",
+    "threat_source": "Security gaps between cloud providers, misconfiguration, inconsistent access controls",
+    "vulnerability": "Different security models per provider, no unified visibility, inconsistent IAM policies, unmanaged shadow resources",
+    "likelihood": 4,
+    "impact": 4,
+    "risk_score": 16,
+    "risk_level": "Critical",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Deploy unified CSPM across all cloud providers",
+      "Standardize IAM policies and naming conventions",
+      "Implement consistent network segmentation architecture",
+      "Centralize logging and monitoring",
+      "Conduct cross-cloud security reviews quarterly"
+    ],
+    "controls": [
+      "NIST CA-7",
+      "NIST CM-2",
+      "CIS 4.4",
+      "ISO A.8.30"
+    ],
+    "kri": "Number of security configuration gaps between cloud providers"
+  },
+  {
+    "id": "risk-ai-model-poisoning",
+    "name": "AI Model Poisoning",
+    "category": "AI Security",
+    "description": "Attackers inject malicious data into training datasets, causing the model to learn incorrect behaviors, backdoors, or biased outcomes.",
+    "threat_source": "External attacker, compromised data supplier, malicious insider",
+    "vulnerability": "No data provenance validation, untrusted training data sources, no integrity checks on training pipeline",
+    "likelihood": 2,
+    "impact": 5,
+    "risk_score": 10,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Validate data provenance and integrity for training datasets",
+      "Implement data sanitization and anomaly detection",
+      "Use differential privacy techniques during training",
+      "Conduct adversarial testing of trained models",
+      "Maintain strict access controls on training pipelines"
+    ],
+    "controls": [
+      "NIST SA-10",
+      "NIST SI-7",
+      "ISO A.5.19",
+      "CIS 16.2"
+    ],
+    "kri": "Number of anomalous training data samples detected"
+  },
+  {
+    "id": "risk-ai-data-leakage",
+    "name": "AI Data Leakage via Model Outputs",
+    "category": "AI Security",
+    "description": "LLMs and generative AI models inadvertently expose training data, PII, or trade secrets in their outputs through prompt injection or extraction attacks.",
+    "threat_source": "External attacker crafting extraction prompts, employees using public AI tools with sensitive data",
+    "vulnerability": "No input/output filtering for AI systems, employees pasting sensitive data into public AI tools, no DLP coverage",
+    "likelihood": 4,
+    "impact": 4,
+    "risk_score": 16,
+    "risk_level": "Critical",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Deploy AI gateway with input/output content filtering",
+      "Implement DLP policies for AI tools",
+      "Block upload of classified data to external AI services",
+      "Train employees on safe AI usage",
+      "Audit AI tool usage logs monthly"
+    ],
+    "controls": [
+      "NIST SC-28",
+      "NIST MP-5",
+      "ISO A.5.12",
+      "CIS 3.10"
+    ],
+    "kri": "Number of PII exposure events detected in AI tool logs per month"
+  },
+  {
+    "id": "risk-ai-hallucination",
+    "name": "AI Hallucination-Driven Business Decisions",
+    "category": "AI Security",
+    "description": "Decision-makers rely on AI-generated outputs containing hallucinations or factual errors, leading to incorrect business, compliance, or security decisions.",
+    "threat_source": "AI model's tendency to fabricate information, poorly designed RAG systems",
+    "vulnerability": "Over-reliance on AI outputs, no human-in-the-loop for critical decisions, no output validation",
+    "likelihood": 4,
+    "impact": 3,
+    "risk_score": 12,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement human-in-the-loop for critical decisions",
+      "Design RAG systems with source citations",
+      "Set confidence thresholds with automatic escalation",
+      "Conduct regular accuracy benchmarking",
+      "Provide user training on AI limitations"
+    ],
+    "controls": [
+      "NIST SI-7",
+      "ISO A.5.1",
+      "CIS 14.1"
+    ],
+    "kri": "Number of verified hallucination incidents per quarter"
+  },
+  {
+    "id": "risk-ai-adversarial",
+    "name": "Adversarial AI Input Manipulation",
+    "category": "AI Security",
+    "description": "Attackers craft adversarial inputs (subtle perturbations, prompt injection, jailbreak attempts) that cause AI systems to misclassify, bypass guardrails, or produce harmful outputs.",
+    "threat_source": "External attacker, malicious user",
+    "vulnerability": "No adversarial robustness testing, insufficient input sanitization, lack of guardrail testing",
+    "likelihood": 3,
+    "impact": 4,
+    "risk_score": 12,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Deploy AI guardrails and content filters",
+      "Test models against adversarial attack libraries",
+      "Implement rate limiting and abuse detection",
+      "Use ensemble models for critical classification tasks",
+      "Conduct red-team exercises quarterly"
+    ],
+    "controls": [
+      "NIST SI-7",
+      "NIST SC-8",
+      "ISO A.5.1",
+      "CIS 16.1"
+    ],
+    "kri": "Number of detected prompt injection or jailbreak attempts per day"
+  },
+  {
+    "id": "risk-ai-agent-rogue",
+    "name": "Rogue AI Agent Actions",
+    "category": "AI Security",
+    "description": "An autonomous AI agent with tool access takes unintended actions \u2014 deleting data, modifying configurations, approving transactions \u2014 due to misaligned instructions or insufficient guardrails.",
+    "threat_source": "AI agent misalignment, tool misuse, escalation from indirect prompt injection",
+    "vulnerability": "Over-permissioned agent tool access, no human approval for destructive actions, no agent behavior monitoring",
+    "likelihood": 3,
+    "impact": 5,
+    "risk_score": 15,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Apply least privilege to all agent tool access",
+      "Require human approval for high-impact actions (deletes, writes, financial)",
+      "Log and monitor all agent actions in real-time",
+      "Set agent action budgets (max actions per session)",
+      "Implement kill-switch mechanism for rogue agents"
+    ],
+    "controls": [
+      "NIST AC-6",
+      "NIST AU-3",
+      "ISO A.5.15",
+      "CIS 6.7"
+    ],
+    "kri": "Number of AI agent actions requiring manual rollback per month"
+  },
+  {
+    "id": "risk-supply-chain-dependency",
+    "name": "Software Dependency Confusion",
+    "category": "Supply Chain",
+    "description": "Internal package names are registered publicly by attackers, causing dependency managers to install malicious versions instead of private internal ones.",
+    "threat_source": "External attacker registering typosquatted or internal package names on public registries",
+    "vulnerability": "No private registry configuration, no package pinning, no integrity verification for dependencies",
+    "likelihood": 3,
+    "impact": 5,
+    "risk_score": 15,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Configure package managers to use private registries first",
+      "Reserve internal package names on public registries",
+      "Pin dependencies to specific versions with hash verification",
+      "Scan for dependency confusion vulnerabilities quarterly"
+    ],
+    "controls": [
+      "NIST SA-10",
+      "NIST SI-7",
+      "ISO A.5.19",
+      "CIS 16.2"
+    ],
+    "kri": "Number of packages without pinned versions or hash verification"
+  },
+  {
+    "id": "risk-vendor-data-access",
+    "name": "Vendor Data Access Sprawl",
+    "category": "Supply Chain",
+    "description": "Vendors accumulate excessive data access over time (orphaned accounts, over-broad API tokens, unused integrations) creating an expanding attack surface.",
+    "threat_source": "Compromised vendor accounts, M&A creating access accumulations",
+    "vulnerability": "No vendor access recertification process, no expiration on vendor accounts, no monitoring of vendor activity",
+    "likelihood": 4,
+    "impact": 3,
+    "risk_score": 12,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Implement quarterly vendor access recertification",
+      "Set expiration dates on all vendor accounts",
+      "Scope API tokens to minimum required permissions",
+      "Monitor vendor account activity for anomalies",
+      "Automate vendor account deprovisioning on contract end"
+    ],
+    "controls": [
+      "NIST AC-2",
+      "NIST SA-9",
+      "ISO A.5.15",
+      "CIS 6.8"
+    ],
+    "kri": "Number of vendor accounts with access not reviewed in 90+ days"
+  },
+  {
+    "id": "risk-oss-dependency",
+    "name": "Open-Source Dependency Vulnerability",
+    "category": "Supply Chain",
+    "description": "Critical applications depend on open-source libraries with known vulnerabilities, abandoned maintenance, or malicious maintainer takeovers.",
+    "threat_source": "Attackers exploiting known CVEs, maintainer account compromise",
+    "vulnerability": "No SBOM, no automated vulnerability scanning, transitive dependencies not tracked, stale libraries",
+    "likelihood": 5,
+    "impact": 4,
+    "risk_score": 20,
+    "risk_level": "Critical",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Generate and maintain SBOM for all applications",
+      "Deploy SCA tooling in CI/CD pipeline",
+      "Define SLAs for critical vulnerability remediation",
+      "Pin dependencies and review updates",
+      "Monitor for library abandonment and fork if necessary"
+    ],
+    "controls": [
+      "NIST SA-10",
+      "NIST SA-8",
+      "ISO A.5.19",
+      "CIS 16.2"
+    ],
+    "kri": "% of dependencies with known critical vulnerabilities past SLA window"
+  },
+  {
+    "id": "risk-msp-compromise",
+    "name": "Managed Service Provider Breach",
+    "category": "Supply Chain",
+    "description": "An MSP or MSSP with privileged access to multiple client environments is breached, creating a cascading supply chain compromise.",
+    "threat_source": "Nation-state actors targeting MSPs for broad access, criminal groups",
+    "vulnerability": "MSP has excessive privileged access, no MFA on MSP administrative accounts, no monitoring of MSP activity",
+    "likelihood": 2,
+    "impact": 5,
+    "risk_score": 10,
+    "risk_level": "High",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Restrict MSP access to minimum necessary with JIT / PAM",
+      "Require MFA on all MSP administrative accounts",
+      "Monitor all MSP-accessed sessions for anomalies",
+      "Conduct quarterly MSP access reviews",
+      "Maintain break-glass procedures to revoke MSP access immediately"
+    ],
+    "controls": [
+      "NIST AC-6",
+      "NIST SA-9",
+      "ISO A.5.19",
+      "CIS 15.2"
+    ],
+    "kri": "Number of MSP accounts with privileged access not reviewed in 90+ days"
+  },
+  {
+    "id": "risk-hardware-supply-chain",
+    "name": "Hardware Supply Chain Tampering",
+    "category": "Supply Chain",
+    "description": "Counterfeit or tampered hardware components (servers, networking gear, IoT devices) enter the organization through compromised supply chains.",
+    "threat_source": "Nation-state actors, counterfeit manufacturers",
+    "vulnerability": "No hardware provenance verification, purchasing from unauthorized resellers, no inspection procedures",
+    "likelihood": 1,
+    "impact": 5,
+    "risk_score": 5,
+    "risk_level": "Medium",
+    "treatment": "Mitigate",
+    "treatment_plan": [
+      "Purchase hardware only from authorized distributors",
+      "Verify hardware provenance and chain of custody",
+      "Conduct physical inspection of delivered hardware",
+      "Maintain hardware bill of materials",
+      "Test hardware firmware integrity before deployment"
+    ],
+    "controls": [
+      "NIST SR-5",
+      "NIST SR-3",
+      "ISO A.5.19",
+      "CIS 15.1"
+    ],
+    "kri": "Number of unauthorized hardware reseller purchases in last quarter"
   }
 ]

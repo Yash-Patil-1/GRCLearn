@@ -2,7 +2,7 @@
 from fastapi import APIRouter, Request, HTTPException
 from pydantic import BaseModel
 from models.database import get_connection
-from services.stats import award_xp, XP_QUIZ_CORRECT
+from services.stats import record_activity
 
 router = APIRouter()
 
@@ -77,12 +77,10 @@ async def submit_answer(request: Request, body: AnswerSubmit):
     conn.commit()
     conn.close()
 
-    # Award XP if correct
-    xp_result = {}
-    if result["correct"]:
-        xp_result = award_xp(XP_QUIZ_CORRECT, "quiz")
+    # Record activity for streak tracking (no XP awarded for quizzes)
+    activity_result = record_activity("quiz")
 
-    return {**result, "xp_awarded": XP_QUIZ_CORRECT if result["correct"] else 0, **xp_result}
+    return {**result, "xp_awarded": 0, **activity_result}
 
 
 @router.get("/stats")

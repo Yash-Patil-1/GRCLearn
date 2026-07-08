@@ -68,10 +68,42 @@
 ## 2. SQLite Schema (User State)
 
 ```sql
+CREATE TABLE user_stats (
+    id INTEGER PRIMARY KEY DEFAULT 1,
+    total_xp INTEGER NOT NULL DEFAULT 0,
+    current_streak INTEGER NOT NULL DEFAULT 0,
+    longest_streak INTEGER NOT NULL DEFAULT 0,
+    last_active_date TEXT
+);
+
+CREATE TABLE daily_activity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date TEXT NOT NULL UNIQUE,
+    xp INTEGER NOT NULL DEFAULT 0,
+    lessons INTEGER NOT NULL DEFAULT 0,
+    quizzes INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE quiz_history (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    question_id TEXT NOT NULL,
+    framework TEXT NOT NULL,
+    correct INTEGER NOT NULL DEFAULT 0,
+    user_answer TEXT,
+    answered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE quiz_seen (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    framework TEXT NOT NULL,
+    question_id TEXT NOT NULL,
+    seen_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE progress (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     item_id TEXT NOT NULL,
-    item_type TEXT NOT NULL CHECK(item_type IN ('control', 'risk', 'policy', 'phase')),
+    item_type TEXT NOT NULL CHECK(item_type IN ('control', 'risk', 'policy', 'lesson')),
     learned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(item_id, item_type)
 );
@@ -108,18 +140,6 @@ CREATE TABLE notes (
     content TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE audit_findings (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    framework TEXT NOT NULL,
-    control_id TEXT NOT NULL,
-    status TEXT CHECK(status IN ('compliant', 'non_compliant', 'partial', 'not_applicable')),
-    evidence TEXT,
-    finding TEXT,
-    remediation TEXT,
-    due_date TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
 

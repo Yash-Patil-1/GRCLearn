@@ -61,7 +61,7 @@ export default function Learn() {
             {/* Green accent bar on hover */}
             <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-racing-green/0 group-hover:bg-racing-green/40 transition-all duration-200" />
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 flex items-center justify-center shrink-0 rounded-lg bg-[rgba(0,77,43,0.06)]">
+              <div className="w-10 h-10 flex items-center justify-center shrink-0 rounded-lg bg-[var(--bg-green-faint)]">
                 <span className="text-racing-green font-bold text-sm font-mono">{i + 1}</span>
               </div>
               <div className="flex-1 min-w-0">

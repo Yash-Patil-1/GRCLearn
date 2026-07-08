@@ -1,71 +1,113 @@
 # UI/UX Design Brief
-## GRCLearn — Same Hyperstudio Theme as VAPTLearn
+## GRCLearn — Aston Martin Racing Green Theme
 
 ---
 
 ## Design System
 
-Same Hyperstudio monochrome terminal + amber design as VAPTLearn for portfolio cohesion.
-Both projects share the same visual language — they look like they belong together.
-
-**Source:** https://styles.refero.design/style/8eb9c53e-d69c-497a-b640-610856cf3a60
+GRCLearn uses a distinct Aston Martin racing green theme — a clean, professional aesthetic with green accents, warm neutrals, and high readability. This differentiates it from VAPTLearn's dark Hyperstudio theme while maintaining portfolio cohesion through shared component patterns.
 
 ---
 
 ## Color Palette
 
-Same as VAPTLearn, plus risk-specific colors:
+| Name | CSS Variable | Hex | Usage |
+|------|-------------|-----|-------|
+| Racing Green | `--color-racing-green` | `#004D2B` | Primary accent, brand color |
+| Champagne | `--color-champagne` | `#C9A96E` | Warm accent (risk, highlights) |
+| Charcoal | `--color-charcoal` | `#2C2C2C` | Primary text, headings |
+| Ivory | `--color-ivory` | `#F5F0E8` | Light background surfaces |
+| Warm Gray | `--color-warm-gray` | `#7A7A7A` | Secondary text, meta info |
+| Parchment | `--color-parchment` | `#E5E0D8` | Borders, dividers |
+| White | `--color-white` | `#FFFFFF` | Card backgrounds, main content |
+| Green | `--color-green` | `#00AC5C` | Correct/success states |
+| Red | `--color-red` | `#A52A2A` | Incorrect/error states |
+| Orange | `--color-orange` | `#B8860B` | Medium risk, warnings |
 
-| Name | Hex | Usage |
-|------|-----|-------|
-| Midnight Void | `#101010` | Primary background |
-| Deep Space | `#080808` | Deeper surfaces |
-| Dark Carbon | `#333333` | Borders |
-| Ash Gray | `#949494` | Secondary text |
-| Polar White | `#F3F3F3` | Primary text |
-| Amber Glow | `#E7C59A` | Key accent |
-| Neon Green | `#00AC5C` | Compliant / low risk |
-| Risk Yellow | `#F39C12` | Medium risk |
-| Risk Orange | `#E67E22` | High risk |
-| Risk Red | `#E74C3C` | Critical risk |
+### Background Variants
+| CSS Variable | Usage |
+|-------------|-------|
+| `--bg-green-faint` | Light green icon backgrounds |
+| `--bg-green-subtle` | XP/success card backgrounds |
+| `--bg-green-tag` | Tag/label backgrounds |
+| `--bg-champagne-subtle` | Warm accent backgrounds |
+| `--bg-orange-subtle` | Warning backgrounds |
+| `--bg-red-subtle` | Error backgrounds |
+| `--bg-charcoal-overlay` | Mobile menu overlay |
 
 ---
 
 ## GRC-Specific Components
 
-### Risk Heat Map
-- 5×5 grid with colored cells
-- Green → Yellow → Orange → Red gradient
-- Clickable cells to filter risks
+### StreakBadge
+- Horizontal bar showing: Streak (🔥 count), Level (LVL N + XP), Daily Goal progress bar
+- Border: parchment, Background: white
+- Responsive: wraps on mobile
 
-### Compliance Gauge
-- Circular progress (like ScoreGauge from JobMatchAI)
-- Shows % of controls implemented
-- Color: Green (>80%), Yellow (50-80%), Red (<50%)
+### Lesson Card (Learn page)
+- Numbered list with green accent
+- Shows section count + checkpoint count
+- Hover: green accent bar slides in
+- Chevron on right for navigation
 
-### Framework Card
-- Dark Carbon background
-- Framework name in Polar White (bold)
-- Control count badge in Amber Glow
-- Click to expand
-
-### Control Card
-- Similar to VAPTLearn command card
-- Control ID badge (Amber)
-- Framework badge (Dark Carbon)
-- Priority indicator (Green/Yellow/Red dot)
+### Control Card (Controls page)
+- Control ID badge (green)
+- Framework badge
+- Family tag
+- Description, guidance, evidence sections
 - Mapping badges (linked frameworks)
+- Priority indicator
+
+### Lesson View (LessonView)
+- Progress bar (green) with section counter
+- Section navigation + checkpoint questions between sections
+- Markdown rendered with styled tables, code blocks, lists
+- Key concepts as pill tags
+- Result feedback: green (correct) / red (incorrect)
+- Lesson completion screen: XP earned, streak, level
+
+### Quiz Page
+- Framework selector tabs (nist, ISO, Risk, Compliance, Audit)
+- Session tracking with topic & difficulty breakdown
+- Hint system
+- QuizResults: score card, by-topic breakdown, by-difficulty breakdown, wrong answer review
 
 ### Policy Viewer
 - Markdown rendered with proper heading hierarchy
-- Table of contents sidebar
-- Copy section button
+- Clean typography for readability
+
+---
+
+## Component States
+
+| Component | State | Visual |
+|-----------|-------|--------|
+| Button | Default | Racing green bg, white text |
+| Button | Ghost | No bg, racing green text on hover |
+| Card | Default | White bg, parchment border |
+| Card | Hover | Shadow, racing green border tint |
+| Nav link | Active | Racing green bg, white text |
+| Nav link | Default | Transparent, warm gray text |
+| Tag | Racing | Green bg + text variant |
+| Tag | Default | White bg, warm gray text variant |
+| Input | Focus | Racing green border tint |
 
 ---
 
 ## Typography & Spacing
 
-Identical to VAPTLearn:
-- Inter for UI, JetBrains Mono for IDs/codes
-- 8px radius, 24px card padding, 64px section gap
-- No shadows, dark shades for depth
+| Element | Font | Size | Weight |
+|---------|------|------|--------|
+| Headings (h1) | Inter | 24-30px | 700 |
+| Headings (h2) | Inter | 18-20px | 700 |
+| Body | Inter | 13-15px | 400 |
+| Meta text | Inter | 10-12px | 500 |
+| Codes/IDs | JetBrains Mono | 11-13px | 400 |
+| Buttons | Inter | 13px | 500 |
+
+- 8px border radius (rounded-lg)
+- 16-24px card padding
+- 24-32px section gap
+- White backgrounds, parchment borders
+- Subtle shadows (shadow-sm)
+- Smooth transitions (duration-200)

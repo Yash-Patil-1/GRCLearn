@@ -21,18 +21,18 @@ export default function Risks() {
       {/* Risk Heat Map Legend */}
       <div className="flex flex-wrap gap-2 mb-6">
         <span className="tag-green">Low (1-4)</span>
-        <span className="text-[10px] font-mono px-2.5 py-1 rounded-full border border-yellow/40 text-yellow bg-[rgba(212,175,55,0.04)]">Medium (5-9)</span>
-        <span className="text-[10px] font-mono px-2.5 py-1 rounded-full border border-orange/40 text-orange bg-[rgba(184,134,11,0.04)]">High (10-15)</span>
+        <span className="text-[10px] font-mono px-2.5 py-1 rounded-full border border-yellow/40 text-yellow bg-[var(--bg-champagne-subtle)]">Medium (5-9)</span>
+        <span className="text-[10px] font-mono px-2.5 py-1 rounded-full border border-orange/40 text-orange bg-[var(--bg-orange-subtle)]">High (10-15)</span>
         <span className="tag-red">Critical (16-25)</span>
       </div>
 
       <div className="space-y-3">
         {risks.map(risk => {
           const levelColors = {
-            Critical: { tag: 'tag-red', bg: 'bg-[rgba(165,42,42,0.03)]' },
-            High: { tag: 'text-orange border-orange', bg: 'bg-[rgba(184,134,11,0.03)]' },
-            Medium: { tag: 'text-yellow border-yellow', bg: 'bg-[rgba(212,175,55,0.03)]' },
-            Low: { tag: 'tag-green', bg: 'bg-[rgba(0,77,43,0.03)]' },
+            Critical: { tag: 'tag-red', bg: 'bg-[var(--bg-red-subtle)]' },
+            High: { tag: 'text-orange border-orange', bg: 'bg-[var(--bg-orange-subtle)]' },
+            Medium: { tag: 'text-yellow border-yellow', bg: 'bg-[var(--bg-champagne-subtle)]' },
+            Low: { tag: 'tag-green', bg: 'bg-[var(--bg-green-subtle)]' },
           }
           const lc = levelColors[risk.risk_level] || levelColors.Low
 

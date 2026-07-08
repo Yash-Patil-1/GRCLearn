@@ -20,18 +20,17 @@ Week 4: Content expansion, Testing, Documentation
 |------|----------|
 | Project structure | P0 |
 | Define JSON schemas | P0 |
-| Write 50 NIST 800-53 controls | P0 |
-| Write 22 NIST CSF categories | P0 |
-| Write 40 ISO 27001 controls | P0 |
-| Write 18 CIS Controls + 50 safeguards | P0 |
-| Write SOC 2 trust criteria | P1 |
-| Write PCI DSS requirements | P1 |
-| Create 30 risk scenarios | P0 |
+| Generate NIST 800-53 controls (324 controls in nist_800_53.json) | P0 |
+| Write ISO 27001 controls | P0 |
+| Create 35 risk scenarios (cloud, AI, supply chain added) | P0 |
 | Create cross-framework mappings | P0 |
 | Write 10 policy templates (Markdown) | P0 |
 | Create phases.json | P0 |
+| Write 6 theory lessons (Governance, Risk, Controls, Access Control, Audit Evidence, Cross-Framework Mapping) | P0 |
+| Write quiz questions (grc_quiz.json) | P0 |
+| NIST, ISO, CIS, SOC 2 controls via bulk_generate scripts | P0 |
 
-**Deliverable:** 300+ controls, 30 risks, 10 policies, 100+ mappings
+**Deliverable:** 324 controls, 35 risks, 10 policies, 6 theory lessons, quiz engine
 
 ---
 
@@ -40,19 +39,20 @@ Week 4: Content expansion, Testing, Documentation
 | Task | Priority |
 |------|----------|
 | FastAPI app structure | P0 |
-| Frameworks router | P0 |
-| Controls router (list, detail, search, filter) | P0 |
-| Mappings router | P0 |
-| Risks router | P0 |
+| Frameworks router (frameworks.py) | P0 |
+| Controls router (controls.py) | P0 |
+| Mappings router (mappings.py) | P0 |
+| Risks router (risks.py) | P0 |
 | Risk register CRUD | P0 |
-| Policies router | P0 |
-| Audit router (checklist generation) | P1 |
-| Progress router | P1 |
-| Bookmarks + Notes | P1 |
-| SQLite setup | P0 |
+| Policies router (policies.py) | P0 |
+| Quiz router (quiz.py) — next question, submit answer, stats | P0 |
+| Lessons router (lessons.py) — theory content + checkpoints | P0 |
+| Progress router (progress.py) | P1 |
+| Streak router (streak.py) — XP, level, streak tracking | P0 |
+| SQLite setup (user_stats, daily_activity, quiz_history, quiz_seen, progress) | P0 |
 | CORS | P0 |
 
-**Deliverable:** Full REST API
+**Deliverable:** Full REST API with quiz engine, lessons, streak/XP system
 
 ---
 
@@ -63,15 +63,18 @@ Week 4: Content expansion, Testing, Documentation
 | Vite + React + Tailwind v4 | P0 |
 | Hyperstudio theme | P0 |
 | Sidebar navigation | P0 |
-| Dashboard (progress, risk heat map) | P0 |
-| Framework Explorer | P0 |
-| Control Detail page | P0 |
-| Learning Paths | P0 |
-| Search (Fuse.js) | P0 |
-| Policy viewer (Markdown) | P1 |
-| Risk Register page | P1 |
+| Dashboard (stats cards, StreakBadge) | P0 |
+| Guided Lessons page (Learn.jsx) | P0 |
+| Lesson View (LessonView.jsx) — sections, checkpoints, XP | P0 |
+| Controls page (Controls.jsx) — search, filter | P0 |
+| Risks page (Risks.jsx) — scenarios, risk register | P0 |
+| Policies page (Policies.jsx) — Markdown viewer | P1 |
+| Quiz page (Quiz.jsx) — session tracking, results | P0 |
+| QuizResults component | P0 |
+| StreakBadge component (level, XP, streak, daily goal) | P0 |
+| ErrorMessage, SkeletonLoader components | P0 |
 
-**Deliverable:** Functional frontend
+**Deliverable:** Full interactive frontend
 
 ---
 
@@ -79,15 +82,14 @@ Week 4: Content expansion, Testing, Documentation
 
 | Task | Priority |
 |------|----------|
-| Risk heat map visualization | P0 |
-| Framework mapping view | P0 |
-| Audit checklist generator | P1 |
-| Compliance score gauge | P1 |
-| Progress tracking | P1 |
-| Bookmarks + Notes | P1 |
+| XP/Level/Streak system | P0 |
+| Theory lesson content expansion (6 files, 40+ sections) | P0 |
+| Quiz checkpoint integration in lessons | P0 |
+| Streak tracking across all activity (quizzes maintain streak) | P0 |
 | Responsive design | P1 |
+| Session quiz results with topic/difficulty breakdown | P0 |
 
-**Deliverable:** Full-featured app
+**Deliverable:** Gamified learning experience with 40k+ words of theory
 
 ---
 
@@ -108,16 +110,40 @@ Week 4: Content expansion, Testing, Documentation
 
 ## Content Breakdown
 
-| Framework | Controls | Families |
-|-----------|----------|----------|
-| NIST 800-53 Rev 5 | 80 | 20 |
-| NIST CSF 2.0 | 22 categories + 106 subcategories | 6 functions |
-| ISO 27001:2022 | 93 (full Annex A) | 4 themes |
-| CIS Controls v8 | 18 + 153 safeguards (top 80) | 18 |
-| SOC 2 | 40 | 5 trust criteria |
-| PCI DSS 4.0 | 50 | 12 requirements |
-| GDPR | 20 key articles | — |
-| HIPAA | 20 key rules | — |
-| **Total** | **~400+** | — |
+| Framework | Controls |
+|-----------|----------|
+| NIST 800-53 Rev 5 | 324 controls (generated via gen_nist_controls.py) |
+| ISO 27001 | 93 controls |
+| CIS Controls v8 | 18 + safeguards |
+| SOC 2 | Trust criteria + controls |
 
-Plus: 50 risk scenarios, 15 policies, 150+ cross-mappings
+### Theory Lessons (6 lessons, 40 sections, 40k+ words)
+| Lesson | Sections |
+|--------|----------|
+| Phase 1: Governance Fundamentals | 7 sections |
+| Phase 2: Risk Management | 7 sections |
+| Phase 3: Control Frameworks | 7 sections |
+| Access Control | 7 sections |
+| Audit Evidence | 6 sections |
+| Cross-Framework Mapping | 6 sections |
+
+### Risk Scenarios (35 total)
+| Category | Count |
+|----------|-------|
+| Core security risks | 20 |
+| Cloud Security | 5 |
+| AI Security | 5 |
+| Supply Chain | 5 |
+
+### Quiz System
+- Framework-specific questions (NIST, ISO 27001, Risk, Compliance, Audit)
+- Session tracking with topic/difficulty breakdown
+- Checkpoint questions integrated into lessons
+- Low-repetition algorithm (last 80 seen excluded)
+
+### Gamification
+- **XP**: Earned only from completing theory lessons (15 XP per lesson)
+- **Level**: 10 levels (thresholds: 0, 50, 120, 220, 360, 550, 800, 1100, 1500, 2000 XP)
+- **Streak**: Maintained by any activity (lessons + quizzes)
+- **Daily Goal**: 50 XP per day
+- Quizzes maintain streak but award 0 XP (theory-only progression)

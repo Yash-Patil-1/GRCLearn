@@ -24,22 +24,22 @@ def clean_db():
 
 
 def test_same_day_no_bump():
-    """XP on same day should not increase streak."""
-    from services.stats import award_xp, XP_QUIZ_CORRECT
+    """Activity on same day should not increase streak."""
+    from services.stats import record_activity
 
-    r1 = award_xp(XP_QUIZ_CORRECT, "quiz")
+    r1 = record_activity("quiz")
     assert r1["current_streak"] == 1
 
-    r2 = award_xp(XP_QUIZ_CORRECT, "quiz")
+    r2 = record_activity("quiz")
     assert r2["current_streak"] == 1  # same day, no bump
 
 
 def test_consecutive_day_bump():
-    """XP on consecutive days should increase streak."""
-    from services.stats import award_xp, XP_QUIZ_CORRECT
+    """Activity on consecutive days should increase streak."""
+    from services.stats import record_activity
 
     # Day 1
-    r1 = award_xp(XP_QUIZ_CORRECT, "quiz")
+    r1 = record_activity("quiz")
 
     # Manually set yesterday to simulate next day
     yesterday = (date.today() - timedelta(days=1)).isoformat()
@@ -48,15 +48,15 @@ def test_consecutive_day_bump():
     conn.commit()
     conn.close()
 
-    r2 = award_xp(XP_QUIZ_CORRECT, "quiz")
+    r2 = record_activity("quiz")
     assert r2["current_streak"] == 2
 
 
 def test_gap_resets_streak():
     """Missing a day should reset streak to 1."""
-    from services.stats import award_xp, XP_QUIZ_CORRECT
+    from services.stats import record_activity
 
-    r1 = award_xp(XP_QUIZ_CORRECT, "quiz")
+    r1 = record_activity("quiz")
 
     # Simulate a 2-day gap
     two_days_ago = (date.today() - timedelta(days=2)).isoformat()
@@ -65,13 +65,13 @@ def test_gap_resets_streak():
     conn.commit()
     conn.close()
 
-    r2 = award_xp(XP_QUIZ_CORRECT, "quiz")
+    r2 = record_activity("quiz")
     assert r2["current_streak"] == 1
 
 
 def test_longest_never_decreases():
     """Longest streak should never decrease."""
-    from services.stats import award_xp, XP_QUIZ_CORRECT
+    from services.stats import record_activity
 
     # Build a streak of 3
     for day_offset in range(3):
@@ -82,7 +82,7 @@ def test_longest_never_decreases():
             conn.execute("UPDATE user_stats SET last_active_date = ?", (past,))
             conn.commit()
             conn.close()
-        r = award_xp(XP_QUIZ_CORRECT, "quiz")
+        r = record_activity("quiz")
 
     assert r["longest_streak"] >= 2
 
@@ -93,9 +93,23 @@ def test_longest_never_decreases():
     conn.commit()
     conn.close()
 
-    r = award_xp(XP_QUIZ_CORRECT, "quiz")
+    r = record_activity("quiz")
     assert r["longest_streak"] == 2
     assert r["current_streak"] == 1
+
+
+def test_quiz_awards_no_xp():
+    """Quiz activity should award 0 XP — only lessons earn XP."""
+    from services.stats import record_activity, award_xp, XP_LESSON_COMPLETE
+
+    # Quiz gives 0 XP
+    r1 = record_activity("quiz")
+    assert r1["total_xp"] == 0
+    assert "xp_awarded" not in r1
+
+    # Lesson gives XP
+    r2 = award_xp(XP_LESSON_COMPLETE, "lesson")
+    assert r2["total_xp"] == XP_LESSON_COMPLETE
 
 
 class TestStreakAPI:

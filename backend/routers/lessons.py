@@ -12,6 +12,7 @@ LESSON_QUESTION_TOPICS = {
     "audit_evidence": ["audit", "audit_evidence"],
     "access_control": ["compliance", "access_control"],
     "cross_framework_mapping": ["nist", "iso27001", "framework_mapping"],
+    "phase3": ["nist", "iso27001", "compliance", "framework_mapping"],
 }
 
 

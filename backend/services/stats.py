@@ -3,11 +3,11 @@
 from datetime import date, timedelta
 from models.database import get_connection
 
-XP_QUIZ_CORRECT = 5
-XP_LESSON_CHECKPOINT = 5
+# XP is ONLY earned by completing theory lessons — quizzes do not award XP
 XP_LESSON_COMPLETE = 15
 DAILY_GOAL = 50
 
+# XP thresholds for levels 1–10 (10 levels, 2000 XP needed for max)
 LEVEL_THRESHOLDS = [0, 50, 120, 220, 360, 550, 800, 1100, 1500, 2000]
 
 
@@ -37,39 +37,37 @@ def calculate_level(total_xp: int) -> dict:
     }
 
 
-def award_xp(amount: int, kind: str) -> dict:
-    """Award XP and update streak. kind is 'quiz' or 'lesson'."""
+def _update_streak_and_activity(amount: int, kind: str, conn) -> None:
+    """Shared logic: update streak and daily_activity."""
     today = date.today()
     today_str = today.isoformat()
     yesterday_str = (today - timedelta(days=1)).isoformat()
 
-    conn = get_connection()
     row = conn.execute("SELECT * FROM user_stats WHERE id = 1").fetchone()
-
     last_active = row["last_active_date"]
 
     if last_active == today_str:
         pass  # streak unchanged
     elif last_active == yesterday_str:
-        conn.execute(
-            "UPDATE user_stats SET current_streak = current_streak + 1 WHERE id = 1"
-        )
+        conn.execute("UPDATE user_stats SET current_streak = current_streak + 1 WHERE id = 1")
     else:
-        conn.execute(
-            "UPDATE user_stats SET current_streak = 1 WHERE id = 1"
-        )
+        conn.execute("UPDATE user_stats SET current_streak = 1 WHERE id = 1")
 
     # Update longest streak
     cur = conn.execute("SELECT current_streak, longest_streak FROM user_stats WHERE id = 1").fetchone()
     if cur["current_streak"] > cur["longest_streak"]:
         conn.execute("UPDATE user_stats SET longest_streak = ? WHERE id = 1", (cur["current_streak"],))
 
-    # Increment XP
-    conn.execute("UPDATE user_stats SET total_xp = total_xp + ?, last_active_date = ? WHERE id = 1",
-                 (amount, today_str))
+    # Update XP and last active
+    conn.execute(
+        "UPDATE user_stats SET total_xp = total_xp + ?, last_active_date = ? WHERE id = 1",
+        (amount, today_str)
+    )
 
     # Upsert daily activity
-    existing = conn.execute("SELECT xp, lessons, quizzes FROM daily_activity WHERE date = ?", (today_str,)).fetchone()
+    existing = conn.execute(
+        "SELECT xp, lessons, quizzes FROM daily_activity WHERE date = ?", (today_str,)
+    ).fetchone()
     if existing:
         lesson_inc = 1 if kind == "lesson" else 0
         quiz_inc = 1 if kind == "quiz" else 0
@@ -83,14 +81,16 @@ def award_xp(amount: int, kind: str) -> dict:
             (today_str, amount, 1 if kind == "lesson" else 0, 1 if kind == "quiz" else 0)
         )
 
-    conn.commit()
 
-    # Fetch updated stats
+def _build_response(conn) -> dict:
+    """Build the standard stats response dict from current DB state."""
+    today = date.today()
+    today_str = today.isoformat()
+
     updated = conn.execute("SELECT * FROM user_stats WHERE id = 1").fetchone()
     today_activity = conn.execute(
         "SELECT xp FROM daily_activity WHERE date = ?", (today_str,)
     ).fetchone()
-    conn.close()
 
     level_info = calculate_level(updated["total_xp"])
     today_xp = today_activity["xp"] if today_activity else 0
@@ -104,6 +104,26 @@ def award_xp(amount: int, kind: str) -> dict:
         "goal_met": today_xp >= DAILY_GOAL,
         **level_info,
     }
+
+
+def record_activity(kind: str) -> dict:
+    """Record activity (quiz, lesson) for streak tracking. Awards NO XP."""
+    conn = get_connection()
+    _update_streak_and_activity(0, kind, conn)
+    conn.commit()
+    result = _build_response(conn)
+    conn.close()
+    return result
+
+
+def award_xp(amount: int, kind: str) -> dict:
+    """Award XP and update streak. Only called for lesson completions."""
+    conn = get_connection()
+    _update_streak_and_activity(amount, kind, conn)
+    conn.commit()
+    result = _build_response(conn)
+    conn.close()
+    return result
 
 
 def get_streak() -> dict:

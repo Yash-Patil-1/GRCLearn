@@ -56,7 +56,7 @@ export default function LessonView() {
     }).then(r => {
       setResult(r.data)
       if (r.data.xp_awarded > 0) setXpEarned(prev => prev + r.data.xp_awarded)
-      if (r.data.streak) setStreak(r.data.streak)
+      if (r.data.current_streak) setStreak({ current_streak: r.data.current_streak, level: r.data.level })
       setPhase('result')
     })
   }
@@ -84,27 +84,27 @@ export default function LessonView() {
     try {
       const r = await axios.post(`/api/lessons/${id}/complete`)
       setXpEarned(prev => prev + r.data.xp_awarded)
-      setStreak(r.data.streak)
+      if (r.data.current_streak) setStreak({ current_streak: r.data.current_streak, level: r.data.level })
     } catch { /* ignore */ }
     setCompleted(true)
   }
 
   if (completed) {
     return (
-      <div className="max-w-4xl">
-        <div className="card text-center py-12 animate-fade-in border-racing-green/30">
-          <div className="w-16 h-16 rounded-full bg-[rgba(0,77,43,0.08)] flex items-center justify-center mx-auto mb-4">
-            <Award className="w-8 h-8 text-racing-green" />
+      <div className="max-w-4xl mx-auto">
+        <div className="card text-center py-8 sm:py-12 animate-fade-in border-racing-green/30">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[var(--bg-green-tag)] flex items-center justify-center mx-auto mb-4">
+            <Award className="w-7 h-7 sm:w-8 sm:h-8 text-racing-green" />
           </div>
-          <h2 className="text-2xl font-bold text-charcoal mb-2">Lesson Complete!</h2>
-          <p className="text-warm-gray mb-6">You've mastered this GRC concept.</p>
+          <h2 className="text-xl sm:text-2xl font-bold text-charcoal mb-2">Lesson Complete!</h2>
+          <p className="text-warm-gray text-sm sm:text-base mb-6">You've mastered this GRC concept.</p>
           {xpEarned > 0 && (
-            <div className="inline-flex items-center gap-4 px-6 py-3 mb-6 bg-[rgba(0,77,43,0.04)] border border-racing-green/20 rounded-lg">
-              <Flame className="w-5 h-5 text-champagne" />
+            <div className="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 mb-6 bg-[var(--bg-green-subtle)] border border-racing-green/20 rounded-lg">
+              <Flame className="w-5 h-5 text-champagne shrink-0" />
               <span className="text-racing-green font-bold font-mono">+{xpEarned} XP</span>
               {streak && (
                 <>
-                  <span className="text-warm-gray font-mono text-sm border-l border-racing-green/20 pl-4">
+                  <span className="text-warm-gray font-mono text-xs sm:text-sm border-l border-racing-green/20 pl-3 sm:pl-4">
                     Streak: {streak.current_streak} days
                   </span>
                   <span className="tag-racing text-xs">LVL {streak.level}</span>
@@ -112,9 +112,9 @@ export default function LessonView() {
               )}
             </div>
           )}
-          <div className="flex gap-4 justify-center">
-            <Link to="/learn" className="btn-primary">Next Lesson →</Link>
-            <Link to="/quiz" className="btn-ghost">Practice Quiz</Link>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link to="/learn" className="btn-primary justify-center text-sm">Next Lesson →</Link>
+            <Link to="/quiz" className="btn-ghost justify-center text-sm">Practice Quiz</Link>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function LessonView() {
 
   if (loading) {
     return (
-      <div className="max-w-4xl">
+      <div className="max-w-4xl mx-auto">
         <Link to="/learn" className="inline-flex items-center gap-1 text-racing-green hover:underline mb-6 text-sm">
           <ChevronLeft className="w-4 h-4" /> Back to lessons
         </Link>
@@ -134,7 +134,7 @@ export default function LessonView() {
 
   if (error || !lesson) {
     return (
-      <div className="max-w-4xl">
+      <div className="max-w-4xl mx-auto">
         <Link to="/learn" className="inline-flex items-center gap-1 text-racing-green hover:underline mb-6 text-sm">
           <ChevronLeft className="w-4 h-4" /> Back to lessons
         </Link>
@@ -147,22 +147,22 @@ export default function LessonView() {
   const totalSections = sections.length
 
   return (
-    <div className="max-w-4xl">
-      <Link to="/learn" className="inline-flex items-center gap-1 text-racing-green hover:underline mb-6 text-sm transition-colors">
+    <div className="max-w-4xl mx-auto">
+      <Link to="/learn" className="inline-flex items-center gap-1 text-racing-green hover:underline mb-4 sm:mb-6 text-sm transition-colors">
         <ChevronLeft className="w-4 h-4" /> Back to lessons
       </Link>
 
       {/* Progress bar */}
-      <div className="flex items-center gap-3 mb-6">
+      <div className="flex items-center gap-3 mb-4 sm:mb-6">
         <div className="flex-1 h-1.5 bg-parchment/60 rounded-full overflow-hidden">
           <div className="h-full rounded-full transition-all duration-500 ease-out bg-racing-green"
             style={{
               width: `${((step + 1) / totalSections) * 100}%`,
-              boxShadow: '0 0 6px rgba(0, 77, 43, 0.2)',
+              boxShadow: '0 0 6px var(--color-racing-green)',
             }}
           />
         </div>
-        <span className="text-xs font-mono text-warm-gray">{step + 1}/{totalSections}</span>
+        <span className="text-xs font-mono text-warm-gray shrink-0">{step + 1}/{totalSections}</span>
       </div>
 
       {/* ===== READING PHASE ===== */}
@@ -173,22 +173,22 @@ export default function LessonView() {
             <div className="flex items-center gap-2 mb-3">
               <span className="tag-racing">Section {step + 1}</span>
             </div>
-            <h2 className="text-xl font-bold text-charcoal mb-4">{sections[step].title}</h2>
-            <div className="prose prose-invert max-w-none text-warm-gray leading-relaxed text-sm
+            <h2 className="text-lg sm:text-xl font-bold text-charcoal mb-4">{sections[step].title}</h2>
+            <div className="prose prose-invert max-w-none text-warm-gray leading-relaxed text-xs sm:text-sm
               [&_strong]:text-charcoal
               [&_code]:text-racing-green [&_code]:bg-ivory [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-xs
-              [&_pre]:bg-ivory [&_pre]:border [&_pre]:border-parchment [&_pre]:rounded-lg [&_pre]:p-4 [&_pre]:text-xs [&_pre]:font-mono
+              [&_pre]:bg-ivory [&_pre]:border [&_pre]:border-parchment [&_pre]:rounded-lg [&_pre]:p-3 sm:[&_pre]:p-4 [&_pre]:text-xs [&_pre]:overflow-x-auto [&_pre]:font-mono
               [&_pre_code]:bg-transparent [&_pre_code]:p-0
-              [&_table]:w-full [&_table]:border-collapse
-              [&_th]:border [&_th]:border-parchment [&_th]:px-3 [&_th]:py-2 [&_th]:text-xs [&_th]:text-racing-green [&_th]:bg-ivory
-              [&_td]:border [&_td]:border-parchment [&_td]:px-3 [&_td]:py-2 [&_td]:text-xs
+              [&_table]:w-full [&_table]:border-collapse [&_table]:text-xs
+              [&_th]:border [&_th]:border-parchment [&_th]:px-2 sm:[&_th]:px-3 [&_th]:py-1.5 sm:[&_th]:py-2 [&_th]:text-xs [&_th]:text-racing-green [&_th]:bg-ivory
+              [&_td]:border [&_td]:border-parchment [&_td]:px-2 sm:[&_td]:px-3 [&_td]:py-1.5 sm:[&_td]:py-2 [&_td]:text-xs
               [&_ul]:list-disc [&_ul]:pl-4 [&_li]:text-warm-gray
               [&_hr]:border-parchment">
               <ReactMarkdown>{sections[step].content}</ReactMarkdown>
             </div>
 
             {sections[step].key_concepts && (
-              <div className="flex flex-wrap gap-2 mt-6 pt-4 border-t border-parchment/60">
+              <div className="flex flex-wrap gap-2 mt-5 sm:mt-6 pt-4 border-t border-parchment/60">
                 {sections[step].key_concepts.map((concept, i) => (
                   <span key={i}
                     className="px-2 py-0.5 text-[10px] font-mono rounded-full border border-parchment text-warm-gray">
@@ -200,7 +200,7 @@ export default function LessonView() {
           </div>
 
           <div className="flex justify-end mt-4">
-            <button onClick={advanceSection} className="btn-primary flex items-center gap-1">
+            <button onClick={advanceSection} className="btn-primary w-full sm:w-auto justify-center text-sm">
               {step < totalSections - 1 ? (
                 <>Next Section <ChevronRight className="w-4 h-4" /></>
               ) : (
@@ -217,18 +217,17 @@ export default function LessonView() {
           <div className="flex items-center gap-2 mb-4">
             <span className="tag-racing">CHECKPOINT</span>
           </div>
-          <p className="text-charcoal mb-5 leading-relaxed text-base">{question.question}</p>
+          <p className="text-charcoal mb-5 leading-relaxed text-sm sm:text-base">{question.question}</p>
           <textarea
             value={answer}
             onChange={e => setAnswer(e.target.value)}
             placeholder="Type your answer..."
-            className="input-field font-mono text-sm resize-none h-24 mb-3"
-            style={{ borderColor: answer ? 'rgba(0, 77, 43, 0.3)' : undefined }}
+            className={`input-field font-mono text-sm resize-none min-h-[80px] sm:h-24 mb-3 ${answer ? 'border-[var(--color-racing-green)]/30' : ''}`}
             onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submitCheckpoint() }}}
           />
-          <div className="flex gap-3">
-            <button onClick={submitCheckpoint} className="btn-primary">Submit</button>
-            <button onClick={() => setShowHint(true)} className="btn-ghost flex items-center gap-1">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <button onClick={submitCheckpoint} className="btn-primary justify-center text-sm">Submit</button>
+            <button onClick={() => setShowHint(true)} className="btn-ghost justify-center text-sm">
               <Lightbulb className="w-4 h-4" /> Hint
             </button>
           </div>
@@ -245,25 +244,25 @@ export default function LessonView() {
         }`}>
           <div className="flex items-center gap-2 mb-3">
             {result.correct
-              ? <CheckCircle className="w-5 h-5 text-green" />
-              : <XCircle className="w-5 h-5 text-red" />
+              ? <CheckCircle className="w-5 h-5 text-green shrink-0" />
+              : <XCircle className="w-5 h-5 text-red shrink-0" />
             }
-            <span className={`font-semibold ${result.correct ? 'text-green' : 'text-red'}`}>
+            <span className={`font-semibold text-sm sm:text-base ${result.correct ? 'text-green' : 'text-red'}`}>
               {result.correct ? 'Correct!' : 'Not quite'}
             </span>
             {result.xp_awarded > 0 && (
-              <span className="text-racing-green text-xs font-mono ml-auto">
+              <span className="text-racing-green text-xs font-mono ml-auto shrink-0">
                 <Flame className="w-3 h-3 inline mr-1" />+{result.xp_awarded} XP
               </span>
             )}
           </div>
-          <p className="text-sm text-warm-gray mb-3">{result.explanation}</p>
+          <p className="text-sm text-warm-gray mb-3 leading-relaxed">{result.explanation}</p>
           {!result.correct && (
             <p className="text-xs text-warm-gray mb-3">
-              Expected: <code className="text-racing-green bg-ivory px-1 py-0.5 rounded text-xs font-mono">{result.expected}</code>
+              Expected: <code className="text-racing-green bg-ivory px-1 py-0.5 rounded text-xs font-mono break-words">{result.expected}</code>
             </p>
           )}
-          <button onClick={advanceAfterResult} className="btn-primary flex items-center gap-1">
+          <button onClick={advanceAfterResult} className="btn-primary w-full sm:w-auto justify-center text-sm">
             Continue <ChevronRight className="w-4 h-4" />
           </button>
         </div>
