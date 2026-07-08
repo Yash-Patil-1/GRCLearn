@@ -37,6 +37,16 @@ class GRCKnowledgeBase:
                             "control_count": len(data["controls"]),
                         })
 
+        # Deduplicate controls — keep first occurrence when IDs overlap (e.g., batch files)
+        seen_ids = set()
+        unique_controls = []
+        for c in self.controls:
+            cid = c.get("id")
+            if cid and cid not in seen_ids:
+                seen_ids.add(cid)
+                unique_controls.append(c)
+        self.controls = unique_controls
+
         self._index = {c["id"]: c for c in self.controls}
 
         # Load risks
