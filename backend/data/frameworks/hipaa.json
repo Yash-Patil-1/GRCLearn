@@ -414,6 +414,219 @@
       "references": [
         "https://www.hhs.gov/hipaa"
       ]
+    },
+    {
+      "id": "hipaa-164-308-a7",
+      "framework": "HIPAA",
+      "family": "Administrative Safeguards",
+      "family_id": "164.308",
+      "control_id": "164.308(a)(7)",
+      "name": "Contingency Plan",
+      "description": "Establish policies for responding to an emergency or occurrence that damages ePHI systems.",
+      "implementation_guidance": [
+        "Create data backup plan",
+        "Develop disaster recovery plan",
+        "Create emergency mode operations plan",
+        "Test and revise contingency plans"
+      ],
+      "audit_evidence": [
+        "Backup plan",
+        "DR plan",
+        "Emergency procedures",
+        "Test results"
+      ],
+      "risk_addressed": [
+        "Data loss",
+        "Extended downtime",
+        "ePHI unavailability"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "CP-1",
+          "CP-2",
+          "CP-9"
+        ],
+        "iso_27001": [
+          "A.5.29",
+          "A.5.30"
+        ]
+      },
+      "related_controls": [
+        "164.308(a)(1)"
+      ],
+      "references": [
+        "https://www.hhs.gov/hipaa"
+      ]
+    },
+    {
+      "id": "hipaa-164-310-a1",
+      "framework": "HIPAA",
+      "family": "Physical Safeguards",
+      "family_id": "164.310",
+      "control_id": "164.310(a)(1)",
+      "name": "Facility Access Controls",
+      "description": "Implement policies to limit physical access to ePHI systems and facilities.",
+      "implementation_guidance": [
+        "Implement contingency operations access",
+        "Create facility security plan",
+        "Implement access control and validation",
+        "Maintain maintenance records"
+      ],
+      "audit_evidence": [
+        "Facility security plan",
+        "Access control records",
+        "Validation procedures",
+        "Maintenance logs"
+      ],
+      "risk_addressed": [
+        "Physical theft",
+        "Unauthorized facility access"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "PE-1",
+          "PE-2",
+          "PE-3"
+        ],
+        "iso_27001": [
+          "A.7.1",
+          "A.7.2"
+        ]
+      },
+      "related_controls": [
+        "164.310(b)"
+      ],
+      "references": [
+        "https://www.hhs.gov/hipaa"
+      ]
+    },
+    {
+      "id": "hipaa-164-310-b",
+      "framework": "HIPAA",
+      "family": "Physical Safeguards",
+      "family_id": "164.310",
+      "control_id": "164.310(b)",
+      "name": "Workstation Use",
+      "description": "Implement policies specifying proper functions and physical attributes of workstations.",
+      "implementation_guidance": [
+        "Define acceptable workstation use",
+        "Specify physical safeguards for workstations",
+        "Restrict workstation locations",
+        "Implement screen privacy"
+      ],
+      "audit_evidence": [
+        "Workstation use policy",
+        "Physical safeguard documentation",
+        "Location restrictions",
+        "Privacy screen deployment"
+      ],
+      "risk_addressed": [
+        "Unauthorized viewing of ePHI",
+        "Workstation theft"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "nist_800_53": [
+          "PE-18"
+        ],
+        "iso_27001": [
+          "A.7.7"
+        ]
+      },
+      "related_controls": [
+        "164.310(a)(1)",
+        "164.310(c)"
+      ],
+      "references": [
+        "https://www.hhs.gov/hipaa"
+      ]
+    },
+    {
+      "id": "hipaa-164-310-d",
+      "framework": "HIPAA",
+      "family": "Physical Safeguards",
+      "family_id": "164.310",
+      "control_id": "164.310(d)",
+      "name": "Device and Media Controls",
+      "description": "Implement policies governing receipt and removal of hardware and electronic media containing ePHI.",
+      "implementation_guidance": [
+        "Implement disposal procedures",
+        "Implement media re-use procedures",
+        "Maintain accountability records",
+        "Create data backup before movement"
+      ],
+      "audit_evidence": [
+        "Disposal records",
+        "Sanitization records",
+        "Accountability tracking",
+        "Backup verification"
+      ],
+      "risk_addressed": [
+        "ePHI on disposed media",
+        "Lost devices"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "MP-6",
+          "MP-7"
+        ],
+        "iso_27001": [
+          "A.7.10",
+          "A.7.14"
+        ]
+      },
+      "related_controls": [
+        "164.310(a)(1)"
+      ],
+      "references": [
+        "https://www.hhs.gov/hipaa"
+      ]
+    },
+    {
+      "id": "hipaa-164-312-a",
+      "framework": "HIPAA",
+      "family": "Technical Safeguards",
+      "family_id": "164.312",
+      "control_id": "164.312(a)",
+      "name": "Access Control",
+      "description": "Implement technical policies to allow access only to authorized persons or software.",
+      "implementation_guidance": [
+        "Assign unique user identification",
+        "Implement emergency access procedure",
+        "Implement automatic logoff",
+        "Implement encryption and decryption"
+      ],
+      "audit_evidence": [
+        "Unique ID assignment",
+        "Emergency access procedures",
+        "Logoff configuration",
+        "Encryption implementation"
+      ],
+      "risk_addressed": [
+        "Unauthorized ePHI access",
+        "Unencrypted ePHI exposure"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "AC-2",
+          "AC-7",
+          "SC-28"
+        ],
+        "iso_27001": [
+          "A.8.3",
+          "A.8.5"
+        ]
+      },
+      "related_controls": [
+        "164.312(d)"
+      ],
+      "references": [
+        "https://www.hhs.gov/hipaa"
+      ]
     }
   ]
 }

@@ -460,6 +460,207 @@
       "references": [
         "https://gdpr-info.eu/art-35-gdpr/"
       ]
+    },
+    {
+      "id": "gdpr-art-20",
+      "framework": "GDPR",
+      "family": "Data Subject Rights",
+      "family_id": "ART",
+      "control_id": "Art.20",
+      "name": "Right to Data Portability",
+      "description": "Data subjects can receive their data in a structured, machine-readable format.",
+      "implementation_guidance": [
+        "Provide data in JSON/CSV format",
+        "Enable direct transfer to another controller",
+        "Implement automated export",
+        "Cover only data provided by subject"
+      ],
+      "audit_evidence": [
+        "Export functionality",
+        "Format documentation",
+        "Transfer mechanisms",
+        "Scope documentation"
+      ],
+      "risk_addressed": [
+        "Non-compliance",
+        "Operational burden"
+      ],
+      "priority": "medium",
+      "mappings": {
+        "nist_800_53": [
+          "N/A"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "Art.15"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-20-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-34",
+      "framework": "GDPR",
+      "family": "Breach Notification",
+      "family_id": "ART",
+      "control_id": "Art.34",
+      "name": "Communication to Data Subject",
+      "description": "Communicate personal data breach to data subjects when high risk to rights and freedoms.",
+      "implementation_guidance": [
+        "Define high-risk criteria",
+        "Prepare subject notification templates",
+        "Implement mass notification capability",
+        "Document notification decisions"
+      ],
+      "audit_evidence": [
+        "Risk assessment criteria",
+        "Notification templates",
+        "Communication records",
+        "Decision documentation"
+      ],
+      "risk_addressed": [
+        "Reputation damage",
+        "Data subject harm"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "IR-6"
+        ],
+        "iso_27001": [
+          "A.5.26"
+        ]
+      },
+      "related_controls": [
+        "Art.33"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-34-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-37",
+      "framework": "GDPR",
+      "family": "Data Protection Officer",
+      "family_id": "ART",
+      "control_id": "Art.37",
+      "name": "Designation of DPO",
+      "description": "Designate a Data Protection Officer where required by regulation.",
+      "implementation_guidance": [
+        "Assess DPO requirement",
+        "Appoint qualified DPO",
+        "Ensure independence",
+        "Provide adequate resources"
+      ],
+      "audit_evidence": [
+        "DPO appointment letter",
+        "Qualification evidence",
+        "Independence documentation",
+        "Resource allocation"
+      ],
+      "risk_addressed": [
+        "Non-compliance",
+        "Lack of oversight"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "PM-2"
+        ],
+        "iso_27001": [
+          "A.5.1"
+        ]
+      },
+      "related_controls": [
+        "Art.38",
+        "Art.39"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-37-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-44",
+      "framework": "GDPR",
+      "family": "International Transfers",
+      "family_id": "ART",
+      "control_id": "Art.44",
+      "name": "General Principle for Transfers",
+      "description": "Transfer of personal data to third countries only with adequate safeguards.",
+      "implementation_guidance": [
+        "Assess adequacy decisions",
+        "Implement Standard Contractual Clauses (SCCs)",
+        "Conduct Transfer Impact Assessments",
+        "Document transfer mechanisms"
+      ],
+      "audit_evidence": [
+        "Adequacy assessment",
+        "SCCs",
+        "TIA documentation",
+        "Transfer records"
+      ],
+      "risk_addressed": [
+        "Illegal data transfers",
+        "Regulatory fines"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "N/A"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "Art.46"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-44-gdpr/"
+      ]
+    },
+    {
+      "id": "gdpr-art-46",
+      "framework": "GDPR",
+      "family": "International Transfers",
+      "family_id": "ART",
+      "control_id": "Art.46",
+      "name": "Transfers Subject to Appropriate Safeguards",
+      "description": "Transfers may take place where appropriate safeguards are provided.",
+      "implementation_guidance": [
+        "Use Standard Contractual Clauses",
+        "Implement Binding Corporate Rules",
+        "Obtain certification under approved mechanism",
+        "Supplement with additional measures if needed"
+      ],
+      "audit_evidence": [
+        "SCCs signed",
+        "BCR documentation",
+        "Certification evidence",
+        "Supplementary measures"
+      ],
+      "risk_addressed": [
+        "Invalid transfer basis",
+        "Regulatory enforcement"
+      ],
+      "priority": "high",
+      "mappings": {
+        "nist_800_53": [
+          "N/A"
+        ],
+        "iso_27001": [
+          "A.5.12"
+        ]
+      },
+      "related_controls": [
+        "Art.44"
+      ],
+      "references": [
+        "https://gdpr-info.eu/art-46-gdpr/"
+      ]
     }
   ]
 }
