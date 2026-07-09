@@ -13,8 +13,6 @@ class GRCKnowledgeBase:
         self.risks: list[dict] = []
         self.frameworks: list[dict] = []
         self.policies: list[dict] = []
-        self.mappings: dict = {}
-        self.phases: list[dict] = []
         self.questions: list[dict] = []
         self.theory: list[dict] = []
         self._index: dict[str, dict] = {}
@@ -45,23 +43,11 @@ class GRCKnowledgeBase:
             with open(risks_file, 'r') as f:
                 self.risks = json.load(f)
 
-        # Load mappings
-        mappings_file = DATA_DIR / "mappings.json"
-        if mappings_file.exists():
-            with open(mappings_file, 'r') as f:
-                self.mappings = json.load(f)
-
         # Load policies list
         policies_dir = DATA_DIR / "policies"
         if policies_dir.exists():
             for f in sorted(policies_dir.glob("*.md")):
                 self.policies.append({"id": f.stem, "name": f.stem.replace("_", " ").title(), "file": str(f)})
-
-        # Load phases
-        phases_file = DATA_DIR / "phases.json"
-        if phases_file.exists():
-            with open(phases_file, 'r') as f:
-                self.phases = json.load(f)
 
         # Load quiz questions
         questions_dir = DATA_DIR / "questions"

@@ -1,9 +1,0 @@
-[
-  {"id": 1, "name": "Governance Fundamentals", "description": "Security governance, roles, responsibilities, and organizational structure."},
-  {"id": 2, "name": "Risk Management", "description": "Risk identification, analysis, scoring, treatment, and acceptance."},
-  {"id": 3, "name": "Control Frameworks", "description": "NIST, ISO, CIS controls — implementation and mapping."},
-  {"id": 4, "name": "Compliance", "description": "Regulatory requirements, compliance obligations, and evidence collection."},
-  {"id": 5, "name": "Audit Readiness", "description": "Internal/external audits, findings management, corrective actions."},
-  {"id": 6, "name": "Security Operations Governance", "description": "Incident response governance, change management, vendor management."},
-  {"id": 7, "name": "Reporting & Metrics", "description": "KPIs, KRIs, executive dashboards, board reporting."}
-]

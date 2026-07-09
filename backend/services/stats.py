@@ -33,7 +33,6 @@ def calculate_level(total_xp: int) -> dict:
         "next_level_xp": next_level_xp,
         "max_level_reached": max_level_reached,
         "total_xp": total_xp,
-        "level_thresholds": LEVEL_THRESHOLDS,
     }
 
 
