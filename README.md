@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?logo=fastapi)
-![Tests](https://img.shields.io/badge/Tests-27%20passing-brightgreen)
+![Tests](https://img.shields.io/badge/Tests-28%20passing-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
@@ -33,7 +33,7 @@
 | ⚠️ **Risk Scenarios** | 20 real-world risk scenarios with assessment and registration |
 | 📝 **Policy Templates** | 8 ready-to-use policy templates with full content |
 | 📖 **Guided Lessons** | Step-by-step theory chapters with checkpoints, progress tracking, and XP rewards |
-| 🧠 **Quiz Engine** | 28 quiz questions across 7 topic areas with scoring and streak tracking |
+| 🧠 **Quiz Engine** | 43 quiz questions across 8 topic areas with scoring and streak tracking |
 | 🔍 **Cross-Mapping** | See how controls map across frameworks |
 | 📊 **Progress Tracking** | XP, streaks, daily goals, and learning progress |
 | 🏆 **Gamification** | Levels, streaks, checkpoints, and daily goals keep you motivated |
@@ -50,8 +50,8 @@
 | Risk Scenarios | 20 |
 | Policy Templates | 8 |
 | Theory Chapters / Lessons | 5 |
-| Quiz Questions | 28 |
-| Automated Tests | 27 |
+| Quiz Questions | 43 |
+| Automated Tests | 28 |
 
 ---
 
@@ -85,7 +85,7 @@ npm install
 ```bash
 # Terminal 1 — Backend
 cd backend
-./venv/bin/python -m uvicorn main:app --reload --port 8000
+./venv/bin/python -m uvicorn main:app --reload --port 8001
 
 # Terminal 2 — Frontend
 cd frontend
@@ -147,13 +147,13 @@ GRCLearn/
 │   │   ├── risks/                # Risk scenarios (20)
 │   │   ├── policies/             # Policy templates (8)
 │   │   ├── theory/               # Learning chapters (5 lessons)
-│   │   ├── questions/            # Quiz questions (28)
+│   │   ├── questions/            # Quiz questions (43)
 │   │   ├── mappings.json         # Cross-framework mappings
 │   │   └── phases.json           # GRC implementation phases
 │   ├── models/                   # Database models
 │   ├── routers/                  # API route handlers
 │   ├── services/                 # Business logic
-│   └── tests/                    # Test suite (27 tests)
+│   └── tests/                    # Test suite (28 tests)
 ├── frontend/
 │   ├── src/
 │   │   ├── components/           # React components (Sidebar, StreakBadge, etc.)
@@ -181,7 +181,7 @@ cd backend
 ./venv/bin/python -m pytest tests/ -v
 ```
 
-**27 tests passing** — API endpoints, control search, risk register, policy retrieval, audit checklist, quiz engine, progress tracking, streak system, lessons.
+**28 tests passing** — API endpoints, control search, risk register, policy retrieval, audit checklist, quiz engine, progress tracking, streak system, lessons.
 
 ---
 

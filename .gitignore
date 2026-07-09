@@ -1,25 +1,28 @@
-
-# Build
-# Database
-data/database/*.db
-*.db
-dist/
-.DS_Store
-*.egg-info/
-.env
-frontend/dist/
-frontend/test-results/
-# IDE
-.idea/
-# Node
-node_modules/
-# OS
-*.pyc
+# Python
 __pycache__/
 *.py[cod]
-.pytest_cache/
-# Python
-Thumbs.db
+*.pyc
 .venv/
 venv/
+.env
+
+# Database
+*.db
+data/database/*.db
+
+# IDE
 .vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+dist/
+test-results/
+
+# Build
+*.egg-info/
+.pytest_cache/
