@@ -30,7 +30,7 @@ export default function Sidebar({ onClose, darkMode, toggleDarkMode }) {
           </div>
         </Link>
         {onClose && (
-          <button onClick={onClose} className="lg:hidden w-7 h-7 rounded-md flex items-center justify-center text-[var(--color-warm-gray)] hover:text-[var(--color-charcoal)] hover:bg-[var(--color-ivory)] transition-colors">
+          <button onClick={onClose} aria-label="Close sidebar" className="lg:hidden w-7 h-7 rounded-md flex items-center justify-center text-[var(--color-warm-gray)] hover:text-[var(--color-charcoal)] hover:bg-[var(--color-ivory)] transition-colors">
             <X className="w-4 h-4" />
           </button>
         )}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Lightbulb, Award, Flame } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
@@ -19,6 +19,7 @@ export default function LessonView() {
   const [completed, setCompleted] = useState(false)
   const [xpEarned, setXpEarned] = useState(0)
   const [streak, setStreak] = useState(null)
+  const sectionRef = useRef(null)
   const [phase, setPhase] = useState('reading')
 
   const [loading, setLoading] = useState(true)
@@ -33,6 +34,10 @@ export default function LessonView() {
       setLoading(false)
     }).catch(() => { setError(true); setLoading(false) })
   }, [id])
+
+  useEffect(() => {
+    sectionRef.current?.focus()
+  }, [step])
 
   useEffect(() => {
     if (phase !== 'checkpoint' || !lesson) return
@@ -168,7 +173,7 @@ export default function LessonView() {
       {/* ===== READING PHASE ===== */}
       {phase === 'reading' && (
         <>
-          <div className="card animate-fade-in relative overflow-hidden" key={`s-${step}`}>
+          <div ref={sectionRef} tabIndex={-1} className=" card animate-fade-in relative overflow-hidden focus-visible:ring-1 focus-visible:ring-racing-green outline-none" key={`s-${step}`}>
             <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-racing-green/20" />
             <div className="flex items-center gap-2 mb-3">
               <span className="tag-racing">Section {step + 1}</span>

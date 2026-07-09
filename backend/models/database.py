@@ -94,6 +94,9 @@ async def init_db():
             user_answer TEXT,
             answered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
+        CREATE INDEX IF NOT EXISTS idx_quiz_history_framework ON quiz_history(framework);
+        CREATE INDEX IF NOT EXISTS idx_quiz_seen_framework ON quiz_seen(framework);
+        CREATE INDEX IF NOT EXISTS idx_quiz_history_date ON quiz_history(answered_at);
     """)
     conn.commit()
     conn.close()

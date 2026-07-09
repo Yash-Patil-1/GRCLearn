@@ -10,6 +10,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
+logger = logging.getLogger(__name__)
+
 from routers import frameworks, controls, risks, policies, audit, progress, quiz, streak, lessons
 from models.database import init_db
 from services.knowledge_base import GRCKnowledgeBase
@@ -18,15 +22,15 @@ from services.quiz_engine import QuizEngine
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    print("🏛️  Loading GRCLearn knowledge base...")
+    logger.info("Loading GRCLearn knowledge base...")
     app.state.kb = GRCKnowledgeBase()
     app.state.kb.load()
-    print(f"✅ Loaded {app.state.kb.control_count} controls, {app.state.kb.risk_count} risks, {app.state.kb.framework_count} frameworks")
+    logger.info("Loaded %d controls, %d risks, %d frameworks", app.state.kb.control_count, app.state.kb.risk_count, app.state.kb.framework_count)
     app.state.quiz_engine = QuizEngine(app.state.kb.questions if hasattr(app.state.kb, 'questions') else [])
     await init_db()
-    print("✅ Database initialized.")
+    logger.info("Database initialized.")
     yield
-    print("👋 Shutting down GRCLearn.")
+    logger.info("Shutting down GRCLearn.")
 
 
 app = FastAPI(
