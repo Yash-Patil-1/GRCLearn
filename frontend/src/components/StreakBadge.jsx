@@ -33,7 +33,7 @@ export default function StreakBadge() {
     <div className="flex flex-wrap items-center gap-4 px-5 py-3 rounded-lg border border-parchment bg-white shadow-sm">
       {/* Streak */}
       <div className="flex items-center gap-2">
-        <Flame className={`w-5 h-5 ${data.current_streak > 0 ? 'text-orange drop-shadow-[0_0_6px_rgba(180,134,0,0.3)]' : 'text-warm-gray'}`} />
+        <Flame className={`w-5 h-5 ${data.current_streak > 0 ? 'text-orange' : 'text-warm-gray'}`} style={data.current_streak > 0 ? { filter: 'drop-shadow(0 0 6px color-mix(in srgb, var(--color-orange) 30%, transparent))' } : {}} />
         <div>
           <span className="font-bold text-charcoal font-mono text-sm">{data.current_streak}</span>
           <span className="text-warm-gray text-[10px] ml-1">day streak</span>

@@ -158,7 +158,7 @@ export default function QuizResults({ results, onRestart }) {
                     <div className="h-full rounded-full transition-all duration-500"
                       style={{
                         width: `${(data.correct / Math.max(1, data.total)) * 100}%`,
-                        backgroundColor: diff === 'easy' ? '#004D2B' : diff === 'hard' ? '#A52A2A' : '#C9A96E',
+                        backgroundColor: diff === 'easy' ? 'var(--color-racing-green)' : diff === 'hard' ? 'var(--color-british-red)' : 'var(--color-champagne)',
                       }} />
                   </div>
                 </div>

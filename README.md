@@ -37,7 +37,7 @@
 | 🔍 **Cross-Mapping** | See how controls map across frameworks |
 | 📊 **Progress Tracking** | XP, streaks, daily goals, and learning progress |
 | 🏆 **Gamification** | Levels, streaks, checkpoints, and daily goals keep you motivated |
-| 🎨 **Aston Martin Theme** | Light theme — Racing Green, Bone White, Champagne Gold |
+| 🎨 **Aston Martin Theme** | Light/dark toggle — Racing Green, Bone White, Champagne Gold |
 
 ---
 
@@ -100,7 +100,7 @@ Open **http://localhost:5174**
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | React 18, Vite 5, Tailwind CSS v4, Lucide Icons, Recharts |
+| Frontend | React 18, Vite 8, Tailwind CSS v4, Lucide Icons, Recharts |
 | Backend | FastAPI, Python 3.10+ |
 | Database | SQLite (progress, streaks, XP) |
 | Knowledge Base | JSON (controls, frameworks, risks, policies, lessons, questions) |
@@ -202,13 +202,11 @@ cd backend
 ## 🎨 Design
 
 **Aston Martin Design Language:**
-- **Light theme** with bone-white (#F4EFE6) backgrounds
-- **Racing Green** (#004D2B) as primary brand color
-- **Champagne Gold** (#C9A96E) for accents and highlights
-- **Warm Gray** (#8C8273) for secondary text
-- **British Red** (#A52A2A) for errors and warnings
-- Clean, editorial spacing with generous whitespace
-- Elegant hover transitions and micro-interactions
+- **Dark/light toggle** — defaults to bone-white light theme, persists in localStorage
+- **Light theme:** bone-white (#F4EFE6) backgrounds, warm gray text
+- **Dark theme:** charcoal (#1A1A1E) backgrounds, light text
+- **Racing Green** (#004D2B) primary, **Champagne Gold** (#C9A96E) accents
+- Clean editorial spacing, elegant micro-interactions
 
 ---
 
